@@ -9,7 +9,7 @@ const navLinks = [
   { label: 'Services', href: '#services' },
   { label: 'How It Works', href: '#how-it-works' },
   { label: 'Reviews', href: '#testimonials' },
-  { label: 'Pricing', href: '#pricing' },
+  { label: 'About', href: '#about' },
   { label: 'FAQ', href: '#faq' },
   { label: 'Contact', href: '#quote-form' },
 ]
@@ -23,7 +23,7 @@ export default function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
 
-      const sections = ['services', 'how-it-works', 'testimonials', 'pricing', 'faq', 'quote-form']
+      const sections = ['services', 'how-it-works', 'testimonials', 'about', 'faq', 'quote-form']
       for (const section of sections) {
         const element = document.getElementById(section)
         if (element) {
