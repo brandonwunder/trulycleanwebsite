@@ -4,14 +4,29 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
 export default function FixedBackground() {
+  const [isMounted, setIsMounted] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
+    setIsMounted(true)
     const checkMobile = () => setIsMobile(window.innerWidth < 768)
     checkMobile()
     window.addEventListener('resize', checkMobile)
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
+
+  // Prevent hydration mismatch by not rendering until mounted
+  if (!isMounted) {
+    return (
+      <>
+        <div className="fixed-background-wrapper">
+          <div className="fixed-background-image" />
+        </div>
+        <div className="background-overlay-radial" />
+        <div className="background-overlay-brand" />
+      </>
+    )
+  }
 
   return (
     <>
