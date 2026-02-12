@@ -1,13 +1,12 @@
 import Hero from '@/components/sections/Hero'
 import TrustBar from '@/components/sections/TrustBar'
-import RecentCleansTicker from '@/components/sections/RecentCleansTicker'
-import HowItWorks from '@/components/sections/HowItWorks'
-import CleanOMeter from '@/components/sections/CleanOMeter'
-import Services from '@/components/sections/Services'
-import CTABreak from '@/components/sections/CTABreak'
-import BeforeAfter from '@/components/sections/BeforeAfter'
-import WhyDifferent from '@/components/sections/WhyDifferent'
 import Testimonials from '@/components/sections/Testimonials'
+import BeforeAfter from '@/components/sections/BeforeAfter'
+import Services from '@/components/sections/Services'
+import HowItWorks from '@/components/sections/HowItWorks'
+import CTABreak from '@/components/sections/CTABreak'
+import WhyDifferent from '@/components/sections/WhyDifferent'
+import CleanOMeter from '@/components/sections/CleanOMeter'
 import ServiceAreaMap from '@/components/sections/ServiceAreaMap'
 import About from '@/components/sections/About'
 import FAQ from '@/components/sections/FAQ'
@@ -25,13 +24,14 @@ export default function HomePage() {
         <TrustBar />
       </div>
 
-      <RecentCleansTicker />
-      <HowItWorks />
-      <CleanOMeter />
+      <Testimonials />
+      <BeforeAfter />
 
       <div className="section-overlay-medium">
         <Services />
       </div>
+
+      <HowItWorks />
 
       <CTABreak
         id="cta-1"
@@ -41,18 +41,8 @@ export default function HomePage() {
         variant="teal"
       />
 
-      <BeforeAfter />
       <WhyDifferent />
-      <Testimonials />
-
-      <CTABreak
-        id="cta-2"
-        headline="Join 492+ Happy Customers"
-        subtext="See why New River families trust Truly Clean for their homes and businesses."
-        ctaLabel="Request Your Quote"
-        variant="green"
-      />
-
+      <CleanOMeter />
       <ServiceAreaMap />
 
       <div className="section-overlay-heavy">
@@ -64,9 +54,9 @@ export default function HomePage() {
       </div>
 
       <CTABreak
-        id="cta-3"
-        headline="Limited Availability This Week"
-        subtext="Book now to secure your preferred cleaning date."
+        id="cta-final"
+        headline="Limited Availability This Week - Join 492+ Happy Customers"
+        subtext="See why New River families trust Truly Clean. Book now to secure your preferred cleaning date."
         ctaLabel="Book Your Clean Today"
         variant="dark"
       />
