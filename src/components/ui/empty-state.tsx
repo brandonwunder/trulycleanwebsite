@@ -38,7 +38,7 @@ export default function EmptyState({
         </motion.div>
       )}
 
-      <h3 className="font-heading font-bold text-2xl text-navy-dark mb-2 text-center">
+      <h3 className="font-heading font-bold text-2xl text-deep-indigo mb-2 text-center">
         {title}
       </h3>
 
@@ -49,7 +49,7 @@ export default function EmptyState({
       {action && (
         <motion.button
           onClick={action.onClick}
-          className="bg-gradient-to-r from-vibrant-teal to-vibrant-green text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all"
+          className="bg-gradient-to-r from-ocean-blue to-royal-blue text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >

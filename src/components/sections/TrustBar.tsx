@@ -30,9 +30,9 @@ const trustItems = [
 
 export default function TrustBar() {
   return (
-    <section className="relative bg-navy-dark py-6 overflow-hidden">
+    <section className="relative bg-deep-indigo py-6 overflow-hidden">
       {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-vibrant-teal/5 via-transparent to-vibrant-green/5" />
+      <div className="absolute inset-0 bg-gradient-to-r from-ocean-blue/5 via-transparent to-royal-blue/5" />
 
       <motion.div
         className="container mx-auto px-4 max-w-7xl relative z-10"
@@ -48,8 +48,8 @@ export default function TrustBar() {
               variants={slideUp}
               className="flex items-center gap-3 justify-center py-2"
             >
-              <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-vibrant-teal/10 flex items-center justify-center">
-                <item.icon className="w-5 h-5 text-vibrant-teal" />
+              <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-ocean-blue/10 flex items-center justify-center">
+                <item.icon className="w-5 h-5 text-ocean-blue" />
               </div>
               <div>
                 <div className="flex items-center gap-1">

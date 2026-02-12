@@ -40,10 +40,10 @@ const tiers = [
       'Sanitization treatment',
     ],
     featured: true,
-    gradient: 'from-vibrant-teal/5 to-vibrant-green/5',
-    borderColor: 'border-vibrant-teal/30',
-    iconBg: 'bg-vibrant-teal/10',
-    iconColor: 'text-vibrant-teal',
+    gradient: 'from-ocean-blue/5 to-royal-blue/5',
+    borderColor: 'border-ocean-blue/30',
+    iconBg: 'bg-ocean-blue/10',
+    iconColor: 'text-ocean-blue',
   },
   {
     name: 'Move In/Out',
@@ -76,7 +76,7 @@ export default function PricingAnchor() {
     <section id="pricing" className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-50">
       {/* Background accents */}
       <motion.div
-        className="absolute top-10 right-10 w-40 h-40 bg-vibrant-teal/5 rounded-full blur-3xl pointer-events-none"
+        className="absolute top-10 right-10 w-40 h-40 bg-ocean-blue/5 rounded-full blur-3xl pointer-events-none"
         animate={{ y: [0, -20, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
       />
@@ -92,17 +92,17 @@ export default function PricingAnchor() {
         <div className="text-center mb-16">
           <motion.div
             variants={slideUp}
-            className="inline-flex items-center gap-2 bg-vibrant-orange/10 text-vibrant-orange px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-vibrant-orange/20"
+            className="inline-flex items-center gap-2 bg-vibrant-purple/10 text-vibrant-purple px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-vibrant-purple/20"
           >
             <Crown className="w-4 h-4" />
             <span className="font-semibold text-sm">Transparent Pricing</span>
           </motion.div>
           <motion.h2
             variants={slideUp}
-            className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-navy-dark mb-4"
+            className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-deep-indigo mb-4"
           >
             Affordable{' '}
-            <span className="text-vibrant-orange">Premium</span> Cleaning
+            <span className="text-vibrant-purple">Premium</span> Cleaning
           </motion.h2>
           <motion.p
             variants={slideUp}
@@ -120,14 +120,14 @@ export default function PricingAnchor() {
               variants={tier.featured ? scaleIn : slideUp}
               className={`relative bg-gradient-to-br ${tier.gradient} rounded-2xl border-2 ${tier.borderColor} p-8 ${
                 tier.featured
-                  ? 'lg:scale-105 shadow-xl shadow-vibrant-teal/10 ring-1 ring-vibrant-teal/20'
+                  ? 'lg:scale-105 shadow-xl shadow-ocean-blue/10 ring-1 ring-ocean-blue/20'
                   : 'shadow-lg hover:shadow-xl'
               } transition-all duration-300 hover:-translate-y-1 flex flex-col`}
             >
               {/* Popular Badge */}
               {tier.featured && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <span className="bg-vibrant-teal text-white px-4 py-1.5 rounded-full text-sm font-semibold shadow-lg shadow-vibrant-teal/25">
+                  <span className="bg-ocean-blue text-white px-4 py-1.5 rounded-full text-sm font-semibold shadow-lg shadow-ocean-blue/25">
                     Most Popular
                   </span>
                 </div>
@@ -139,7 +139,7 @@ export default function PricingAnchor() {
                   <tier.icon className={`w-6 h-6 ${tier.iconColor}`} />
                 </div>
                 <div>
-                  <h3 className="font-heading font-bold text-xl text-navy-dark">{tier.name}</h3>
+                  <h3 className="font-heading font-bold text-xl text-deep-indigo">{tier.name}</h3>
                   <p className="text-gray-500 text-sm">{tier.description}</p>
                 </div>
               </div>
@@ -148,7 +148,7 @@ export default function PricingAnchor() {
               <div className="mb-6">
                 <div className="flex items-baseline gap-1">
                   <span className="text-gray-400 text-lg">from</span>
-                  <span className="font-heading font-bold text-5xl text-navy-dark">${tier.price}</span>
+                  <span className="font-heading font-bold text-5xl text-deep-indigo">${tier.price}</span>
                 </div>
                 <span className="text-gray-400 text-sm">{tier.period}</span>
               </div>
@@ -157,8 +157,8 @@ export default function PricingAnchor() {
               <ul className="space-y-3 mb-8 flex-grow">
                 {tier.features.map((feature, i) => (
                   <li key={i} className="flex items-start gap-2.5">
-                    <CheckCircle className={`w-5 h-5 flex-shrink-0 mt-0.5 ${tier.featured ? 'text-vibrant-green' : 'text-gray-400'}`} />
-                    <span className={`text-sm ${tier.featured ? 'text-navy-dark font-medium' : 'text-gray-600'}`}>{feature}</span>
+                    <CheckCircle className={`w-5 h-5 flex-shrink-0 mt-0.5 ${tier.featured ? 'text-royal-blue' : 'text-gray-400'}`} />
+                    <span className={`text-sm ${tier.featured ? 'text-deep-indigo font-medium' : 'text-gray-600'}`}>{feature}</span>
                   </li>
                 ))}
               </ul>

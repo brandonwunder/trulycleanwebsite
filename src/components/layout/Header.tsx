@@ -71,10 +71,10 @@ export default function Header() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <div className="bg-gradient-to-br from-vibrant-teal to-vibrant-green w-10 h-10 rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-[0_0_25px_rgba(6,182,212,0.4)] transition-all">
+            <div className="bg-gradient-to-br from-ocean-blue to-royal-blue w-10 h-10 rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-[0_0_25px_rgba(6,182,212,0.4)] transition-all">
               <Sparkles className="w-6 h-6 text-white" />
             </div>
-            <span className="font-heading font-bold text-xl text-navy-dark hidden sm:inline">
+            <span className="font-heading font-bold text-xl text-deep-indigo hidden sm:inline">
               Truly Clean
             </span>
           </motion.button>
@@ -85,14 +85,14 @@ export default function Header() {
               <motion.button
                 key={link.href}
                 onClick={() => handleNavClick(link.href)}
-                className="relative text-gray-700 font-medium hover:text-vibrant-teal transition-colors text-sm"
+                className="relative text-gray-700 font-medium hover:text-ocean-blue transition-colors text-sm"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 {link.label}
                 {activeSection === link.href.replace('#', '') && (
                   <motion.div
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-vibrant-teal to-vibrant-green"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-ocean-blue to-royal-blue"
                     layoutId="activeUnderline"
                     transition={{ duration: 0.3 }}
                   />
@@ -126,9 +126,9 @@ export default function Header() {
             whileTap={{ scale: 0.9 }}
           >
             {isOpen ? (
-              <X className="w-6 h-6 text-navy-dark" />
+              <X className="w-6 h-6 text-deep-indigo" />
             ) : (
-              <Menu className="w-6 h-6 text-navy-dark" />
+              <Menu className="w-6 h-6 text-deep-indigo" />
             )}
           </motion.button>
         </div>

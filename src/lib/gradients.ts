@@ -1,33 +1,33 @@
 /**
- * Brand Gradient System
+ * Brand Gradient System - Ocean Depths Palette
  * Consistent gradients for premium, cohesive design
  */
 
 export const gradients = {
   // Primary brand gradients
-  tealToGreen: 'bg-gradient-to-br from-vibrant-teal to-vibrant-green',
-  tealToOrange: 'bg-gradient-to-br from-vibrant-teal to-vibrant-orange',
-  greenToOrange: 'bg-gradient-to-br from-vibrant-green to-vibrant-orange',
+  oceanToRoyal: 'bg-gradient-to-br from-ocean-blue to-royal-blue',
+  oceanToPurple: 'bg-gradient-to-br from-ocean-blue to-vibrant-purple',
+  royalToPurple: 'bg-gradient-to-br from-royal-blue to-vibrant-purple',
 
   // Subtle gradients (for backgrounds)
-  whiteToTeal: 'bg-gradient-to-br from-white via-vibrant-teal/5 to-vibrant-teal/10',
-  whiteToGreen: 'bg-gradient-to-br from-white via-vibrant-green/5 to-vibrant-green/10',
-  whiteToOrange: 'bg-gradient-to-br from-white via-vibrant-orange/5 to-vibrant-orange/10',
+  whiteToOcean: 'bg-gradient-to-br from-white via-ocean-blue/5 to-ocean-blue/10',
+  whiteToRoyal: 'bg-gradient-to-br from-white via-royal-blue/5 to-royal-blue/10',
+  whiteToPurple: 'bg-gradient-to-br from-white via-vibrant-purple/5 to-vibrant-purple/10',
 
   // Dark gradients
-  darkToTeal: 'bg-gradient-to-br from-navy-dark to-navy-dark/70',
+  darkToOcean: 'bg-gradient-to-br from-deep-indigo to-deep-indigo/70',
 
   // Overlay gradients
-  overlayDark: 'bg-gradient-to-t from-navy-dark/80 to-transparent',
-  overlayTeal: 'bg-gradient-to-t from-vibrant-teal/80 to-transparent',
-  overlayGreen: 'bg-gradient-to-t from-vibrant-green/80 to-transparent',
+  overlayDark: 'bg-gradient-to-t from-deep-indigo/80 to-transparent',
+  overlayOcean: 'bg-gradient-to-t from-ocean-blue/80 to-transparent',
+  overlayRoyal: 'bg-gradient-to-t from-royal-blue/80 to-transparent',
 
   // Shimmer effect
   shimmer: 'bg-gradient-to-r from-transparent via-white/20 to-transparent',
 
   // Hover gradients
-  hoverTeal: 'hover:bg-gradient-to-br hover:from-vibrant-teal/90 hover:to-vibrant-teal transition-all duration-300',
-  hoverGreen: 'hover:bg-gradient-to-br hover:from-vibrant-green/90 hover:to-vibrant-green transition-all duration-300',
+  hoverOcean: 'hover:bg-gradient-to-br hover:from-ocean-blue/90 hover:to-ocean-blue transition-all duration-300',
+  hoverRoyal: 'hover:bg-gradient-to-br hover:from-royal-blue/90 hover:to-royal-blue transition-all duration-300',
 } as const
 
 export type GradientVariant = keyof typeof gradients

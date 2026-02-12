@@ -42,9 +42,9 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-navy-dark text-white relative overflow-hidden">
+    <footer className="bg-deep-indigo text-white relative overflow-hidden">
       {/* Gradient divider */}
-      <div className="h-1 bg-gradient-to-r from-vibrant-teal via-vibrant-green to-vibrant-teal" />
+      <div className="h-1 bg-gradient-to-r from-ocean-blue via-royal-blue to-ocean-blue" />
 
       <div className="container mx-auto px-4 max-w-7xl py-16">
         <motion.div
@@ -57,7 +57,7 @@ export default function Footer() {
           {/* Brand Column */}
           <motion.div variants={slideUp}>
             <div className="flex items-center gap-3 mb-4">
-              <div className="bg-gradient-to-br from-vibrant-teal to-vibrant-green w-12 h-12 rounded-lg flex items-center justify-center">
+              <div className="bg-gradient-to-br from-ocean-blue to-royal-blue w-12 h-12 rounded-lg flex items-center justify-center">
                 <CheckCircle className="w-7 h-7 text-white" />
               </div>
               <div>
@@ -74,7 +74,7 @@ export default function Footer() {
                 href="https://www.facebook.com/TrulyCleanSonya"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white/10 p-3 rounded-lg hover:bg-vibrant-teal/20 transition-all"
+                className="bg-white/10 p-3 rounded-lg hover:bg-ocean-blue/20 transition-all"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -95,7 +95,7 @@ export default function Footer() {
                 >
                   <button
                     onClick={() => handleSmoothScroll(link.href)}
-                    className="text-gray-400 hover:text-vibrant-teal transition-colors text-sm"
+                    className="text-gray-400 hover:text-ocean-blue transition-colors text-sm"
                   >
                     {link.label}
                   </button>
@@ -109,29 +109,29 @@ export default function Footer() {
             <h4 className="font-heading font-bold text-lg mb-6">Contact Us</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-vibrant-teal flex-shrink-0 mt-0.5" />
+                <Phone className="w-5 h-5 text-ocean-blue flex-shrink-0 mt-0.5" />
                 <div>
                   <a
                     href={`tel:${phone}`}
-                    className="text-gray-300 hover:text-vibrant-teal transition-colors"
+                    className="text-gray-300 hover:text-ocean-blue transition-colors"
                   >
                     {phone}
                   </a>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-vibrant-teal flex-shrink-0 mt-0.5" />
+                <Mail className="w-5 h-5 text-ocean-blue flex-shrink-0 mt-0.5" />
                 <div>
                   <a
                     href={`mailto:${email}`}
-                    className="text-gray-300 hover:text-vibrant-teal transition-colors break-all"
+                    className="text-gray-300 hover:text-ocean-blue transition-colors break-all"
                   >
                     {email}
                   </a>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-vibrant-teal flex-shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-ocean-blue flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-gray-400 text-sm">{serviceAreas}</p>
                 </div>
@@ -152,7 +152,7 @@ export default function Footer() {
                     whileHover={{ x: 5 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <Icon className="w-5 h-5 text-vibrant-teal flex-shrink-0 mt-0.5" />
+                    <Icon className="w-5 h-5 text-ocean-blue flex-shrink-0 mt-0.5" />
                     <span className="text-gray-400 text-sm">{badge.label}</span>
                   </motion.div>
                 )
@@ -189,7 +189,7 @@ export default function Footer() {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-gray-400 hover:text-vibrant-teal transition-colors text-sm"
+                className="text-gray-400 hover:text-ocean-blue transition-colors text-sm"
               >
                 {link.label}
               </a>

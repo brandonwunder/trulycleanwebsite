@@ -25,7 +25,7 @@ const comparisons: ComparisonItem[] = [
     resultLabel: 'Sparkling Clean',
     duration: '2h 15m Deep Clean',
     beforeGradient: 'from-gray-400 via-gray-300 to-gray-350',
-    afterGradient: 'from-vibrant-teal/30 via-vibrant-teal/10 to-white',
+    afterGradient: 'from-ocean-blue/30 via-ocean-blue/10 to-white',
   },
   {
     label: 'Bathroom Refresh',
@@ -35,7 +35,7 @@ const comparisons: ComparisonItem[] = [
     resultLabel: 'Spotless & Fresh',
     duration: '1h 45m Standard Clean',
     beforeGradient: 'from-gray-500 via-gray-400 to-gray-350',
-    afterGradient: 'from-vibrant-green/30 via-vibrant-green/10 to-white',
+    afterGradient: 'from-royal-blue/30 via-royal-blue/10 to-white',
   },
   {
     label: 'Move-Out Reset',
@@ -45,7 +45,7 @@ const comparisons: ComparisonItem[] = [
     resultLabel: 'Rent-Ready',
     duration: '4h 30m Move-Out Clean',
     beforeGradient: 'from-gray-600 via-gray-500 to-gray-400',
-    afterGradient: 'from-vibrant-orange/30 via-vibrant-orange/10 to-white',
+    afterGradient: 'from-vibrant-purple/30 via-vibrant-purple/10 to-white',
   },
 ]
 
@@ -90,7 +90,7 @@ function ComparisonSlider({ item }: { item: ComparisonItem }) {
     <div className="group">
       <div
         ref={containerRef}
-        className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden cursor-col-resize shadow-lg border border-white/20 select-none touch-none focus:outline-none focus-visible:ring-2 focus-visible:ring-vibrant-teal"
+        className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden cursor-col-resize shadow-lg border border-white/20 select-none touch-none focus:outline-none focus-visible:ring-2 focus-visible:ring-ocean-blue"
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
@@ -106,9 +106,9 @@ function ComparisonSlider({ item }: { item: ComparisonItem }) {
         <div className={`absolute inset-0 bg-gradient-to-br ${item.afterGradient} sparkle-bokeh`}>
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center">
-              <Sparkles className="w-12 h-12 text-vibrant-teal/40 mx-auto mb-2" />
-              <span className="text-vibrant-teal/60 font-heading font-bold text-2xl">{item.afterLabel}</span>
-              <p className="text-vibrant-teal/40 text-sm mt-1">Spotless & Fresh</p>
+              <Sparkles className="w-12 h-12 text-ocean-blue/40 mx-auto mb-2" />
+              <span className="text-ocean-blue/60 font-heading font-bold text-2xl">{item.afterLabel}</span>
+              <p className="text-ocean-blue/40 text-sm mt-1">Spotless & Fresh</p>
             </div>
           </div>
         </div>
@@ -135,8 +135,8 @@ function ComparisonSlider({ item }: { item: ComparisonItem }) {
           style={{ left: `${sliderPos}%`, transform: 'translateX(-50%)' }}
         >
           {/* Grip handle */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-xl border-2 border-vibrant-teal flex items-center justify-center">
-            <GripVertical className="w-4 h-4 text-vibrant-teal" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-xl border-2 border-ocean-blue flex items-center justify-center">
+            <GripVertical className="w-4 h-4 text-ocean-blue" />
           </div>
         </div>
 
@@ -150,24 +150,24 @@ function ComparisonSlider({ item }: { item: ComparisonItem }) {
           )}
         </div>
         <div className="absolute top-4 right-4 space-y-1 z-10 text-right">
-          <div className="glass-teal px-3 py-1 rounded-full inline-block">
-            <span className="text-xs font-semibold text-vibrant-teal">Result</span>
+          <div className="glass-ocean px-3 py-1 rounded-full inline-block">
+            <span className="text-xs font-semibold text-ocean-blue">Result</span>
           </div>
           {item.resultLabel && (
-            <p className="text-xs text-vibrant-teal font-semibold">{item.resultLabel}</p>
+            <p className="text-xs text-ocean-blue font-semibold">{item.resultLabel}</p>
           )}
         </div>
 
         {/* Duration Badge */}
         {item.duration && (
-          <div className="absolute bottom-4 right-4 glass-teal px-4 py-2 rounded-full flex items-center gap-2 z-10">
-            <Clock className="w-3 h-3 text-vibrant-teal" />
-            <span className="text-xs font-semibold text-vibrant-teal">{item.duration}</span>
+          <div className="absolute bottom-4 right-4 glass-ocean px-4 py-2 rounded-full flex items-center gap-2 z-10">
+            <Clock className="w-3 h-3 text-ocean-blue" />
+            <span className="text-xs font-semibold text-ocean-blue">{item.duration}</span>
           </div>
         )}
       </div>
 
-      <p className="text-center mt-4 font-heading font-semibold text-navy-dark text-lg">{item.label}</p>
+      <p className="text-center mt-4 font-heading font-semibold text-deep-indigo text-lg">{item.label}</p>
     </div>
   )
 }
@@ -177,7 +177,7 @@ export default function BeforeAfter() {
     <section id="before-after" className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-50">
       {/* Background accents */}
       <motion.div
-        className="absolute top-20 left-10 w-32 h-32 bg-vibrant-teal/5 rounded-full blur-3xl pointer-events-none"
+        className="absolute top-20 left-10 w-32 h-32 bg-ocean-blue/5 rounded-full blur-3xl pointer-events-none"
         animate={{ y: [0, -20, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
       />
@@ -193,17 +193,17 @@ export default function BeforeAfter() {
         <div className="text-center mb-16">
           <motion.div
             variants={slideUp}
-            className="inline-flex items-center gap-2 bg-vibrant-teal/10 text-vibrant-teal px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-vibrant-teal/20"
+            className="inline-flex items-center gap-2 bg-ocean-blue/10 text-ocean-blue px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-ocean-blue/20"
           >
             <Eye className="w-4 h-4" />
             <span className="font-semibold text-sm">See the Difference</span>
           </motion.div>
           <motion.h2
             variants={slideUp}
-            className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-navy-dark mb-4"
+            className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-deep-indigo mb-4"
           >
             Real Results,{' '}
-            <span className="text-vibrant-teal">Real Clean</span>
+            <span className="text-ocean-blue">Real Clean</span>
           </motion.h2>
           <motion.p
             variants={slideUp}

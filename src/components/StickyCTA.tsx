@@ -55,10 +55,10 @@ export function StickyCTA() {
             </button>
 
             {/* Main CTA Button */}
-            <div className="glass rounded-full p-1.5 shadow-2xl border border-vibrant-teal/30">
+            <div className="glass rounded-full p-1.5 shadow-2xl border border-ocean-blue/30">
               <button
                 onClick={scrollToQuote}
-                className="flex items-center gap-2 px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-vibrant-teal to-vibrant-teal/90 text-white font-heading font-bold rounded-full hover:shadow-lg transition-all duration-200 hover:scale-105 active:scale-95 whitespace-nowrap"
+                className="flex items-center gap-2 px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-ocean-blue to-ocean-blue/90 text-white font-heading font-bold rounded-full hover:shadow-lg transition-all duration-200 hover:scale-105 active:scale-95 whitespace-nowrap"
               >
                 <Phone className="w-5 h-5 flex-shrink-0" />
                 <span className="hidden md:inline">Get Your Free Quote</span>

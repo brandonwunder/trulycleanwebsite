@@ -27,7 +27,7 @@ export default function ChooseYourFinish() {
     >
       {/* Background accents */}
       <motion.div
-        className="absolute top-20 right-0 w-80 h-80 bg-vibrant-orange/5 rounded-full blur-3xl pointer-events-none"
+        className="absolute top-20 right-0 w-80 h-80 bg-vibrant-purple/5 rounded-full blur-3xl pointer-events-none"
         animate={{ y: [0, 60, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
       />
@@ -43,7 +43,7 @@ export default function ChooseYourFinish() {
         <div className="text-center mb-16">
           <motion.div
             variants={slideUp}
-            className="inline-flex items-center gap-2 bg-vibrant-orange/10 text-vibrant-orange px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-vibrant-orange/20"
+            className="inline-flex items-center gap-2 bg-vibrant-purple/10 text-vibrant-purple px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-vibrant-purple/20"
           >
             <Check className="w-4 h-4" />
             <span className="font-semibold text-sm">Customization</span>
@@ -51,11 +51,11 @@ export default function ChooseYourFinish() {
 
           <motion.h2
             variants={slideUp}
-            className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-navy-dark mb-4"
+            className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-deep-indigo mb-4"
           >
             Choose Your
             <br />
-            <span className="text-vibrant-orange">Finish</span>
+            <span className="text-vibrant-purple">Finish</span>
           </motion.h2>
 
           <motion.p
@@ -69,7 +69,7 @@ export default function ChooseYourFinish() {
 
         {/* Scent Selector */}
         <motion.div variants={slideUp} className="mb-16">
-          <h3 className="font-heading font-bold text-2xl text-navy-dark mb-6 text-center">
+          <h3 className="font-heading font-bold text-2xl text-deep-indigo mb-6 text-center">
             Select Your Scent
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -96,7 +96,7 @@ export default function ChooseYourFinish() {
                   <div className="mb-3">
                     <scent.icon className={cn('w-12 h-12 mx-auto', `text-${scent.color}`)} />
                   </div>
-                  <h4 className="font-heading font-bold text-lg text-navy-dark mb-2">
+                  <h4 className="font-heading font-bold text-lg text-deep-indigo mb-2">
                     {scent.name}
                   </h4>
                   <p className="text-sm text-gray-600">{scent.description}</p>
@@ -121,7 +121,7 @@ export default function ChooseYourFinish() {
 
         {/* Product Transparency Sections */}
         <motion.div variants={slideUp}>
-          <h3 className="font-heading font-bold text-2xl text-navy-dark mb-6 text-center">
+          <h3 className="font-heading font-bold text-2xl text-deep-indigo mb-6 text-center">
             Product Transparency
           </h3>
           <div className="space-y-3">
@@ -133,14 +133,14 @@ export default function ChooseYourFinish() {
                 {({ open }) => (
                   <>
                     <Disclosure.Button
-                      className="w-full flex items-center justify-between gap-4 p-6 glass rounded-xl hover:shadow-md transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-vibrant-teal"
+                      className="w-full flex items-center justify-between gap-4 p-6 glass rounded-xl hover:shadow-md transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-ocean-blue"
                       onClick={() => toggleSection(section.id)}
                     >
                       <div className="flex items-center gap-4 text-left">
                         <div className="flex-shrink-0">
-                          <section.icon className="w-6 h-6 text-vibrant-teal" />
+                          <section.icon className="w-6 h-6 text-ocean-blue" />
                         </div>
-                        <h4 className="font-heading font-bold text-lg text-navy-dark">
+                        <h4 className="font-heading font-bold text-lg text-deep-indigo">
                           {section.title}
                         </h4>
                       </div>
@@ -173,7 +173,7 @@ export default function ChooseYourFinish() {
                                   transition={{ delay: i * 0.05 }}
                                   className="flex items-start gap-3"
                                 >
-                                  <Check className="w-4 h-4 text-vibrant-green flex-shrink-0 mt-0.5" />
+                                  <Check className="w-4 h-4 text-royal-blue flex-shrink-0 mt-0.5" />
                                   <span className="text-gray-700 text-sm md:text-base">{item}</span>
                                 </motion.div>
                               ))}
@@ -192,9 +192,9 @@ export default function ChooseYourFinish() {
         {/* Trust Statement */}
         <motion.div
           variants={slideUp}
-          className="mt-12 p-6 bg-vibrant-green/10 border border-vibrant-green/20 rounded-2xl text-center"
+          className="mt-12 p-6 bg-royal-blue/10 border border-royal-blue/20 rounded-2xl text-center"
         >
-          <p className="text-navy-dark font-medium">
+          <p className="text-deep-indigo font-medium">
             <span className="font-bold">100% Transparent:</span> We believe you should know exactly
             what we're using to clean your home. All products are non-toxic, kid-safe, and pet-safe.
           </p>

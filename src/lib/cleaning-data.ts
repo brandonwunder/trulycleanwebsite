@@ -51,7 +51,7 @@ export const cleaningTiers: CleanTier[] = [
     frequency: 'Weekly',
     priceRange: '$60-90',
     icon: Sparkles,
-    color: 'vibrant-teal',
+    color: 'ocean-blue',
     description: 'Perfect for weekly maintenance',
     checklist: [
       'Quick dust all surfaces',
@@ -69,7 +69,7 @@ export const cleaningTiers: CleanTier[] = [
     frequency: 'Biweekly',
     priceRange: '$120-180',
     icon: Home,
-    color: 'vibrant-green',
+    color: 'royal-blue',
     description: 'Our most popular service',
     checklist: [
       'Thorough dust all surfaces',
@@ -89,7 +89,7 @@ export const cleaningTiers: CleanTier[] = [
     frequency: 'Monthly',
     priceRange: '$200-300',
     icon: Award,
-    color: 'vibrant-orange',
+    color: 'vibrant-purple',
     description: 'Complete top-to-bottom cleaning',
     checklist: [
       'Everything in Standard Clean, PLUS:',
@@ -110,7 +110,7 @@ export const cleaningTiers: CleanTier[] = [
     frequency: 'One-time',
     priceRange: '$300-500',
     icon: Package,
-    color: 'navy-dark',
+    color: 'deep-indigo',
     description: 'Rent-ready, inspection-ready',
     checklist: [
       'Everything in Deep Clean, PLUS:',
@@ -425,10 +425,10 @@ export interface TrustBadge {
 }
 
 export const trustBadges: TrustBadge[] = [
-  { icon: Shield, text: 'Insured', color: 'vibrant-teal' },
-  { icon: Award, text: 'BBB Accredited', color: 'vibrant-green' },
-  { icon: Star, text: '5.0 Rating', color: 'vibrant-orange' },
-  { icon: CheckCircle, text: '100% Satisfaction', color: 'vibrant-teal' },
+  { icon: Shield, text: 'Insured', color: 'ocean-blue' },
+  { icon: Award, text: 'BBB Accredited', color: 'royal-blue' },
+  { icon: Star, text: '5.0 Rating', color: 'vibrant-purple' },
+  { icon: CheckCircle, text: '100% Satisfaction', color: 'ocean-blue' },
 ]
 
 /**
@@ -449,21 +449,21 @@ export const scentOptions: ScentOption[] = [
     id: 'fresh-linen',
     name: 'Fresh Linen',
     icon: Sparkles,
-    color: 'vibrant-teal',
+    color: 'ocean-blue',
     description: 'Clean, crisp, and refreshing',
   },
   {
     id: 'citrus',
     name: 'Citrus Burst',
     icon: Citrus,
-    color: 'vibrant-orange',
+    color: 'vibrant-purple',
     description: 'Energizing and uplifting',
   },
   {
     id: 'unscented',
     name: 'Unscented',
     icon: ShieldCheck,
-    color: 'vibrant-green',
+    color: 'royal-blue',
     description: 'Hypoallergenic and gentle',
   },
 ]

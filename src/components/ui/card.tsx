@@ -14,13 +14,13 @@ const cardVariants = cva(
       variant: {
         default: 'bg-white border-gray-200 shadow-md hover:shadow-lg',
         elevated:
-          'bg-white border-gray-100 shadow-lg hover:shadow-xl hover:border-vibrant-teal/30',
+          'bg-white border-gray-100 shadow-lg hover:shadow-xl hover:border-ocean-blue/30',
         glass:
           'bg-white/80 backdrop-blur-sm border-white/20 shadow-lg hover:shadow-xl hover:bg-white/90',
         gradient:
-          'bg-gradient-to-br from-vibrant-teal/10 to-vibrant-green/10 border-vibrant-teal/20 shadow-md hover:shadow-lg hover:border-vibrant-teal/40',
-        dark: 'bg-navy-dark/80 border-gray-700 text-white shadow-lg hover:shadow-xl',
-        hollow: 'bg-transparent border-2 border-vibrant-teal hover:bg-vibrant-teal/5',
+          'bg-gradient-to-br from-ocean-blue/10 to-royal-blue/10 border-ocean-blue/20 shadow-md hover:shadow-lg hover:border-ocean-blue/40',
+        dark: 'bg-deep-indigo/80 border-gray-700 text-white shadow-lg hover:shadow-xl',
+        hollow: 'bg-transparent border-2 border-ocean-blue hover:bg-ocean-blue/5',
       },
       size: {
         sm: 'p-4',
@@ -88,7 +88,7 @@ export function CardTitle({ className, ...props }: CardTitleProps) {
   return (
     <h3
       className={cn(
-        'font-heading font-bold text-2xl text-navy-dark',
+        'font-heading font-bold text-2xl text-deep-indigo',
         className
       )}
       {...props}
@@ -144,11 +144,11 @@ export function IconCard({
       {...props}
     >
       {icon && (
-        <div className="mb-4 p-3 bg-vibrant-teal/10 rounded-lg">
+        <div className="mb-4 p-3 bg-ocean-blue/10 rounded-lg">
           {icon}
         </div>
       )}
-      <h3 className="font-heading font-bold text-lg text-navy-dark mb-2">
+      <h3 className="font-heading font-bold text-lg text-deep-indigo mb-2">
         {title}
       </h3>
       <p className="text-gray-600 text-sm flex-1">

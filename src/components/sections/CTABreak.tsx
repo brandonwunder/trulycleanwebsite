@@ -14,9 +14,9 @@ interface CTABreakProps {
 }
 
 const variantStyles = {
-  teal: 'bg-gradient-to-br from-vibrant-teal via-vibrant-teal/90 to-vibrant-teal/80',
-  green: 'bg-gradient-to-br from-vibrant-green via-vibrant-teal to-vibrant-teal/90',
-  dark: 'bg-gradient-to-br from-navy-dark via-navy-dark/95 to-navy-dark',
+  teal: 'bg-gradient-to-br from-ocean-blue via-ocean-blue/90 to-ocean-blue/80',
+  green: 'bg-gradient-to-br from-royal-blue via-ocean-blue to-ocean-blue/90',
+  dark: 'bg-gradient-to-br from-deep-indigo via-deep-indigo/95 to-deep-indigo',
 }
 
 export default function CTABreak({ id, headline, subtext, ctaLabel, variant = 'teal' }: CTABreakProps) {
@@ -71,8 +71,8 @@ export default function CTABreak({ id, headline, subtext, ctaLabel, variant = 't
             size="xl"
             variant={variant === 'dark' ? 'primary' : 'secondary'}
             className={variant === 'dark'
-              ? 'bg-vibrant-teal text-white hover:bg-vibrant-teal/90 shadow-lg shadow-vibrant-teal/25'
-              : 'bg-white text-navy-dark hover:bg-white/90 border-0 shadow-lg shadow-black/10'
+              ? 'bg-ocean-blue text-white hover:bg-ocean-blue/90 shadow-lg shadow-ocean-blue/25'
+              : 'bg-white text-deep-indigo hover:bg-white/90 border-0 shadow-lg shadow-black/10'
             }
           >
             <Sparkles className="w-5 h-5" />

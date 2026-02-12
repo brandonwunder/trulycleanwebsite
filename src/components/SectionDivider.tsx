@@ -18,9 +18,9 @@ export function SectionDivider({ variant = 'wave' }: SectionDividerProps) {
         {/* Gradient definition */}
         <defs>
           <linearGradient id="wave-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="rgba(6, 182, 212, 0.1)" />
-            <stop offset="50%" stopColor="rgba(132, 204, 22, 0.1)" />
-            <stop offset="100%" stopColor="rgba(6, 182, 212, 0.1)" />
+            <stop offset="0%" stopColor="rgba(14, 165, 233, 0.1)" />
+            <stop offset="50%" stopColor="rgba(59, 130, 246, 0.1)" />
+            <stop offset="100%" stopColor="rgba(14, 165, 233, 0.1)" />
           </linearGradient>
         </defs>
 

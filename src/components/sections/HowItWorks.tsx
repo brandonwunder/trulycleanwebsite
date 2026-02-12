@@ -21,10 +21,10 @@ const steps = [
     title: 'Book Online',
     description: 'Fill out our quick form or give us a call. We\'ll match you with the perfect cleaning plan in minutes.',
     gradient: 'from-white to-gray-50',
-    iconColor: 'text-vibrant-teal',
-    accentColor: 'bg-vibrant-teal',
-    glowColor: 'shadow-vibrant-teal/20',
-    borderGradient: 'from-vibrant-teal via-vibrant-teal/80 to-vibrant-teal',
+    iconColor: 'text-ocean-blue',
+    accentColor: 'bg-ocean-blue',
+    glowColor: 'shadow-ocean-blue/20',
+    borderGradient: 'from-ocean-blue via-ocean-blue/80 to-ocean-blue',
   },
   {
     number: '02',
@@ -32,10 +32,10 @@ const steps = [
     title: 'We Clean',
     description: 'Our trained, background-checked team arrives on time with eco-friendly products and professional equipment.',
     gradient: 'from-white to-gray-50',
-    iconColor: 'text-vibrant-green',
-    accentColor: 'bg-vibrant-green',
-    glowColor: 'shadow-vibrant-green/20',
-    borderGradient: 'from-vibrant-green via-vibrant-green/80 to-vibrant-green',
+    iconColor: 'text-royal-blue',
+    accentColor: 'bg-royal-blue',
+    glowColor: 'shadow-royal-blue/20',
+    borderGradient: 'from-royal-blue via-royal-blue/80 to-royal-blue',
   },
   {
     number: '03',
@@ -43,23 +43,23 @@ const steps = [
     title: 'You Enjoy',
     description: 'Come home to a sparkling space. If you\'re not 100% happy, we\'ll re-clean for free. That\'s our promise.',
     gradient: 'from-white to-gray-50',
-    iconColor: 'text-vibrant-orange',
-    accentColor: 'bg-vibrant-orange',
-    glowColor: 'shadow-vibrant-orange/20',
-    borderGradient: 'from-vibrant-orange via-vibrant-orange/80 to-vibrant-orange',
+    iconColor: 'text-vibrant-purple',
+    accentColor: 'bg-vibrant-purple',
+    glowColor: 'shadow-vibrant-purple/20',
+    borderGradient: 'from-vibrant-purple via-vibrant-purple/80 to-vibrant-purple',
   },
 ]
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-white via-vibrant-green/5 to-white">
+    <section id="how-it-works" className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-white via-royal-blue/5 to-white">
       {/* Background floating blobs */}
       <motion.div
-        className="absolute top-20 right-10 w-32 h-32 bg-vibrant-green/10 rounded-full blur-3xl pointer-events-none"
+        className="absolute top-20 right-10 w-32 h-32 bg-royal-blue/10 rounded-full blur-3xl pointer-events-none"
         animate={floatingAnimation}
       />
       <motion.div
-        className="absolute bottom-20 left-10 w-24 h-24 bg-vibrant-teal/10 rounded-full blur-3xl pointer-events-none"
+        className="absolute bottom-20 left-10 w-24 h-24 bg-ocean-blue/10 rounded-full blur-3xl pointer-events-none"
         animate={{ y: [0, 20, 0], transition: { duration: 5, repeat: Infinity, ease: 'easeInOut' } }}
       />
 
@@ -74,17 +74,17 @@ export default function HowItWorks() {
         <div className="text-center mb-16 md:mb-20">
           <motion.div
             variants={slideUp}
-            className="inline-flex items-center gap-2 bg-vibrant-green/10 text-vibrant-green px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-vibrant-green/20"
+            className="inline-flex items-center gap-2 bg-royal-blue/10 text-royal-blue px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-royal-blue/20"
           >
             <Sparkles className="w-4 h-4" />
             <span className="font-semibold text-sm">Simple Process</span>
           </motion.div>
           <motion.h2
             variants={slideUp}
-            className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-navy-dark mb-4"
+            className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-deep-indigo mb-4"
           >
             Sparkling Clean in{' '}
-            <span className="text-vibrant-green">3 Easy Steps</span>
+            <span className="text-royal-blue">3 Easy Steps</span>
           </motion.h2>
           <motion.p
             variants={slideUp}
@@ -108,7 +108,7 @@ export default function HowItWorks() {
             >
               <motion.path
                 d="M 0 4 L 100 4"
-                stroke="#06B6D4"
+                stroke="#0EA5E9"
                 strokeWidth="0.5"
                 strokeDasharray="2 2"
                 fill="none"
@@ -151,7 +151,7 @@ export default function HowItWorks() {
                   </div>
 
                   {/* Content */}
-                  <h3 className="font-heading font-bold text-2xl text-navy-dark mb-4 group-hover:text-opacity-90 transition-all duration-300">
+                  <h3 className="font-heading font-bold text-2xl text-deep-indigo mb-4 group-hover:text-opacity-90 transition-all duration-300">
                     {step.title}
                   </h3>
                   <p className="text-gray-600 leading-relaxed text-base">

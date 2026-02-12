@@ -54,16 +54,16 @@ export default function QuoteForm() {
         initial="hidden"
         animate="visible"
         variants={successAnimation}
-        className="glass p-8 rounded-2xl text-center border border-vibrant-green/30"
+        className="glass p-8 rounded-2xl text-center border border-royal-blue/30"
       >
         <motion.div
           className="mb-4"
           animate={{ scale: [1, 1.1, 1] }}
           transition={{ duration: 0.6 }}
         >
-          <CheckCircle className="w-16 h-16 text-vibrant-green mx-auto" />
+          <CheckCircle className="w-16 h-16 text-royal-blue mx-auto" />
         </motion.div>
-        <h3 className="font-heading font-bold text-2xl text-navy-dark mb-2">
+        <h3 className="font-heading font-bold text-2xl text-deep-indigo mb-2">
           Quote Request Received!
         </h3>
         <p className="text-gray-600 mb-4">
@@ -93,12 +93,12 @@ export default function QuoteForm() {
         {/* Full Name */}
         <motion.div variants={slideUp}>
           <div className="relative">
-            <User className="absolute left-4 top-3.5 w-5 h-5 text-vibrant-teal pointer-events-none" />
+            <User className="absolute left-4 top-3.5 w-5 h-5 text-ocean-blue pointer-events-none" />
             <input
               id="fullName"
               placeholder="Full Name"
               {...register('fullName')}
-              className={`w-full pl-12 pr-4 py-3 bg-white/50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-vibrant-teal focus:bg-white transition-all ${
+              className={`w-full pl-12 pr-4 py-3 bg-white/50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-blue focus:bg-white transition-all ${
                 errors.fullName ? 'border-red-500' : 'border-gray-300'
               }`}
             />
@@ -111,13 +111,13 @@ export default function QuoteForm() {
         {/* Email */}
         <motion.div variants={slideUp}>
           <div className="relative">
-            <Mail className="absolute left-4 top-3.5 w-5 h-5 text-vibrant-teal pointer-events-none" />
+            <Mail className="absolute left-4 top-3.5 w-5 h-5 text-ocean-blue pointer-events-none" />
             <input
               id="email"
               type="email"
               placeholder="Email Address"
               {...register('email')}
-              className={`w-full pl-12 pr-4 py-3 bg-white/50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-vibrant-teal focus:bg-white transition-all ${
+              className={`w-full pl-12 pr-4 py-3 bg-white/50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-blue focus:bg-white transition-all ${
                 errors.email ? 'border-red-500' : 'border-gray-300'
               }`}
             />
@@ -130,13 +130,13 @@ export default function QuoteForm() {
         {/* Phone */}
         <motion.div variants={slideUp}>
           <div className="relative">
-            <Phone className="absolute left-4 top-3.5 w-5 h-5 text-vibrant-teal pointer-events-none" />
+            <Phone className="absolute left-4 top-3.5 w-5 h-5 text-ocean-blue pointer-events-none" />
             <input
               id="phone"
               type="tel"
               placeholder="Phone Number"
               {...register('phone')}
-              className={`w-full pl-12 pr-4 py-3 bg-white/50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-vibrant-teal focus:bg-white transition-all ${
+              className={`w-full pl-12 pr-4 py-3 bg-white/50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-blue focus:bg-white transition-all ${
                 errors.phone ? 'border-red-500' : 'border-gray-300'
               }`}
             />
@@ -148,7 +148,7 @@ export default function QuoteForm() {
 
         {/* Service Type */}
         <motion.div variants={slideUp}>
-          <label className="text-navy-dark font-semibold block mb-3 text-sm">
+          <label className="text-deep-indigo font-semibold block mb-3 text-sm">
             Service Type *
           </label>
           <div className="grid grid-cols-2 gap-3">
@@ -159,8 +159,8 @@ export default function QuoteForm() {
                 {...register('serviceType')}
                 className="sr-only peer"
               />
-              <div className="border-2 border-gray-300 rounded-lg p-4 text-center peer-checked:border-vibrant-teal peer-checked:bg-vibrant-teal/10 transition font-semibold flex flex-col items-center gap-2 group-hover:border-vibrant-teal/50">
-                <Home className="w-6 h-6 text-vibrant-teal" />
+              <div className="border-2 border-gray-300 rounded-lg p-4 text-center peer-checked:border-ocean-blue peer-checked:bg-ocean-blue/10 transition font-semibold flex flex-col items-center gap-2 group-hover:border-ocean-blue/50">
+                <Home className="w-6 h-6 text-ocean-blue" />
                 Residential
               </div>
             </label>
@@ -171,8 +171,8 @@ export default function QuoteForm() {
                 {...register('serviceType')}
                 className="sr-only peer"
               />
-              <div className="border-2 border-gray-300 rounded-lg p-4 text-center peer-checked:border-vibrant-teal peer-checked:bg-vibrant-teal/10 transition font-semibold flex flex-col items-center gap-2 group-hover:border-vibrant-teal/50">
-                <Building2 className="w-6 h-6 text-vibrant-green" />
+              <div className="border-2 border-gray-300 rounded-lg p-4 text-center peer-checked:border-ocean-blue peer-checked:bg-ocean-blue/10 transition font-semibold flex flex-col items-center gap-2 group-hover:border-ocean-blue/50">
+                <Building2 className="w-6 h-6 text-royal-blue" />
                 Commercial
               </div>
             </label>
@@ -185,14 +185,14 @@ export default function QuoteForm() {
         {/* Additional Notes */}
         <motion.div variants={slideUp}>
           <div className="relative">
-            <FileText className="absolute left-4 top-3.5 w-5 h-5 text-vibrant-teal pointer-events-none" />
+            <FileText className="absolute left-4 top-3.5 w-5 h-5 text-ocean-blue pointer-events-none" />
             <textarea
               id="notes"
               placeholder="Tell us about your cleaning needs (optional)"
               rows={3}
               {...register('notes')}
               maxLength={500}
-              className={`w-full pl-12 pr-4 py-3 bg-white/50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-vibrant-teal focus:bg-white transition-all resize-none ${
+              className={`w-full pl-12 pr-4 py-3 bg-white/50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-ocean-blue focus:bg-white transition-all resize-none ${
                 errors.notes ? 'border-red-500' : 'border-gray-300'
               }`}
             />

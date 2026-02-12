@@ -10,11 +10,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Custom Truly Clean brand colors
-        'vibrant-teal': '#06B6D4',
-        'vibrant-green': '#84CC16',
-        'vibrant-orange': '#F97316',
-        'navy-dark': '#0F172A',
+        // Custom Truly Clean brand colors - Ocean Depths palette
+        'ocean-blue': '#0EA5E9',
+        'royal-blue': '#3B82F6',
+        'vibrant-purple': '#A855F7',
+        'deep-indigo': '#1E1B4B',
 
         // shadcn/ui colors (keep defaults)
         border: "hsl(var(--border))",
@@ -23,15 +23,15 @@ const config: Config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: '#06B6D4', // Vibrant teal
+          DEFAULT: '#0EA5E9', // Ocean blue
           foreground: '#FFFFFF',
         },
         secondary: {
-          DEFAULT: '#84CC16', // Fresh green
-          foreground: '#0F172A',
+          DEFAULT: '#3B82F6', // Royal blue
+          foreground: '#FFFFFF',
         },
         accent: {
-          DEFAULT: '#F97316', // Vibrant orange
+          DEFAULT: '#A855F7', // Vibrant purple
           foreground: '#FFFFFF',
         },
       },
@@ -79,16 +79,16 @@ const config: Config = {
           '@apply bg-white/80 backdrop-blur-sm border border-white/20': {},
         },
         '.glass-dark': {
-          '@apply bg-navy-dark/80 backdrop-blur-sm border border-white/10': {},
+          '@apply bg-deep-indigo/80 backdrop-blur-sm border border-white/10': {},
         },
-        '.glass-teal': {
-          '@apply bg-vibrant-teal/10 backdrop-blur-sm border border-vibrant-teal/20': {},
+        '.glass-ocean': {
+          '@apply bg-ocean-blue/10 backdrop-blur-sm border border-ocean-blue/20': {},
         },
-        '.glass-green': {
-          '@apply bg-vibrant-green/10 backdrop-blur-sm border border-vibrant-green/20': {},
+        '.glass-royal': {
+          '@apply bg-royal-blue/10 backdrop-blur-sm border border-royal-blue/20': {},
         },
-        '.glass-orange': {
-          '@apply bg-vibrant-orange/10 backdrop-blur-sm border border-vibrant-orange/20': {},
+        '.glass-purple': {
+          '@apply bg-vibrant-purple/10 backdrop-blur-sm border border-vibrant-purple/20': {},
         },
       })
     },

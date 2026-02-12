@@ -65,16 +65,16 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="py-20 md:py-28 bg-gradient-to-br from-white via-vibrant-teal/5 to-white relative overflow-hidden"
+      className="py-20 md:py-28 bg-gradient-to-br from-white via-ocean-blue/5 to-white relative overflow-hidden"
     >
       {/* Background floating elements */}
       <motion.div
-        className="absolute top-10 left-10 w-40 h-40 bg-vibrant-teal/10 rounded-full blur-3xl"
+        className="absolute top-10 left-10 w-40 h-40 bg-ocean-blue/10 rounded-full blur-3xl"
         animate={floatingAnimation}
         style={{ y: 0 }}
       />
       <motion.div
-        className="absolute bottom-20 right-10 w-60 h-60 bg-vibrant-green/10 rounded-full blur-3xl"
+        className="absolute bottom-20 right-10 w-60 h-60 bg-royal-blue/10 rounded-full blur-3xl"
         animate={{
           y: [0, -30, 0],
           transition: { duration: 5, repeat: Infinity, ease: 'easeInOut' },
@@ -91,16 +91,16 @@ export default function Services() {
           variants={staggerContainer}
         >
           <motion.div variants={slideUp}>
-            <div className="inline-flex items-center gap-2 bg-vibrant-teal/10 text-vibrant-teal px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-vibrant-teal/20">
+            <div className="inline-flex items-center gap-2 bg-ocean-blue/10 text-ocean-blue px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-ocean-blue/20">
               <Sparkles className="w-4 h-4" />
               <span className="text-sm font-semibold">Our Expertise</span>
             </div>
           </motion.div>
           <motion.h2
             variants={slideUp}
-            className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-navy-dark mb-4"
+            className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-deep-indigo mb-4"
           >
-            Premium <span className="text-vibrant-teal">Services</span>
+            Premium <span className="text-ocean-blue">Services</span>
           </motion.h2>
           <motion.p
             variants={slideUp}
@@ -129,20 +129,20 @@ export default function Services() {
             >
               {/* Popular Badge */}
               <div className="absolute top-4 right-4">
-                <span className="bg-vibrant-orange text-white px-3 py-1 rounded-full text-xs font-semibold shadow-md">
+                <span className="bg-vibrant-purple text-white px-3 py-1 rounded-full text-xs font-semibold shadow-md">
                   Popular
                 </span>
               </div>
 
               {/* Icon Container */}
               <motion.div
-                className="bg-gradient-to-br from-vibrant-teal/20 to-vibrant-teal/5 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:shadow-[0_0_25px_rgba(6,182,212,0.3)] transition-all duration-300"
+                className="bg-gradient-to-br from-ocean-blue/20 to-ocean-blue/5 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:shadow-[0_0_25px_rgba(6,182,212,0.3)] transition-all duration-300"
                 whileHover={{ scale: 1.1, rotate: 5 }}
               >
-                <Home className="w-8 h-8 text-vibrant-teal" />
+                <Home className="w-8 h-8 text-ocean-blue" />
               </motion.div>
 
-              <h3 className="font-heading font-bold text-2xl text-navy-dark mb-3">
+              <h3 className="font-heading font-bold text-2xl text-deep-indigo mb-3">
                 Residential Cleaning
               </h3>
               <p className="text-gray-600 mb-6 flex-1">
@@ -166,7 +166,7 @@ export default function Services() {
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.05 + 0.1, type: 'spring', stiffness: 500 }}
                     >
-                      <CheckCircle className="w-5 h-5 text-vibrant-teal flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-ocean-blue flex-shrink-0" />
                     </motion.div>
                     <span className="text-gray-700">{service}</span>
                   </motion.li>
@@ -195,13 +195,13 @@ export default function Services() {
               interactive
             >
               <motion.div
-                className="bg-gradient-to-br from-vibrant-green/20 to-vibrant-green/5 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:shadow-[0_0_25px_rgba(132,204,22,0.3)] transition-all duration-300"
+                className="bg-gradient-to-br from-royal-blue/20 to-royal-blue/5 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:shadow-[0_0_25px_rgba(132,204,22,0.3)] transition-all duration-300"
                 whileHover={{ scale: 1.1, rotate: -5 }}
               >
-                <Building2 className="w-8 h-8 text-vibrant-green" />
+                <Building2 className="w-8 h-8 text-royal-blue" />
               </motion.div>
 
-              <h3 className="font-heading font-bold text-2xl text-navy-dark mb-3">
+              <h3 className="font-heading font-bold text-2xl text-deep-indigo mb-3">
                 Commercial Cleaning
               </h3>
               <p className="text-gray-600 mb-6 flex-1">
@@ -225,7 +225,7 @@ export default function Services() {
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.05 + 0.1, type: 'spring', stiffness: 500 }}
                     >
-                      <CheckCircle className="w-5 h-5 text-vibrant-green flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-royal-blue flex-shrink-0" />
                     </motion.div>
                     <span className="text-gray-700">{service}</span>
                   </motion.li>
@@ -235,7 +235,7 @@ export default function Services() {
               <Button
                 variant="primary"
                 size="lg"
-                className="w-full group/btn bg-vibrant-green hover:bg-vibrant-green/90"
+                className="w-full group/btn bg-royal-blue hover:bg-royal-blue/90"
                 onClick={() => handleServiceClick('commercial')}
               >
                 Get Quote
@@ -263,13 +263,13 @@ export default function Services() {
               >
                 <div className="glass p-6 rounded-2xl text-center h-full flex flex-col items-center justify-center hover:bg-white/90 transition-all duration-300 hover:shadow-lg">
                   <motion.div
-                    className="bg-gradient-to-br from-vibrant-teal/10 to-vibrant-teal/5 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:shadow-lg transition-all"
+                    className="bg-gradient-to-br from-ocean-blue/10 to-ocean-blue/5 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:shadow-lg transition-all"
                     whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
                     transition={{ duration: 0.5 }}
                   >
-                    <Icon className="w-6 h-6 text-vibrant-teal" />
+                    <Icon className="w-6 h-6 text-ocean-blue" />
                   </motion.div>
-                  <h4 className="font-heading font-bold text-lg text-navy-dark mb-1">
+                  <h4 className="font-heading font-bold text-lg text-deep-indigo mb-1">
                     {feature.title}
                   </h4>
                   <p className="text-sm text-gray-600">{feature.description}</p>

@@ -35,7 +35,7 @@ export default function CleanOMeter() {
     >
       {/* Background accents */}
       <motion.div
-        className="absolute top-0 right-0 w-96 h-96 bg-vibrant-teal/5 rounded-full blur-3xl pointer-events-none"
+        className="absolute top-0 right-0 w-96 h-96 bg-ocean-blue/5 rounded-full blur-3xl pointer-events-none"
         animate={{ y: [0, 40, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
       />
@@ -51,7 +51,7 @@ export default function CleanOMeter() {
         <div className="text-center mb-16">
           <motion.div
             variants={slideUp}
-            className="inline-flex items-center gap-2 bg-vibrant-green/10 text-vibrant-green px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-vibrant-green/20"
+            className="inline-flex items-center gap-2 bg-royal-blue/10 text-royal-blue px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-royal-blue/20"
           >
             <Check className="w-4 h-4" />
             <span className="font-semibold text-sm">Service Tiers</span>
@@ -59,11 +59,11 @@ export default function CleanOMeter() {
 
           <motion.h2
             variants={slideUp}
-            className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-navy-dark mb-4"
+            className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-deep-indigo mb-4"
           >
             Choose Your
             <br />
-            <span className="text-vibrant-green">Clean Level</span>
+            <span className="text-royal-blue">Clean Level</span>
           </motion.h2>
 
           <motion.p
@@ -84,10 +84,10 @@ export default function CleanOMeter() {
                   key={t.id}
                   className={({ selected }) =>
                     cn(
-                      'relative flex-1 min-w-max px-4 md:px-6 py-3 font-heading font-bold text-sm md:text-base rounded-xl transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-vibrant-teal focus-visible:ring-offset-2',
+                      'relative flex-1 min-w-max px-4 md:px-6 py-3 font-heading font-bold text-sm md:text-base rounded-xl transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-ocean-blue focus-visible:ring-offset-2',
                       selected
-                        ? 'bg-white text-navy-dark shadow-md'
-                        : 'text-gray-600 hover:text-navy-dark'
+                        ? 'bg-white text-deep-indigo shadow-md'
+                        : 'text-gray-600 hover:text-deep-indigo'
                     )
                   }
                 >
@@ -126,7 +126,7 @@ export default function CleanOMeter() {
                         {/* Checklist Column */}
                         <div className="md:col-span-1">
                           <div className="glass p-6 rounded-2xl">
-                            <h3 className="font-heading font-bold text-lg text-navy-dark mb-4">
+                            <h3 className="font-heading font-bold text-lg text-deep-indigo mb-4">
                               What's Included
                             </h3>
                             <ul className="space-y-3">
@@ -135,7 +135,7 @@ export default function CleanOMeter() {
                                   key={i}
                                   className="flex items-start gap-3 text-gray-700"
                                 >
-                                  <Check className="w-5 h-5 text-vibrant-green flex-shrink-0 mt-0.5" />
+                                  <Check className="w-5 h-5 text-royal-blue flex-shrink-0 mt-0.5" />
                                   <span className="text-sm leading-relaxed">{item}</span>
                                 </li>
                               ))}
@@ -149,12 +149,12 @@ export default function CleanOMeter() {
                             {/* Duration Card */}
                             <div className="glass p-6 rounded-2xl">
                               <div className="flex items-center gap-3 mb-2">
-                                <Clock className="w-5 h-5 text-vibrant-teal" />
-                                <h3 className="font-heading font-bold text-navy-dark">
+                                <Clock className="w-5 h-5 text-ocean-blue" />
+                                <h3 className="font-heading font-bold text-deep-indigo">
                                   Duration
                                 </h3>
                               </div>
-                              <p className="text-3xl font-heading font-bold text-vibrant-teal">
+                              <p className="text-3xl font-heading font-bold text-ocean-blue">
                                 {t.duration}
                               </p>
                               <p className="text-sm text-gray-600 mt-1">
@@ -165,12 +165,12 @@ export default function CleanOMeter() {
                             {/* Frequency Card */}
                             <div className="glass p-6 rounded-2xl">
                               <div className="flex items-center gap-3 mb-2">
-                                <Calendar className="w-5 h-5 text-vibrant-green" />
-                                <h3 className="font-heading font-bold text-navy-dark">
+                                <Calendar className="w-5 h-5 text-royal-blue" />
+                                <h3 className="font-heading font-bold text-deep-indigo">
                                   Frequency
                                 </h3>
                               </div>
-                              <p className="text-2xl font-heading font-bold text-vibrant-green">
+                              <p className="text-2xl font-heading font-bold text-royal-blue">
                                 {t.frequency}
                               </p>
                               <p className="text-sm text-gray-600 mt-1">
@@ -182,8 +182,8 @@ export default function CleanOMeter() {
 
                         {/* CTA Column */}
                         <div className="md:col-span-1">
-                          <div className="glass-orange p-8 rounded-2xl h-full flex flex-col justify-center items-center text-center border-2 border-vibrant-orange/20">
-                            <h3 className="font-heading font-bold text-2xl text-navy-dark mb-4">
+                          <div className="glass-purple p-8 rounded-2xl h-full flex flex-col justify-center items-center text-center border-2 border-vibrant-purple/20">
+                            <h3 className="font-heading font-bold text-2xl text-deep-indigo mb-4">
                               Ready to get started?
                             </h3>
                             <p className="text-gray-600 mb-6 text-sm">
@@ -195,7 +195,7 @@ export default function CleanOMeter() {
                                   .getElementById('quote-form')
                                   ?.scrollIntoView({ behavior: 'smooth' })
                               }}
-                              className="w-full px-6 py-4 bg-gradient-to-r from-vibrant-orange to-vibrant-orange/80 text-white font-heading font-bold rounded-xl hover:shadow-xl transition-all duration-200 hover:scale-105 active:scale-95 text-lg"
+                              className="w-full px-6 py-4 bg-gradient-to-r from-vibrant-purple to-vibrant-purple/80 text-white font-heading font-bold rounded-xl hover:shadow-xl transition-all duration-200 hover:scale-105 active:scale-95 text-lg"
                             >
                               Get a Quote
                             </button>
