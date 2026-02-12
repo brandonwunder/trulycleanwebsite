@@ -30,15 +30,15 @@ export default function Contact() {
   return (
     <section
       id="quote-form"
-      className="py-20 md:py-28 bg-gradient-to-br from-gray-50 via-deep-teal/5 to-gray-50 relative overflow-hidden"
+      className="py-20 md:py-28 relative overflow-hidden"
     >
       {/* Background floating elements */}
       <motion.div
-        className="absolute top-0 right-20 w-72 h-72 bg-deep-teal/10 rounded-full blur-3xl"
+        className="absolute top-0 right-20 w-72 h-72 bg-deep-teal/8 rounded-full blur-3xl"
         animate={floatingAnimation}
       />
       <motion.div
-        className="absolute bottom-0 left-10 w-80 h-80 bg-rich-violet/10 rounded-full blur-3xl"
+        className="absolute bottom-0 left-10 w-80 h-80 bg-rich-violet/8 rounded-full blur-3xl"
         animate={{ y: [0, -50, 0], transition: { duration: 6, repeat: Infinity, ease: 'easeInOut' } }}
       />
 

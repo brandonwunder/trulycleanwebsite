@@ -246,3 +246,110 @@ button:active,
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* ===== FIXED BACKGROUND IMAGE SYSTEM ===== */
+
+/* Fallback gradient */
+.fixed-background-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: linear-gradient(180deg, #f9fafb 0%, #f3f4f6 50%, #e5e7eb 100%);
+}
+
+/* Layer 1: Base image */
+.fixed-background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.15;
+  filter: blur(1px) grayscale(20%);
+  will-change: transform;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .fixed-background-image,
+  .fixed-background-wrapper,
+  .background-overlay-radial,
+  .background-overlay-brand {
+    position: absolute;
+    height: 200vh;
+  }
+}
+
+/* Layer 2: Radial gradient */
+.background-overlay-radial {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: radial-gradient(
+    ellipse 120% 100% at 50% 0%,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.85) 40%,
+    rgba(255, 255, 255, 0.70) 70%,
+    rgba(255, 255, 255, 0.40) 100%
+  );
+  pointer-events: none;
+}
+
+/* Layer 3: Brand color tint */
+.background-overlay-brand {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 145, 178, 0.08) 0%,
+    rgba(139, 92, 246, 0.05) 50%,
+    rgba(34, 211, 238, 0.06) 100%
+  );
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+/* Layer 4: Section overlays */
+.section-overlay-light {
+  background: rgba(255, 255, 255, 0.65);
+  position: relative;
+  z-index: 3;
+}
+
+.section-overlay-medium {
+  background: rgba(255, 255, 255, 0.85);
+  position: relative;
+  z-index: 3;
+}
+
+.section-overlay-heavy {
+  background: rgba(255, 255, 255, 0.92);
+  position: relative;
+  z-index: 3;
+}
+
+/* Enhanced glassmorphism */
+.glass-enhanced {
+  background: rgba(255, 255, 255, 0.80);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .fixed-background-image {
+    animation: none;
+  }
+}

@@ -65,16 +65,16 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="py-20 md:py-28 bg-gradient-to-br from-white via-deep-teal/5 to-white relative overflow-hidden"
+      className="py-20 md:py-28 relative overflow-hidden"
     >
       {/* Background floating elements */}
       <motion.div
-        className="absolute top-10 left-10 w-40 h-40 bg-deep-teal/10 rounded-full blur-3xl"
+        className="absolute top-10 left-10 w-40 h-40 bg-deep-teal/8 rounded-full blur-3xl"
         animate={floatingAnimation}
         style={{ y: 0 }}
       />
       <motion.div
-        className="absolute bottom-20 right-10 w-60 h-60 bg-rich-violet/10 rounded-full blur-3xl"
+        className="absolute bottom-20 right-10 w-60 h-60 bg-rich-violet/8 rounded-full blur-3xl"
         animate={{
           y: [0, -30, 0],
           transition: { duration: 5, repeat: Infinity, ease: 'easeInOut' },

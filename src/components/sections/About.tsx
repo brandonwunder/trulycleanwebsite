@@ -69,15 +69,15 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-20 md:py-28 bg-gradient-to-br from-white via-rich-violet/5 to-white relative overflow-hidden"
+      className="py-20 md:py-28 relative overflow-hidden"
     >
       {/* Background floating elements */}
       <motion.div
-        className="absolute top-0 left-10 w-96 h-96 bg-rich-violet/10 rounded-full blur-3xl"
+        className="absolute top-0 left-10 w-96 h-96 bg-rich-violet/8 rounded-full blur-3xl"
         animate={floatingAnimation}
       />
       <motion.div
-        className="absolute bottom-0 right-20 w-80 h-80 bg-deep-teal/10 rounded-full blur-3xl"
+        className="absolute bottom-0 right-20 w-80 h-80 bg-deep-teal/8 rounded-full blur-3xl"
         animate={{ y: [0, -50, 0], transition: { duration: 6, repeat: Infinity, ease: 'easeInOut' } }}
       />
 

@@ -38,9 +38,6 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated mesh gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-white" />
-
       {/* Animated radial gradients for cinematic depth */}
       <motion.div
         className="absolute inset-0 pointer-events-none"
@@ -49,7 +46,7 @@ export default function Hero() {
         transition={{ duration: 1.5 }}
       >
         <motion.div
-          className="absolute w-[600px] h-[600px] rounded-full blur-[120px] opacity-30"
+          className="absolute w-[600px] h-[600px] rounded-full blur-[120px] opacity-20"
           style={{ background: 'radial-gradient(circle, #0891B2 0%, transparent 70%)' }}
           animate={{
             x: ['-10%', '5%', '-10%'],
@@ -58,7 +55,7 @@ export default function Hero() {
           transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
         />
         <motion.div
-          className="absolute right-0 bottom-0 w-[500px] h-[500px] rounded-full blur-[100px] opacity-20"
+          className="absolute right-0 bottom-0 w-[500px] h-[500px] rounded-full blur-[100px] opacity-15"
           style={{ background: 'radial-gradient(circle, #8B5CF6 0%, transparent 70%)' }}
           animate={{
             x: ['10%', '-5%', '10%'],
@@ -67,7 +64,7 @@ export default function Hero() {
           transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
         />
         <motion.div
-          className="absolute right-1/4 top-1/4 w-[400px] h-[400px] rounded-full blur-[80px] opacity-15"
+          className="absolute right-1/4 top-1/4 w-[400px] h-[400px] rounded-full blur-[80px] opacity-10"
           style={{ background: 'radial-gradient(circle, #22D3EE 0%, transparent 70%)' }}
           animate={{
             x: ['-5%', '8%', '-5%'],

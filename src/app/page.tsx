@@ -18,12 +18,22 @@ import { StickyCTA } from '@/components/StickyCTA'
 export default function HomePage() {
   return (
     <>
-      <Hero />
-      <TrustBar />
+      <div className="section-overlay-light">
+        <Hero />
+      </div>
+
+      <div className="section-overlay-heavy">
+        <TrustBar />
+      </div>
+
       <RecentCleansTicker />
       <HowItWorks />
       <CleanOMeter />
-      <Services />
+
+      <div className="section-overlay-medium">
+        <Services />
+      </div>
+
       <CTABreak
         id="cta-1"
         headline="Ready for a Spotless Home?"
@@ -31,9 +41,11 @@ export default function HomePage() {
         ctaLabel="Get My Free Quote"
         variant="teal"
       />
+
       <BeforeAfter />
       <WhyDifferent />
       <Testimonials />
+
       <CTABreak
         id="cta-2"
         headline="Join 492+ Happy Customers"
@@ -41,10 +53,18 @@ export default function HomePage() {
         ctaLabel="Request Your Quote"
         variant="green"
       />
+
       <PricingAnchor />
       <ServiceAreaMap />
-      <About />
-      <FAQ />
+
+      <div className="section-overlay-heavy">
+        <About />
+      </div>
+
+      <div className="section-overlay-heavy">
+        <FAQ />
+      </div>
+
       <CTABreak
         id="cta-3"
         headline="Limited Availability This Week"
@@ -52,7 +72,10 @@ export default function HomePage() {
         ctaLabel="Book Your Clean Today"
         variant="dark"
       />
-      <Contact />
+
+      <div className="section-overlay-medium">
+        <Contact />
+      </div>
 
       {/* Floating Components */}
       <StickyCTA />

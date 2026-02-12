@@ -3,6 +3,7 @@ import { Inter, Outfit } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import FixedBackground from '@/components/FixedBackground'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -33,9 +34,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
       <body className="font-sans antialiased">
-        <Header />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
+        {/* Fixed background system */}
+        <FixedBackground />
+
+        {/* Main content with z-index stacking */}
+        <div className="relative z-10">
+          <Header />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   )
