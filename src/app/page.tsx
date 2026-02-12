@@ -8,7 +8,6 @@ import CTABreak from '@/components/sections/CTABreak'
 import BeforeAfter from '@/components/sections/BeforeAfter'
 import WhyDifferent from '@/components/sections/WhyDifferent'
 import Testimonials from '@/components/sections/Testimonials'
-import PricingAnchor from '@/components/sections/PricingAnchor'
 import ServiceAreaMap from '@/components/sections/ServiceAreaMap'
 import About from '@/components/sections/About'
 import FAQ from '@/components/sections/FAQ'
@@ -54,7 +53,6 @@ export default function HomePage() {
         variant="green"
       />
 
-      <PricingAnchor />
       <ServiceAreaMap />
 
       <div className="section-overlay-heavy">
