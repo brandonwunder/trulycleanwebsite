@@ -1,9 +1,9 @@
 'use client'
 
-import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Sparkles, Phone, MapPin, Users, Heart } from 'lucide-react'
+import { Sparkles, Phone, MapPin, Users, Heart, ChevronDown, Shield, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { floatingAnimationSlow } from '@/lib/animations'
 
 export default function Hero() {
   const phone = process.env.NEXT_PUBLIC_COMPANY_PHONE || '(602) 695-0607'
@@ -12,80 +12,90 @@ export default function Hero() {
     document.getElementById('quote-form')?.scrollIntoView({ behavior: 'smooth' })
   }
 
-  // Animation variants
+  const scrollToServices = () => {
+    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.1,
+        staggerChildren: 0.12,
+        delayChildren: 0.15,
       },
     },
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
-    },
-  }
-
-  const floatingVariants = {
-    animate: {
-      y: [0, -30, 0],
-      rotate: [0, 15, 0],
-      transition: {
-        duration: 4,
-        repeat: Infinity,
-        ease: 'easeInOut',
-      },
-    },
-  }
-
-  const floatingVariants2 = {
-    animate: {
-      y: [0, 20, 0],
-      rotate: [0, -10, 0],
-      transition: {
-        duration: 5,
-        repeat: Infinity,
-        ease: 'easeInOut',
-      },
+      transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] },
     },
   }
 
   return (
-    <section className="relative min-h-screen md:min-h-[700px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-vibrant-teal/5 via-vibrant-green/10 to-vibrant-orange/5">
-      {/* Animated background blobs */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Animated mesh gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-white" />
+
+      {/* Animated radial gradients for cinematic depth */}
       <motion.div
-        className="absolute top-20 right-10 w-24 h-24 bg-vibrant-teal/20 rounded-full blur-3xl pointer-events-none"
-        variants={floatingVariants}
-        animate="animate"
-      />
+        className="absolute inset-0 pointer-events-none"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5 }}
+      >
+        <motion.div
+          className="absolute w-[600px] h-[600px] rounded-full blur-[120px] opacity-30"
+          style={{ background: 'radial-gradient(circle, #06B6D4 0%, transparent 70%)' }}
+          animate={{
+            x: ['-10%', '5%', '-10%'],
+            y: ['-5%', '10%', '-5%'],
+          }}
+          transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <motion.div
+          className="absolute right-0 bottom-0 w-[500px] h-[500px] rounded-full blur-[100px] opacity-20"
+          style={{ background: 'radial-gradient(circle, #84CC16 0%, transparent 70%)' }}
+          animate={{
+            x: ['10%', '-5%', '10%'],
+            y: ['5%', '-10%', '5%'],
+          }}
+          transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <motion.div
+          className="absolute right-1/4 top-1/4 w-[400px] h-[400px] rounded-full blur-[80px] opacity-15"
+          style={{ background: 'radial-gradient(circle, #F97316 0%, transparent 70%)' }}
+          animate={{
+            x: ['-5%', '8%', '-5%'],
+            y: ['8%', '-5%', '8%'],
+          }}
+          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+        />
+      </motion.div>
+
+      {/* Floating trust badges — desktop only */}
       <motion.div
-        className="absolute bottom-20 left-10 w-32 h-32 bg-vibrant-green/20 rounded-full blur-3xl pointer-events-none"
-        variants={floatingVariants2}
-        animate="animate"
-      />
+        className="hidden xl:flex absolute top-32 right-16 items-center gap-2 glass px-4 py-2.5 rounded-full shadow-lg z-20"
+        animate={floatingAnimationSlow}
+      >
+        <Shield className="w-4 h-4 text-vibrant-green" />
+        <span className="text-sm font-semibold text-navy-dark">BBB Accredited</span>
+      </motion.div>
       <motion.div
-        className="absolute top-1/2 right-1/4 w-20 h-20 bg-vibrant-orange/15 rounded-full blur-3xl pointer-events-none"
-        animate={{
-          y: [0, -25, 0],
-          x: [0, 10, 0],
-          transition: {
-            duration: 6,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          },
-        }}
-      />
+        className="hidden xl:flex absolute bottom-40 left-16 items-center gap-2 glass px-4 py-2.5 rounded-full shadow-lg z-20"
+        animate={{ y: [0, -15, 0], transition: { duration: 4, repeat: Infinity, ease: 'easeInOut' } }}
+      >
+        <Sparkles className="w-4 h-4 text-vibrant-orange" />
+        <span className="text-sm font-semibold text-navy-dark">Eco-Friendly</span>
+      </motion.div>
 
       {/* Main content */}
       <motion.div
-        className="container mx-auto px-4 py-20 relative z-10 max-w-5xl"
+        className="container mx-auto px-4 py-24 relative z-10 max-w-5xl"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -94,76 +104,117 @@ export default function Hero() {
           {/* Badge */}
           <motion.div
             variants={itemVariants}
-            className="inline-flex items-center gap-2 bg-vibrant-teal/10 text-vibrant-teal px-5 py-3 rounded-full mb-8 backdrop-blur-sm border border-vibrant-teal/20"
+            className="inline-flex items-center gap-2 glass-teal px-5 py-3 rounded-full mb-8 shadow-sm"
           >
-            <Sparkles className="w-5 h-5" />
-            <span className="font-semibold">Trusted by New River Families</span>
+            <Sparkles className="w-5 h-5 text-vibrant-teal" />
+            <span className="font-semibold text-vibrant-teal">Trusted by New River Families</span>
           </motion.div>
 
           {/* Main Headline */}
           <motion.h1
             variants={itemVariants}
-            className="font-heading font-bold text-6xl lg:text-7xl text-navy-dark mb-6 leading-tight"
+            className="font-heading font-bold text-6xl md:text-7xl lg:text-8xl text-navy-dark mb-6 leading-[0.95] tracking-tight"
           >
             Your Neighbors.
             <br />
-            <span className="text-vibrant-teal">Your Cleaning Experts.</span>
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-vibrant-teal to-vibrant-green">
+              Your Cleaning Experts.
+            </span>
           </motion.h1>
 
           {/* Subheadline */}
           <motion.p
             variants={itemVariants}
-            className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed"
           >
-            We're not just another cleaning service—we're your local partners in creating a healthier, happier home. Proudly serving New River, Anthem, and Cave Creek communities.
+            We're not just another cleaning service — we're your local partners in creating a healthier, happier home. Proudly serving New River, Anthem, and Cave Creek.
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons — glassmorphism wrappers */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-14"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
           >
-            <Button onClick={scrollToQuote} size="xl" variant="primary">
-              <Sparkles className="w-5 h-5" />
-              Get My Instant Quote
-            </Button>
-            <Button size="xl" variant="secondary" asChild>
-              <a href={`tel:${phone}`}>
-                <Phone className="w-5 h-5" />
-                Call Now
-              </a>
-            </Button>
+            <div className="glass rounded-2xl p-1.5 shadow-lg shadow-vibrant-teal/10">
+              <Button onClick={scrollToQuote} size="xl" variant="primary" className="shadow-none">
+                <Sparkles className="w-5 h-5" />
+                Get My Instant Quote
+              </Button>
+            </div>
+            <div className="glass rounded-2xl p-1.5 shadow-lg">
+              <Button size="xl" variant="secondary" asChild className="shadow-none">
+                <a href={`tel:${phone}`}>
+                  <Phone className="w-5 h-5" />
+                  Call Now
+                </a>
+              </Button>
+            </div>
           </motion.div>
 
-          {/* Trust Indicators - Pill Badges */}
+          {/* Trust Indicators */}
           <motion.div
             variants={itemVariants}
             className="flex flex-wrap justify-center gap-4"
           >
-            <motion.div
-              className="flex items-center gap-3 px-5 py-3 rounded-full bg-white/80 backdrop-blur-sm shadow-md hover:shadow-lg transition-shadow duration-200 border border-white/20"
-              whileHover={{ y: -4 }}
-            >
-              <MapPin className="w-6 h-6 text-vibrant-teal flex-shrink-0" />
-              <span className="font-medium text-gray-700">Serving 15+ AZ Communities</span>
-            </motion.div>
-
-            <motion.div
-              className="flex items-center gap-3 px-5 py-3 rounded-full bg-white/80 backdrop-blur-sm shadow-md hover:shadow-lg transition-shadow duration-200 border border-white/20"
-              whileHover={{ y: -4 }}
-            >
-              <Users className="w-6 h-6 text-vibrant-teal flex-shrink-0" />
-              <span className="font-medium text-gray-700">Family-Owned Business</span>
-            </motion.div>
-
-            <motion.div
-              className="flex items-center gap-3 px-5 py-3 rounded-full bg-white/80 backdrop-blur-sm shadow-md hover:shadow-lg transition-shadow duration-200 border border-white/20"
-              whileHover={{ y: -4 }}
-            >
-              <Heart className="w-6 h-6 text-vibrant-teal flex-shrink-0" />
-              <span className="font-medium text-gray-700">100% Satisfaction Promise</span>
-            </motion.div>
+            {[
+              { icon: MapPin, text: 'Serving 15+ AZ Communities' },
+              { icon: Users, text: 'Family-Owned Business' },
+              { icon: Heart, text: '100% Satisfaction Promise' },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                className="flex items-center gap-3 px-5 py-3 rounded-full glass shadow-sm hover:shadow-md transition-all duration-200"
+                whileHover={{ y: -4 }}
+              >
+                <item.icon className="w-5 h-5 text-vibrant-teal flex-shrink-0" />
+                <span className="font-medium text-gray-700 text-sm">{item.text}</span>
+              </motion.div>
+            ))}
           </motion.div>
+
+          {/* Mini Instant Quote Card */}
+          <motion.div variants={itemVariants} className="mt-16 max-w-md mx-auto">
+            <div className="glass p-6 rounded-2xl border-2 border-vibrant-teal/20 shadow-xl">
+              <h3 className="font-heading font-bold text-xl text-navy-dark mb-4 text-center">
+                Quick Quote Preview
+              </h3>
+              <div className="space-y-3">
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  className="w-full px-4 py-2.5 bg-white/70 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vibrant-teal focus:outline-none transition-all"
+                />
+                <select className="w-full px-4 py-2.5 bg-white/70 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vibrant-teal focus:outline-none transition-all">
+                  <option value="">Select Service Type</option>
+                  <option value="residential">🏠 Residential</option>
+                  <option value="commercial">🏢 Commercial</option>
+                </select>
+                <button
+                  onClick={scrollToQuote}
+                  className="w-full px-4 py-2.5 bg-gradient-to-r from-vibrant-teal to-vibrant-teal/80 text-white font-heading font-bold rounded-lg hover:shadow-lg transition-all duration-200 hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
+                >
+                  Get Instant Estimate
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
+              <p className="text-xs text-gray-500 text-center mt-3">
+                No credit card required • Free quote in 60 seconds
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </motion.div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 cursor-pointer"
+        onClick={scrollToServices}
+        animate={{ y: [0, 8, 0] }}
+        transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+      >
+        <div className="flex flex-col items-center gap-2">
+          <span className="text-xs text-gray-400 font-medium uppercase tracking-wider">Explore</span>
+          <ChevronDown className="w-5 h-5 text-gray-400" />
         </div>
       </motion.div>
     </section>

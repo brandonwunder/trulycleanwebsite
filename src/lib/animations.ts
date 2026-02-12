@@ -248,3 +248,66 @@ export const errorShake: Variants = {
     transition: { duration: 0.4, ease: 'easeInOut' },
   },
 }
+
+// Reveal up animation - cinematic text reveal with clip-path
+export const revealUp: Variants = {
+  hidden: { opacity: 0, y: 60, clipPath: 'inset(100% 0 0 0)' },
+  visible: {
+    opacity: 1,
+    y: 0,
+    clipPath: 'inset(0% 0 0 0)',
+    transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] },
+  },
+}
+
+// Draw line animation - for SVG path drawing
+export const drawLine: Variants = {
+  hidden: { pathLength: 0, opacity: 0 },
+  visible: {
+    pathLength: 1,
+    opacity: 1,
+    transition: { duration: 1.2, ease: 'easeInOut' },
+  },
+}
+
+// Tier content switcher - for Clean-O-Meter
+export const tierSwitch: Variants = {
+  hidden: { opacity: 0, y: 20, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.4, ease: 'easeOut' },
+  },
+  exit: {
+    opacity: 0,
+    y: -20,
+    scale: 0.95,
+    transition: { duration: 0.3, ease: 'easeIn' },
+  },
+}
+
+// Tab content reveal - for ChecklistTabs and other tabs
+export const tabReveal: Variants = {
+  hidden: { opacity: 0, x: -20 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.4, ease: 'easeOut' },
+  },
+}
+
+// Checklist item filter animation
+export const checklistFilter: Variants = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.3 },
+  },
+  exit: {
+    opacity: 0,
+    scale: 0.9,
+    transition: { duration: 0.2 },
+  },
+}

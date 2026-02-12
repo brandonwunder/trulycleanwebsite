@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, useMotionValue, useTransform, animate } from 'framer-motion'
 import {
   CheckCircle,
   Leaf,
@@ -12,31 +12,35 @@ import {
 import { Card } from '@/components/ui/card'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 import { staggerContainer, slideUp, slideLeft, slideRight, floatingAnimation } from '@/lib/animations'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef } from 'react'
+import { useInView } from 'react-intersection-observer'
+
+function AnimatedCounter({ target, suffix = '' }: { target: number; suffix?: string }) {
+  const count = useMotionValue(0)
+  const rounded = useTransform(count, (latest) => Math.round(latest))
+  const display = useTransform(rounded, (latest) => `${latest}${suffix}`)
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 })
+  const hasAnimated = useRef(false)
+
+  useEffect(() => {
+    if (inView && !hasAnimated.current) {
+      hasAnimated.current = true
+      animate(count, target, { duration: 2, ease: 'easeOut' })
+    }
+  }, [inView, count, target])
+
+  return (
+    <motion.span ref={ref}>
+      {inView ? <motion.span>{display}</motion.span> : '0'}
+    </motion.span>
+  )
+}
 
 export default function About() {
   const { ref: containerRef, controls: containerControls } = useScrollReveal({
     threshold: 0.2,
     triggerOnce: true,
   })
-
-  const [counts, setCounts] = useState({ followers: 0, satisfaction: 0 })
-
-  // Animate numbers
-  useEffect(() => {
-    let interval: NodeJS.Timeout
-
-    const animateCount = () => {
-      setCounts((prev) => ({
-        followers: Math.min(prev.followers + 20, 492),
-        satisfaction: Math.min(prev.satisfaction + 5, 100),
-      }))
-    }
-
-    interval = setInterval(animateCount, 30)
-
-    return () => clearInterval(interval)
-  }, [])
 
   const values = [
     {
@@ -57,15 +61,15 @@ export default function About() {
   ]
 
   const stats = [
-    { label: 'BBB Accredited', icon: Award, color: 'text-vibrant-teal' },
-    { label: 'Community Followers', value: counts.followers, icon: Users },
-    { label: 'Satisfaction Rate', value: `${counts.satisfaction}%`, icon: Zap },
+    { label: 'BBB Accredited', icon: Award, isVerified: true },
+    { label: 'Community Followers', target: 492, suffix: '+', icon: Users },
+    { label: 'Satisfaction Rate', target: 100, suffix: '%', icon: Zap },
   ]
 
   return (
     <section
       id="about"
-      className="py-20 bg-gradient-to-br from-white via-vibrant-green/5 to-white relative overflow-hidden"
+      className="py-20 md:py-28 bg-gradient-to-br from-white via-vibrant-green/5 to-white relative overflow-hidden"
     >
       {/* Background floating elements */}
       <motion.div
@@ -74,10 +78,7 @@ export default function About() {
       />
       <motion.div
         className="absolute bottom-0 right-20 w-80 h-80 bg-vibrant-teal/10 rounded-full blur-3xl"
-        animate={{
-          y: [0, -50, 0],
-          transition: { duration: 6, repeat: Infinity, ease: 'easeInOut' },
-        }}
+        animate={{ y: [0, -50, 0], transition: { duration: 6, repeat: Infinity, ease: 'easeInOut' } }}
       />
 
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
@@ -90,18 +91,15 @@ export default function About() {
             variants={staggerContainer}
           >
             <motion.div variants={slideLeft}>
-              <div className="inline-block mb-4">
-                <div className="glass px-3 py-1 rounded-full">
-                  <span className="text-xs font-semibold text-vibrant-teal uppercase tracking-widest">
-                    Our Story
-                  </span>
-                </div>
+              <div className="inline-flex items-center gap-2 bg-vibrant-green/10 text-vibrant-green px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-vibrant-green/20">
+                <Heart className="w-4 h-4" />
+                <span className="text-sm font-semibold">Our Story</span>
               </div>
             </motion.div>
 
             <motion.h2
               variants={slideLeft}
-              className="font-heading font-bold text-4xl md:text-5xl text-navy-dark mb-6"
+              className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-navy-dark mb-6"
             >
               About <span className="text-vibrant-teal">Truly Clean</span>
             </motion.h2>
@@ -126,7 +124,7 @@ export default function About() {
               Bureau, a testament to our commitment to excellence.
             </motion.p>
 
-            {/* Values - Card Layout */}
+            {/* Values */}
             <motion.div
               variants={staggerContainer}
               className="space-y-3"
@@ -134,11 +132,8 @@ export default function About() {
               {values.map((value, index) => {
                 const Icon = value.icon
                 return (
-                  <motion.div
-                    key={index}
-                    variants={slideLeft}
-                  >
-                    <div className="glass p-4 rounded-xl flex items-start gap-4 hover:bg-white/90 transition-all duration-300">
+                  <motion.div key={index} variants={slideLeft}>
+                    <div className="glass p-4 rounded-xl flex items-start gap-4 hover:bg-white/90 transition-all duration-300 hover:shadow-md">
                       <motion.div
                         className="bg-gradient-to-br from-vibrant-teal/20 to-vibrant-teal/5 p-3 rounded-lg flex-shrink-0"
                         whileHover={{ scale: 1.1 }}
@@ -171,16 +166,8 @@ export default function About() {
             {stats.map((stat, index) => {
               const Icon = stat.icon
               return (
-                <motion.div
-                  key={index}
-                  variants={slideRight}
-                >
-                  <Card
-                    variant="gradient"
-                    size="lg"
-                    hover="lift"
-                    className="group"
-                  >
+                <motion.div key={index} variants={slideRight}>
+                  <Card variant="gradient" size="lg" hover="lift" className="group">
                     <div className="flex items-center gap-6">
                       <motion.div
                         className="bg-white/80 p-5 rounded-xl flex-shrink-0 group-hover:shadow-lg transition-all"
@@ -188,28 +175,16 @@ export default function About() {
                       >
                         <Icon className="w-8 h-8 text-vibrant-teal" />
                       </motion.div>
-
                       <div className="flex-1">
-                        {stat.value !== undefined && (
-                          <motion.div
-                            className="font-heading font-bold text-3xl md:text-4xl text-vibrant-teal mb-1"
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                          >
-                            {stat.value}
-                            {stat.label.includes('Satisfaction') && '%'}
-                            {stat.label.includes('Community') && '+'}
-                          </motion.div>
-                        )}
-                        {stat.value === undefined && (
-                          <motion.div
-                            className="font-heading font-bold text-3xl text-vibrant-teal mb-1 flex items-center gap-2"
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                          >
+                        {stat.isVerified ? (
+                          <div className="font-heading font-bold text-3xl text-vibrant-teal mb-1 flex items-center gap-2">
                             <CheckCircle className="w-8 h-8" />
                             Verified
-                          </motion.div>
+                          </div>
+                        ) : (
+                          <div className="font-heading font-bold text-3xl md:text-4xl text-vibrant-teal mb-1">
+                            <AnimatedCounter target={stat.target!} suffix={stat.suffix} />
+                          </div>
                         )}
                         <p className="text-gray-600 font-medium">{stat.label}</p>
                       </div>
@@ -222,9 +197,9 @@ export default function About() {
             {/* Trust Badge Section */}
             <motion.div
               variants={slideRight}
-              className="glass p-6 rounded-2xl border border-vibrant-teal/20 mt-4"
+              className="bg-gradient-to-br from-vibrant-teal/10 to-vibrant-green/10 p-6 rounded-2xl border border-vibrant-teal/20 mt-4"
             >
-              <h4 className="font-heading font-bold text-navy-dark mb-4">
+              <h4 className="font-heading font-bold text-navy-dark mb-4 text-lg">
                 Why Trust Us?
               </h4>
               <ul className="space-y-3">
@@ -242,7 +217,7 @@ export default function About() {
                     transition={{ delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <CheckCircle className="w-5 h-5 text-vibrant-teal flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-vibrant-green flex-shrink-0" />
                     <span className="text-gray-700">{item}</span>
                   </motion.li>
                 ))}

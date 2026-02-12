@@ -7,8 +7,10 @@ import { Button } from '@/components/ui/button'
 
 const navLinks = [
   { label: 'Services', href: '#services' },
-  { label: 'Testimonials', href: '#testimonials' },
-  { label: 'About', href: '#about' },
+  { label: 'How It Works', href: '#how-it-works' },
+  { label: 'Reviews', href: '#testimonials' },
+  { label: 'Pricing', href: '#pricing' },
+  { label: 'FAQ', href: '#faq' },
   { label: 'Contact', href: '#quote-form' },
 ]
 
@@ -21,8 +23,7 @@ export default function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
 
-      // Update active section based on scroll position
-      const sections = ['services', 'testimonials', 'about', 'quote-form']
+      const sections = ['services', 'how-it-works', 'testimonials', 'pricing', 'faq', 'quote-form']
       for (const section of sections) {
         const element = document.getElementById(section)
         if (element) {
@@ -79,12 +80,12 @@ export default function Header() {
           </motion.button>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
               <motion.button
                 key={link.href}
                 onClick={() => handleNavClick(link.href)}
-                className="relative text-gray-700 font-medium hover:text-vibrant-teal transition-colors"
+                className="relative text-gray-700 font-medium hover:text-vibrant-teal transition-colors text-sm"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -101,7 +102,7 @@ export default function Header() {
           </nav>
 
           {/* Desktop CTA Button */}
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -120,7 +121,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <motion.button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 hover:bg-white/20 rounded-lg transition-colors"
+            className="lg:hidden p-2 hover:bg-white/20 rounded-lg transition-colors"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
@@ -140,7 +141,7 @@ export default function Header() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden overflow-hidden"
+              className="lg:hidden overflow-hidden"
             >
               <div className="glass rounded-b-2xl border-t border-white/10 p-4 space-y-3">
                 {navLinks.map((link, index) => (

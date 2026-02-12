@@ -15,7 +15,6 @@ import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 import { staggerContainer, slideUp, floatingAnimation } from '@/lib/animations'
-import { cn } from '@/lib/utils'
 
 export default function Services() {
   const { ref: containerRef, controls: containerControls } = useScrollReveal({
@@ -61,13 +60,12 @@ export default function Services() {
 
   const handleServiceClick = (serviceType: string) => {
     document.getElementById('quote-form')?.scrollIntoView({ behavior: 'smooth' })
-    // Could pass service type to form context here if needed
   }
 
   return (
     <section
       id="services"
-      className="py-20 bg-gradient-to-br from-white via-vibrant-teal/5 to-white relative overflow-hidden"
+      className="py-20 md:py-28 bg-gradient-to-br from-white via-vibrant-teal/5 to-white relative overflow-hidden"
     >
       {/* Background floating elements */}
       <motion.div
@@ -93,23 +91,20 @@ export default function Services() {
           variants={staggerContainer}
         >
           <motion.div variants={slideUp}>
-            <div className="inline-block mb-3">
-              <div className="glass px-4 py-1.5 rounded-full">
-                <span className="text-sm font-semibold text-vibrant-teal">
-                  Our Expertise
-                </span>
-              </div>
+            <div className="inline-flex items-center gap-2 bg-vibrant-teal/10 text-vibrant-teal px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-vibrant-teal/20">
+              <Sparkles className="w-4 h-4" />
+              <span className="text-sm font-semibold">Our Expertise</span>
             </div>
           </motion.div>
           <motion.h2
             variants={slideUp}
-            className="font-heading font-bold text-4xl md:text-5xl text-navy-dark mb-4"
+            className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-navy-dark mb-4"
           >
             Premium <span className="text-vibrant-teal">Services</span>
           </motion.h2>
           <motion.p
             variants={slideUp}
-            className="text-lg text-gray-600 max-w-2xl mx-auto"
+            className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto"
           >
             Professional cleaning solutions tailored for homes and businesses
           </motion.p>
@@ -129,18 +124,24 @@ export default function Services() {
               variant="elevated"
               size="lg"
               hover="glow"
-              className="flex flex-col h-full group"
+              className="flex flex-col h-full group rounded-2xl relative overflow-hidden"
               interactive
             >
+              {/* Popular Badge */}
+              <div className="absolute top-4 right-4">
+                <span className="bg-vibrant-orange text-white px-3 py-1 rounded-full text-xs font-semibold shadow-md">
+                  Popular
+                </span>
+              </div>
+
               {/* Icon Container */}
               <motion.div
-                className="bg-gradient-to-br from-vibrant-teal/20 to-vibrant-teal/5 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:shadow-[0_0_25px_rgba(6,182,212,0.3)] transition-all duration-300"
+                className="bg-gradient-to-br from-vibrant-teal/20 to-vibrant-teal/5 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:shadow-[0_0_25px_rgba(6,182,212,0.3)] transition-all duration-300"
                 whileHover={{ scale: 1.1, rotate: 5 }}
               >
                 <Home className="w-8 h-8 text-vibrant-teal" />
               </motion.div>
 
-              {/* Content */}
               <h3 className="font-heading font-bold text-2xl text-navy-dark mb-3">
                 Residential Cleaning
               </h3>
@@ -149,7 +150,6 @@ export default function Services() {
                 cleaning services.
               </p>
 
-              {/* Service List */}
               <ul className="space-y-2.5 mb-8 flex-1">
                 {residentialServices.map((service, index) => (
                   <motion.li
@@ -157,16 +157,22 @@ export default function Services() {
                     className="flex items-center gap-3"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.05 }}
+                    transition={{ delay: index * 0.05, type: 'spring', stiffness: 300 }}
                     viewport={{ once: true }}
                   >
-                    <CheckCircle className="w-5 h-5 text-vibrant-teal flex-shrink-0" />
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.05 + 0.1, type: 'spring', stiffness: 500 }}
+                    >
+                      <CheckCircle className="w-5 h-5 text-vibrant-teal flex-shrink-0" />
+                    </motion.div>
                     <span className="text-gray-700">{service}</span>
                   </motion.li>
                 ))}
               </ul>
 
-              {/* Button */}
               <Button
                 variant="primary"
                 size="lg"
@@ -185,18 +191,16 @@ export default function Services() {
               variant="elevated"
               size="lg"
               hover="glow"
-              className="flex flex-col h-full group"
+              className="flex flex-col h-full group rounded-2xl"
               interactive
             >
-              {/* Icon Container */}
               <motion.div
-                className="bg-gradient-to-br from-vibrant-green/20 to-vibrant-green/5 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:shadow-[0_0_25px_rgba(132,204,22,0.3)] transition-all duration-300"
+                className="bg-gradient-to-br from-vibrant-green/20 to-vibrant-green/5 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:shadow-[0_0_25px_rgba(132,204,22,0.3)] transition-all duration-300"
                 whileHover={{ scale: 1.1, rotate: -5 }}
               >
                 <Building2 className="w-8 h-8 text-vibrant-green" />
               </motion.div>
 
-              {/* Content */}
               <h3 className="font-heading font-bold text-2xl text-navy-dark mb-3">
                 Commercial Cleaning
               </h3>
@@ -205,7 +209,6 @@ export default function Services() {
                 keeping workspaces pristine.
               </p>
 
-              {/* Service List */}
               <ul className="space-y-2.5 mb-8 flex-1">
                 {commercialServices.map((service, index) => (
                   <motion.li
@@ -213,16 +216,22 @@ export default function Services() {
                     className="flex items-center gap-3"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.05 }}
+                    transition={{ delay: index * 0.05, type: 'spring', stiffness: 300 }}
                     viewport={{ once: true }}
                   >
-                    <CheckCircle className="w-5 h-5 text-vibrant-green flex-shrink-0" />
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.05 + 0.1, type: 'spring', stiffness: 500 }}
+                    >
+                      <CheckCircle className="w-5 h-5 text-vibrant-green flex-shrink-0" />
+                    </motion.div>
                     <span className="text-gray-700">{service}</span>
                   </motion.li>
                 ))}
               </ul>
 
-              {/* Button */}
               <Button
                 variant="primary"
                 size="lg"
@@ -252,10 +261,11 @@ export default function Services() {
                 variants={slideUp}
                 className="group"
               >
-                <div className="glass p-6 rounded-xl text-center h-full flex flex-col items-center justify-center hover:bg-white/90 transition-all duration-300">
+                <div className="glass p-6 rounded-2xl text-center h-full flex flex-col items-center justify-center hover:bg-white/90 transition-all duration-300 hover:shadow-lg">
                   <motion.div
                     className="bg-gradient-to-br from-vibrant-teal/10 to-vibrant-teal/5 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:shadow-lg transition-all"
-                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
+                    transition={{ duration: 0.5 }}
                   >
                     <Icon className="w-6 h-6 text-vibrant-teal" />
                   </motion.div>
