@@ -3,8 +3,6 @@ import TrustBar from '@/components/sections/TrustBar'
 import RecentCleansTicker from '@/components/sections/RecentCleansTicker'
 import HowItWorks from '@/components/sections/HowItWorks'
 import CleanOMeter from '@/components/sections/CleanOMeter'
-import ChecklistTabs from '@/components/sections/ChecklistTabs'
-import ChooseYourFinish from '@/components/sections/ChooseYourFinish'
 import Services from '@/components/sections/Services'
 import CTABreak from '@/components/sections/CTABreak'
 import BeforeAfter from '@/components/sections/BeforeAfter'
@@ -14,7 +12,6 @@ import GuaranteeCertificate from '@/components/sections/GuaranteeCertificate'
 import PricingAnchor from '@/components/sections/PricingAnchor'
 import ServiceAreaMap from '@/components/sections/ServiceAreaMap'
 import About from '@/components/sections/About'
-import Gallery from '@/components/sections/Gallery'
 import FAQ from '@/components/sections/FAQ'
 import Contact from '@/components/sections/Contact'
 import { StickyCTA } from '@/components/StickyCTA'
@@ -27,8 +24,6 @@ export default function HomePage() {
       <RecentCleansTicker />
       <HowItWorks />
       <CleanOMeter />
-      <ChecklistTabs />
-      <ChooseYourFinish />
       <Services />
       <CTABreak
         id="cta-1"
@@ -51,7 +46,6 @@ export default function HomePage() {
       <PricingAnchor />
       <ServiceAreaMap />
       <About />
-      <Gallery />
       <FAQ />
       <CTABreak
         id="cta-3"
