@@ -1,8 +1,9 @@
 'use client'
 
+import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Sparkles } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 const navLinks = [
@@ -71,8 +72,14 @@ export default function Header() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <div className="bg-gradient-to-br from-deep-teal to-rich-violet w-10 h-10 rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-[0_0_25px_rgba(6,182,212,0.4)] transition-all">
-              <Sparkles className="w-6 h-6 text-white" />
+            <div className="relative w-10 h-10 rounded-lg overflow-hidden shadow-lg group-hover:shadow-[0_0_25px_rgba(6,182,212,0.4)] transition-all">
+              <Image
+                src="/images/logo/logo-icon.png"
+                alt="Truly Clean Logo"
+                fill
+                priority
+                className="object-contain"
+              />
             </div>
             <span className="font-heading font-bold text-xl text-deep-indigo hidden sm:inline">
               Truly Clean

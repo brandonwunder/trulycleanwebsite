@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Sparkles, Phone, MapPin, Users, Heart, ChevronDown, Shield } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -75,6 +76,20 @@ export default function Hero() {
       </motion.div>
 
       {/* Floating trust badges — desktop only */}
+      <motion.div
+        className="hidden xl:flex absolute top-20 right-20 items-center gap-3 glass px-5 py-3 rounded-full shadow-lg z-20 border border-deep-teal/20"
+        animate={floatingAnimationSlow}
+      >
+        <div className="relative w-6 h-6">
+          <Image
+            src="/images/logo/logo-icon.png"
+            alt="Truly Clean Logo"
+            fill
+            className="object-contain"
+          />
+        </div>
+        <span className="text-sm font-semibold text-deep-indigo">Premium Care</span>
+      </motion.div>
       <motion.div
         className="hidden xl:flex absolute top-32 right-16 items-center gap-2 glass px-4 py-2.5 rounded-full shadow-lg z-20"
         animate={floatingAnimationSlow}

@@ -19,10 +19,29 @@ export const metadata: Metadata = {
   title: 'Truly Clean | Professional Cleaning Services',
   description: 'Professional residential and commercial cleaning services. Get your free quote today!',
   keywords: 'cleaning, residential cleaning, commercial cleaning, professional cleaning',
+  icons: {
+    icon: [
+      { url: '/images/logo/favicon-16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/images/logo/favicon-32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: '/images/logo/logo-icon-256.png',
+  },
   openGraph: {
     title: 'Truly Clean | Professional Cleaning Services',
     description: 'Get your free cleaning quote today',
     type: 'website',
+    images: [
+      {
+        url: '/images/logo/logo-icon-512.png',
+        width: 512,
+        height: 512,
+        alt: 'Truly Clean Logo',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary',
+    images: '/images/logo/logo-icon-512.png',
   },
 }
 

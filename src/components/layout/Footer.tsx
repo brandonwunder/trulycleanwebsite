@@ -1,7 +1,8 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { Phone, Mail, MapPin, Facebook, Heart, Shield, Leaf, CheckCircle } from 'lucide-react'
+import { Phone, Mail, MapPin, Facebook, Heart, Shield, Leaf } from 'lucide-react'
 import { staggerContainer, slideUp, slideLeft, slideRight } from '@/lib/animations'
 
 export default function Footer() {
@@ -57,8 +58,13 @@ export default function Footer() {
           {/* Brand Column */}
           <motion.div variants={slideUp}>
             <div className="flex items-center gap-3 mb-4">
-              <div className="bg-gradient-to-br from-deep-teal to-rich-violet w-12 h-12 rounded-lg flex items-center justify-center">
-                <CheckCircle className="w-7 h-7 text-white" />
+              <div className="relative w-12 h-12 rounded-lg overflow-hidden flex-shrink-0">
+                <Image
+                  src="/images/logo/logo-icon.png"
+                  alt="Truly Clean Logo"
+                  fill
+                  className="object-contain"
+                />
               </div>
               <div>
                 <h3 className="font-heading font-bold text-xl">Truly Clean</h3>
