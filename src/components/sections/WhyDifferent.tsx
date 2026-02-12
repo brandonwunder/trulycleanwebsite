@@ -39,10 +39,10 @@ const comparisons = [
 
 export default function WhyDifferent() {
   return (
-    <section id="why-different" className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-white via-royal-blue/5 to-white">
+    <section id="why-different" className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-white via-rich-violet/5 to-white">
       {/* Background blobs */}
       <motion.div
-        className="absolute bottom-20 right-10 w-32 h-32 bg-royal-blue/10 rounded-full blur-3xl pointer-events-none"
+        className="absolute bottom-20 right-10 w-32 h-32 bg-rich-violet/10 rounded-full blur-3xl pointer-events-none"
         animate={{ y: [0, -15, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
       />
@@ -58,7 +58,7 @@ export default function WhyDifferent() {
         <div className="text-center mb-16">
           <motion.div
             variants={slideUp}
-            className="inline-flex items-center gap-2 bg-royal-blue/10 text-royal-blue px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-royal-blue/20"
+            className="inline-flex items-center gap-2 bg-rich-violet/10 text-rich-violet px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-rich-violet/20"
           >
             <Zap className="w-4 h-4" />
             <span className="font-semibold text-sm">The Truly Clean Difference</span>
@@ -68,7 +68,7 @@ export default function WhyDifferent() {
             className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-deep-indigo mb-4"
           >
             Why Families{' '}
-            <span className="text-royal-blue">Choose Us</span>
+            <span className="text-rich-violet">Choose Us</span>
           </motion.h2>
           <motion.p
             variants={slideUp}
@@ -91,7 +91,7 @@ export default function WhyDifferent() {
             <div />
             <div />
             <div className="text-center">
-              <span className="font-heading font-semibold text-ocean-blue text-sm uppercase tracking-wider">Truly Clean</span>
+              <span className="font-heading font-semibold text-deep-teal text-sm uppercase tracking-wider">Truly Clean</span>
             </div>
           </motion.div>
 
@@ -110,13 +110,13 @@ export default function WhyDifferent() {
                 </div>
 
                 {/* Icon (center) */}
-                <div className="w-12 h-12 rounded-xl bg-ocean-blue/10 flex items-center justify-center flex-shrink-0">
-                  <item.icon className="w-6 h-6 text-ocean-blue" />
+                <div className="w-12 h-12 rounded-xl bg-deep-teal/10 flex items-center justify-center flex-shrink-0">
+                  <item.icon className="w-6 h-6 text-deep-teal" />
                 </div>
 
                 {/* Truly Clean column */}
-                <div className="flex items-center gap-3 bg-gradient-to-r from-ocean-blue/5 to-royal-blue/5 rounded-xl px-6 py-4 border border-ocean-blue/20">
-                  <CheckCircle className="w-5 h-5 text-royal-blue flex-shrink-0" />
+                <div className="flex items-center gap-3 bg-gradient-to-r from-deep-teal/5 to-rich-violet/5 rounded-xl px-6 py-4 border border-deep-teal/20">
+                  <CheckCircle className="w-5 h-5 text-rich-violet flex-shrink-0" />
                   <span className="text-deep-indigo font-medium">{item.truly}</span>
                 </div>
               </motion.div>
@@ -132,9 +132,9 @@ export default function WhyDifferent() {
               variants={slideUp}
               className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden"
             >
-              <div className="flex items-center gap-3 px-5 py-3 bg-ocean-blue/5 border-b border-ocean-blue/10">
-                <div className="w-8 h-8 rounded-lg bg-ocean-blue/10 flex items-center justify-center">
-                  <item.icon className="w-4 h-4 text-ocean-blue" />
+              <div className="flex items-center gap-3 px-5 py-3 bg-deep-teal/5 border-b border-deep-teal/10">
+                <div className="w-8 h-8 rounded-lg bg-deep-teal/10 flex items-center justify-center">
+                  <item.icon className="w-4 h-4 text-deep-teal" />
                 </div>
                 <span className="font-heading font-semibold text-deep-indigo text-sm">{item.truly.split(',')[0]}</span>
               </div>
@@ -144,7 +144,7 @@ export default function WhyDifferent() {
                   <span className="text-gray-500 text-sm">{item.others}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-royal-blue flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-rich-violet flex-shrink-0" />
                   <span className="text-deep-indigo font-medium text-sm">{item.truly}</span>
                 </div>
               </div>

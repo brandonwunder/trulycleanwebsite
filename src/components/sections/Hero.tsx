@@ -50,7 +50,7 @@ export default function Hero() {
       >
         <motion.div
           className="absolute w-[600px] h-[600px] rounded-full blur-[120px] opacity-30"
-          style={{ background: 'radial-gradient(circle, #0EA5E9 0%, transparent 70%)' }}
+          style={{ background: 'radial-gradient(circle, #0891B2 0%, transparent 70%)' }}
           animate={{
             x: ['-10%', '5%', '-10%'],
             y: ['-5%', '10%', '-5%'],
@@ -59,7 +59,7 @@ export default function Hero() {
         />
         <motion.div
           className="absolute right-0 bottom-0 w-[500px] h-[500px] rounded-full blur-[100px] opacity-20"
-          style={{ background: 'radial-gradient(circle, #3B82F6 0%, transparent 70%)' }}
+          style={{ background: 'radial-gradient(circle, #8B5CF6 0%, transparent 70%)' }}
           animate={{
             x: ['10%', '-5%', '10%'],
             y: ['5%', '-10%', '5%'],
@@ -68,7 +68,7 @@ export default function Hero() {
         />
         <motion.div
           className="absolute right-1/4 top-1/4 w-[400px] h-[400px] rounded-full blur-[80px] opacity-15"
-          style={{ background: 'radial-gradient(circle, #A855F7 0%, transparent 70%)' }}
+          style={{ background: 'radial-gradient(circle, #22D3EE 0%, transparent 70%)' }}
           animate={{
             x: ['-5%', '8%', '-5%'],
             y: ['8%', '-5%', '8%'],
@@ -82,14 +82,14 @@ export default function Hero() {
         className="hidden xl:flex absolute top-32 right-16 items-center gap-2 glass px-4 py-2.5 rounded-full shadow-lg z-20"
         animate={floatingAnimationSlow}
       >
-        <Shield className="w-4 h-4 text-royal-blue" />
+        <Shield className="w-4 h-4 text-rich-violet" />
         <span className="text-sm font-semibold text-deep-indigo">BBB Accredited</span>
       </motion.div>
       <motion.div
         className="hidden xl:flex absolute bottom-40 left-16 items-center gap-2 glass px-4 py-2.5 rounded-full shadow-lg z-20"
         animate={{ y: [0, -15, 0], transition: { duration: 4, repeat: Infinity, ease: 'easeInOut' } }}
       >
-        <Sparkles className="w-4 h-4 text-vibrant-purple" />
+        <Sparkles className="w-4 h-4 text-light-teal" />
         <span className="text-sm font-semibold text-deep-indigo">Eco-Friendly</span>
       </motion.div>
 
@@ -104,10 +104,10 @@ export default function Hero() {
           {/* Badge */}
           <motion.div
             variants={itemVariants}
-            className="inline-flex items-center gap-2 glass-ocean px-5 py-3 rounded-full mb-8 shadow-sm"
+            className="inline-flex items-center gap-2 glass-teal px-5 py-3 rounded-full mb-8 shadow-sm"
           >
-            <Sparkles className="w-5 h-5 text-ocean-blue" />
-            <span className="font-semibold text-ocean-blue">Trusted by New River Families</span>
+            <Sparkles className="w-5 h-5 text-deep-teal" />
+            <span className="font-semibold text-deep-teal">Trusted by New River Families</span>
           </motion.div>
 
           {/* Main Headline */}
@@ -117,7 +117,7 @@ export default function Hero() {
           >
             Your Neighbors.
             <br />
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-ocean-blue to-royal-blue">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-deep-teal to-rich-violet">
               Your Cleaning Experts.
             </span>
           </motion.h1>
@@ -135,7 +135,7 @@ export default function Hero() {
             variants={itemVariants}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
           >
-            <div className="glass rounded-2xl p-1.5 shadow-lg shadow-ocean-blue/10">
+            <div className="glass rounded-2xl p-1.5 shadow-lg shadow-deep-teal/10">
               <Button onClick={scrollToQuote} size="xl" variant="primary" className="shadow-none">
                 <Sparkles className="w-5 h-5" />
                 Get My Instant Quote
@@ -166,7 +166,7 @@ export default function Hero() {
                 className="flex items-center gap-3 px-5 py-3 rounded-full glass shadow-sm hover:shadow-md transition-all duration-200"
                 whileHover={{ y: -4 }}
               >
-                <item.icon className="w-5 h-5 text-ocean-blue flex-shrink-0" />
+                <item.icon className="w-5 h-5 text-deep-teal flex-shrink-0" />
                 <span className="font-medium text-gray-700 text-sm">{item.text}</span>
               </motion.div>
             ))}

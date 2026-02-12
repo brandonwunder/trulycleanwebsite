@@ -15,10 +15,10 @@ const serviceAreas = [
 
 export default function ServiceAreaMap() {
   return (
-    <section id="service-area" className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-white via-ocean-blue/5 to-white">
+    <section id="service-area" className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-white via-deep-teal/5 to-white">
       {/* Background blobs */}
       <motion.div
-        className="absolute top-20 right-10 w-32 h-32 bg-ocean-blue/5 rounded-full blur-3xl pointer-events-none"
+        className="absolute top-20 right-10 w-32 h-32 bg-deep-teal/5 rounded-full blur-3xl pointer-events-none"
         animate={{ y: [0, -20, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
       />
@@ -34,7 +34,7 @@ export default function ServiceAreaMap() {
         <div className="text-center mb-16">
           <motion.div
             variants={slideUp}
-            className="inline-flex items-center gap-2 bg-ocean-blue/10 text-ocean-blue px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-ocean-blue/20"
+            className="inline-flex items-center gap-2 bg-deep-teal/10 text-deep-teal px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-deep-teal/20"
           >
             <MapPin className="w-4 h-4" />
             <span className="font-semibold text-sm">Our Service Area</span>
@@ -44,7 +44,7 @@ export default function ServiceAreaMap() {
             className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-deep-indigo mb-4"
           >
             Proudly Serving{' '}
-            <span className="text-ocean-blue">North Phoenix</span>
+            <span className="text-deep-teal">North Phoenix</span>
           </motion.h2>
           <motion.p
             variants={slideUp}
@@ -57,7 +57,7 @@ export default function ServiceAreaMap() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Map */}
           <motion.div variants={slideRight} className="relative">
-            <div className="relative bg-gradient-to-br from-ocean-blue/5 to-royal-blue/5 rounded-3xl p-8 border border-ocean-blue/10">
+            <div className="relative bg-gradient-to-br from-deep-teal/5 to-rich-violet/5 rounded-3xl p-8 border border-deep-teal/10">
               <svg viewBox="0 0 100 80" className="w-full h-auto" style={{ maxHeight: '400px' }}>
                 {/* Simplified Arizona outline */}
                 <motion.path
@@ -133,7 +133,7 @@ export default function ServiceAreaMap() {
                 key={index}
                 className={`flex items-center gap-4 p-4 rounded-xl transition-all duration-200 hover:-translate-y-0.5 ${
                   area.primary
-                    ? 'bg-gradient-to-r from-ocean-blue/10 to-royal-blue/5 border border-ocean-blue/20 shadow-md'
+                    ? 'bg-gradient-to-r from-deep-teal/10 to-rich-violet/5 border border-deep-teal/20 shadow-md'
                     : 'bg-white/80 backdrop-blur-sm border border-gray-100 shadow-sm hover:shadow-md'
                 }`}
                 initial={{ opacity: 0, x: 20 }}
@@ -142,15 +142,15 @@ export default function ServiceAreaMap() {
                 transition={{ delay: index * 0.1 }}
               >
                 <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
-                  area.primary ? 'bg-ocean-blue/10' : 'bg-gray-100'
+                  area.primary ? 'bg-deep-teal/10' : 'bg-gray-100'
                 }`}>
-                  <MapPin className={`w-5 h-5 ${area.primary ? 'text-ocean-blue' : 'text-gray-500'}`} />
+                  <MapPin className={`w-5 h-5 ${area.primary ? 'text-deep-teal' : 'text-gray-500'}`} />
                 </div>
                 <div>
-                  <h3 className={`font-heading font-semibold ${area.primary ? 'text-ocean-blue' : 'text-deep-indigo'}`}>
+                  <h3 className={`font-heading font-semibold ${area.primary ? 'text-deep-teal' : 'text-deep-indigo'}`}>
                     {area.name}
                     {area.primary && (
-                      <span className="ml-2 text-xs bg-ocean-blue/10 text-ocean-blue px-2 py-0.5 rounded-full">HQ</span>
+                      <span className="ml-2 text-xs bg-deep-teal/10 text-deep-teal px-2 py-0.5 rounded-full">HQ</span>
                     )}
                   </h3>
                   <p className="text-gray-500 text-sm">{area.description}</p>

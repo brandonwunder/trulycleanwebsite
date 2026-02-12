@@ -68,7 +68,7 @@ export default function ErrorState({
         {showPhoneOption && (
           <motion.a
             href={`tel:${phone}`}
-            className="flex items-center gap-2 bg-ocean-blue hover:bg-ocean-blue/90 text-white px-6 py-3 rounded-lg font-semibold transition-all"
+            className="flex items-center gap-2 bg-deep-teal hover:bg-deep-teal/90 text-white px-6 py-3 rounded-lg font-semibold transition-all"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -81,7 +81,7 @@ export default function ErrorState({
       {/* Helpful message */}
       <p className="text-sm text-gray-600 text-center">
         If the problem persists, please contact us directly at{' '}
-        <a href={`tel:${phone}`} className="text-ocean-blue font-semibold hover:underline">
+        <a href={`tel:${phone}`} className="text-deep-teal font-semibold hover:underline">
           {phone}
         </a>
       </p>

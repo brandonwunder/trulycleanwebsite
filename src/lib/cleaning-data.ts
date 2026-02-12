@@ -51,7 +51,7 @@ export const cleaningTiers: CleanTier[] = [
     frequency: 'Weekly',
     priceRange: '$60-90',
     icon: Sparkles,
-    color: 'ocean-blue',
+    color: 'deep-teal',
     description: 'Perfect for weekly maintenance',
     checklist: [
       'Quick dust all surfaces',
@@ -69,7 +69,7 @@ export const cleaningTiers: CleanTier[] = [
     frequency: 'Biweekly',
     priceRange: '$120-180',
     icon: Home,
-    color: 'royal-blue',
+    color: 'rich-violet',
     description: 'Our most popular service',
     checklist: [
       'Thorough dust all surfaces',
@@ -89,7 +89,7 @@ export const cleaningTiers: CleanTier[] = [
     frequency: 'Monthly',
     priceRange: '$200-300',
     icon: Award,
-    color: 'vibrant-purple',
+    color: 'light-teal',
     description: 'Complete top-to-bottom cleaning',
     checklist: [
       'Everything in Standard Clean, PLUS:',
@@ -425,10 +425,10 @@ export interface TrustBadge {
 }
 
 export const trustBadges: TrustBadge[] = [
-  { icon: Shield, text: 'Insured', color: 'ocean-blue' },
-  { icon: Award, text: 'BBB Accredited', color: 'royal-blue' },
-  { icon: Star, text: '5.0 Rating', color: 'vibrant-purple' },
-  { icon: CheckCircle, text: '100% Satisfaction', color: 'ocean-blue' },
+  { icon: Shield, text: 'Insured', color: 'deep-teal' },
+  { icon: Award, text: 'BBB Accredited', color: 'rich-violet' },
+  { icon: Star, text: '5.0 Rating', color: 'light-teal' },
+  { icon: CheckCircle, text: '100% Satisfaction', color: 'deep-teal' },
 ]
 
 /**
@@ -449,21 +449,21 @@ export const scentOptions: ScentOption[] = [
     id: 'fresh-linen',
     name: 'Fresh Linen',
     icon: Sparkles,
-    color: 'ocean-blue',
+    color: 'deep-teal',
     description: 'Clean, crisp, and refreshing',
   },
   {
     id: 'citrus',
     name: 'Citrus Burst',
     icon: Citrus,
-    color: 'vibrant-purple',
+    color: 'rich-violet',
     description: 'Energizing and uplifting',
   },
   {
     id: 'unscented',
     name: 'Unscented',
     icon: ShieldCheck,
-    color: 'royal-blue',
+    color: 'light-teal',
     description: 'Hypoallergenic and gentle',
   },
 ]

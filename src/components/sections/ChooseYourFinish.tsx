@@ -27,7 +27,7 @@ export default function ChooseYourFinish() {
     >
       {/* Background accents */}
       <motion.div
-        className="absolute top-20 right-0 w-80 h-80 bg-vibrant-purple/5 rounded-full blur-3xl pointer-events-none"
+        className="absolute top-20 right-0 w-80 h-80 bg-light-teal/5 rounded-full blur-3xl pointer-events-none"
         animate={{ y: [0, 60, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
       />
@@ -43,7 +43,7 @@ export default function ChooseYourFinish() {
         <div className="text-center mb-16">
           <motion.div
             variants={slideUp}
-            className="inline-flex items-center gap-2 bg-vibrant-purple/10 text-vibrant-purple px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-vibrant-purple/20"
+            className="inline-flex items-center gap-2 bg-light-teal/10 text-light-teal px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-light-teal/20"
           >
             <Check className="w-4 h-4" />
             <span className="font-semibold text-sm">Customization</span>
@@ -55,7 +55,7 @@ export default function ChooseYourFinish() {
           >
             Choose Your
             <br />
-            <span className="text-vibrant-purple">Finish</span>
+            <span className="text-light-teal">Finish</span>
           </motion.h2>
 
           <motion.p
@@ -133,12 +133,12 @@ export default function ChooseYourFinish() {
                 {({ open }) => (
                   <>
                     <Disclosure.Button
-                      className="w-full flex items-center justify-between gap-4 p-6 glass rounded-xl hover:shadow-md transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-ocean-blue"
+                      className="w-full flex items-center justify-between gap-4 p-6 glass rounded-xl hover:shadow-md transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-deep-teal"
                       onClick={() => toggleSection(section.id)}
                     >
                       <div className="flex items-center gap-4 text-left">
                         <div className="flex-shrink-0">
-                          <section.icon className="w-6 h-6 text-ocean-blue" />
+                          <section.icon className="w-6 h-6 text-deep-teal" />
                         </div>
                         <h4 className="font-heading font-bold text-lg text-deep-indigo">
                           {section.title}
@@ -173,7 +173,7 @@ export default function ChooseYourFinish() {
                                   transition={{ delay: i * 0.05 }}
                                   className="flex items-start gap-3"
                                 >
-                                  <Check className="w-4 h-4 text-royal-blue flex-shrink-0 mt-0.5" />
+                                  <Check className="w-4 h-4 text-rich-violet flex-shrink-0 mt-0.5" />
                                   <span className="text-gray-700 text-sm md:text-base">{item}</span>
                                 </motion.div>
                               ))}
@@ -192,7 +192,7 @@ export default function ChooseYourFinish() {
         {/* Trust Statement */}
         <motion.div
           variants={slideUp}
-          className="mt-12 p-6 bg-royal-blue/10 border border-royal-blue/20 rounded-2xl text-center"
+          className="mt-12 p-6 bg-rich-violet/10 border border-rich-violet/20 rounded-2xl text-center"
         >
           <p className="text-deep-indigo font-medium">
             <span className="font-bold">100% Transparent:</span> We believe you should know exactly

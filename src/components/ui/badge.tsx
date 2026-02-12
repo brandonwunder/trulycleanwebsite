@@ -12,11 +12,11 @@ const badgeVariants = cva(
   {
     variants: {
       variant: {
-        primary: 'bg-ocean-blue text-white hover:bg-ocean-blue/90',
-        secondary: 'bg-royal-blue text-white hover:bg-royal-blue/90',
-        accent: 'bg-vibrant-purple text-white hover:bg-vibrant-purple/90',
+        primary: 'bg-deep-teal text-white hover:bg-deep-teal/90',
+        secondary: 'bg-rich-violet text-white hover:bg-rich-violet/90',
+        accent: 'bg-light-teal text-white hover:bg-light-teal/90',
         outline:
-          'border-2 border-ocean-blue text-ocean-blue hover:bg-ocean-blue/5',
+          'border-2 border-deep-teal text-deep-teal hover:bg-deep-teal/5',
         ghost: 'bg-gray-100 text-gray-700 hover:bg-gray-200',
         success: 'bg-green-100 text-green-700 hover:bg-green-200',
         warning: 'bg-yellow-100 text-yellow-700 hover:bg-yellow-200',

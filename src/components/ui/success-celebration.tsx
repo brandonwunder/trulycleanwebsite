@@ -63,7 +63,7 @@ export default function SuccessCelebration({
 }: SuccessCelebrationProps) {
   return (
     <motion.div
-      className="relative flex flex-col items-center justify-center py-12 px-4 bg-gradient-to-br from-royal-blue/10 to-ocean-blue/10 rounded-2xl border-2 border-royal-blue/30 overflow-hidden"
+      className="relative flex flex-col items-center justify-center py-12 px-4 bg-gradient-to-br from-rich-violet/10 to-deep-teal/10 rounded-2xl border-2 border-rich-violet/30 overflow-hidden"
       initial={{ opacity: 0, scale: 0.9, y: 20 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -78,7 +78,7 @@ export default function SuccessCelebration({
         transition={{ duration: 0.6 }}
       >
         {icon || (
-          <CheckCircle className="w-20 h-20 text-royal-blue" />
+          <CheckCircle className="w-20 h-20 text-rich-violet" />
         )}
 
         {/* Floating sparkles */}
@@ -101,7 +101,7 @@ export default function SuccessCelebration({
               repeat: Infinity,
             }}
           >
-            <Sparkles className="w-5 h-5 text-ocean-blue" />
+            <Sparkles className="w-5 h-5 text-deep-teal" />
           </motion.div>
         ))}
       </motion.div>
@@ -141,7 +141,7 @@ export default function SuccessCelebration({
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.6 + index * 0.1 }}
             >
-              <CheckCircle className="w-5 h-5 text-royal-blue flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-5 h-5 text-rich-violet flex-shrink-0 mt-0.5" />
               <span className="text-gray-700 text-sm">{detail}</span>
             </motion.li>
           ))}
@@ -152,7 +152,7 @@ export default function SuccessCelebration({
       {action && (
         <motion.button
           onClick={action.onClick}
-          className="bg-gradient-to-r from-ocean-blue to-royal-blue text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all relative z-10"
+          className="bg-gradient-to-r from-deep-teal to-rich-violet text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all relative z-10"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}

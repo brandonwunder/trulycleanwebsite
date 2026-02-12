@@ -14,13 +14,13 @@ const cardVariants = cva(
       variant: {
         default: 'bg-white border-gray-200 shadow-md hover:shadow-lg',
         elevated:
-          'bg-white border-gray-100 shadow-lg hover:shadow-xl hover:border-ocean-blue/30',
+          'bg-white border-gray-100 shadow-lg hover:shadow-xl hover:border-deep-teal/30',
         glass:
           'bg-white/80 backdrop-blur-sm border-white/20 shadow-lg hover:shadow-xl hover:bg-white/90',
         gradient:
-          'bg-gradient-to-br from-ocean-blue/10 to-royal-blue/10 border-ocean-blue/20 shadow-md hover:shadow-lg hover:border-ocean-blue/40',
+          'bg-gradient-to-br from-deep-teal/10 to-rich-violet/10 border-deep-teal/20 shadow-md hover:shadow-lg hover:border-deep-teal/40',
         dark: 'bg-deep-indigo/80 border-gray-700 text-white shadow-lg hover:shadow-xl',
-        hollow: 'bg-transparent border-2 border-ocean-blue hover:bg-ocean-blue/5',
+        hollow: 'bg-transparent border-2 border-deep-teal hover:bg-deep-teal/5',
       },
       size: {
         sm: 'p-4',
@@ -144,7 +144,7 @@ export function IconCard({
       {...props}
     >
       {icon && (
-        <div className="mb-4 p-3 bg-ocean-blue/10 rounded-lg">
+        <div className="mb-4 p-3 bg-deep-teal/10 rounded-lg">
           {icon}
         </div>
       )}

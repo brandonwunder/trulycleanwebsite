@@ -14,8 +14,8 @@ interface CTABreakProps {
 }
 
 const variantStyles = {
-  teal: 'bg-gradient-to-br from-ocean-blue via-ocean-blue/90 to-ocean-blue/80',
-  green: 'bg-gradient-to-br from-royal-blue via-ocean-blue to-ocean-blue/90',
+  teal: 'bg-gradient-to-br from-deep-teal via-deep-teal/90 to-deep-teal/80',
+  green: 'bg-gradient-to-br from-rich-violet via-deep-teal to-deep-teal/90',
   dark: 'bg-gradient-to-br from-deep-indigo via-deep-indigo/95 to-deep-indigo',
 }
 
@@ -71,7 +71,7 @@ export default function CTABreak({ id, headline, subtext, ctaLabel, variant = 't
             size="xl"
             variant={variant === 'dark' ? 'primary' : 'secondary'}
             className={variant === 'dark'
-              ? 'bg-ocean-blue text-white hover:bg-ocean-blue/90 shadow-lg shadow-ocean-blue/25'
+              ? 'bg-deep-teal text-white hover:bg-deep-teal/90 shadow-lg shadow-deep-teal/25'
               : 'bg-white text-deep-indigo hover:bg-white/90 border-0 shadow-lg shadow-black/10'
             }
           >

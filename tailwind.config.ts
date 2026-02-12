@@ -10,11 +10,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Custom Truly Clean brand colors - Ocean Depths palette
-        'ocean-blue': '#0EA5E9',
-        'royal-blue': '#3B82F6',
-        'vibrant-purple': '#A855F7',
-        'deep-indigo': '#1E1B4B',
+        // Custom Truly Clean brand colors - Teal Harmony palette
+        'deep-teal': '#0891B2',      // Cyan 600 - Primary teal
+        'rich-violet': '#8B5CF6',    // Violet 500 - Primary purple
+        'light-teal': '#22D3EE',     // Cyan 400 - Tertiary accent
+        'deep-indigo': '#1E1B4B',    // Indigo 950 - Text/dark (unchanged)
 
         // shadcn/ui colors (keep defaults)
         border: "hsl(var(--border))",
@@ -23,15 +23,15 @@ const config: Config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: '#0EA5E9', // Ocean blue
+          DEFAULT: '#0891B2',  // Deep teal
           foreground: '#FFFFFF',
         },
         secondary: {
-          DEFAULT: '#3B82F6', // Royal blue
+          DEFAULT: '#8B5CF6',  // Rich violet
           foreground: '#FFFFFF',
         },
         accent: {
-          DEFAULT: '#A855F7', // Vibrant purple
+          DEFAULT: '#22D3EE',  // Light teal
           foreground: '#FFFFFF',
         },
       },
@@ -81,14 +81,14 @@ const config: Config = {
         '.glass-dark': {
           '@apply bg-deep-indigo/80 backdrop-blur-sm border border-white/10': {},
         },
-        '.glass-ocean': {
-          '@apply bg-ocean-blue/10 backdrop-blur-sm border border-ocean-blue/20': {},
+        '.glass-teal': {
+          '@apply bg-deep-teal/10 backdrop-blur-sm border border-deep-teal/20': {},
         },
-        '.glass-royal': {
-          '@apply bg-royal-blue/10 backdrop-blur-sm border border-royal-blue/20': {},
+        '.glass-violet': {
+          '@apply bg-rich-violet/10 backdrop-blur-sm border border-rich-violet/20': {},
         },
-        '.glass-purple': {
-          '@apply bg-vibrant-purple/10 backdrop-blur-sm border border-vibrant-purple/20': {},
+        '.glass-light': {
+          '@apply bg-light-teal/10 backdrop-blur-sm border border-light-teal/20': {},
         },
       })
     },

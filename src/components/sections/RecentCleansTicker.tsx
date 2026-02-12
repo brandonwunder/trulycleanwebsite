@@ -21,7 +21,7 @@ export default function RecentCleansTicker() {
           {/* First set */}
           {recentCleans.map((clean, i) => (
             <div key={`first-${i}`} className="flex items-center gap-3 flex-shrink-0">
-              <Sparkles className="w-4 h-4 text-ocean-blue flex-shrink-0" />
+              <Sparkles className="w-4 h-4 text-deep-teal flex-shrink-0" />
               <span className="text-white/90 text-sm font-medium">{clean}</span>
             </div>
           ))}
@@ -29,7 +29,7 @@ export default function RecentCleansTicker() {
           {/* Duplicate for seamless loop */}
           {recentCleans.map((clean, i) => (
             <div key={`second-${i}`} className="flex items-center gap-3 flex-shrink-0">
-              <Sparkles className="w-4 h-4 text-ocean-blue flex-shrink-0" />
+              <Sparkles className="w-4 h-4 text-deep-teal flex-shrink-0" />
               <span className="text-white/90 text-sm font-medium">{clean}</span>
             </div>
           ))}

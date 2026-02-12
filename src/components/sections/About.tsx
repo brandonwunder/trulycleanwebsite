@@ -69,15 +69,15 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-20 md:py-28 bg-gradient-to-br from-white via-royal-blue/5 to-white relative overflow-hidden"
+      className="py-20 md:py-28 bg-gradient-to-br from-white via-rich-violet/5 to-white relative overflow-hidden"
     >
       {/* Background floating elements */}
       <motion.div
-        className="absolute top-0 left-10 w-96 h-96 bg-royal-blue/10 rounded-full blur-3xl"
+        className="absolute top-0 left-10 w-96 h-96 bg-rich-violet/10 rounded-full blur-3xl"
         animate={floatingAnimation}
       />
       <motion.div
-        className="absolute bottom-0 right-20 w-80 h-80 bg-ocean-blue/10 rounded-full blur-3xl"
+        className="absolute bottom-0 right-20 w-80 h-80 bg-deep-teal/10 rounded-full blur-3xl"
         animate={{ y: [0, -50, 0], transition: { duration: 6, repeat: Infinity, ease: 'easeInOut' } }}
       />
 
@@ -91,7 +91,7 @@ export default function About() {
             variants={staggerContainer}
           >
             <motion.div variants={slideLeft}>
-              <div className="inline-flex items-center gap-2 bg-royal-blue/10 text-royal-blue px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-royal-blue/20">
+              <div className="inline-flex items-center gap-2 bg-rich-violet/10 text-rich-violet px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-rich-violet/20">
                 <Heart className="w-4 h-4" />
                 <span className="text-sm font-semibold">Our Story</span>
               </div>
@@ -101,7 +101,7 @@ export default function About() {
               variants={slideLeft}
               className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-deep-indigo mb-6"
             >
-              About <span className="text-ocean-blue">Truly Clean</span>
+              About <span className="text-deep-teal">Truly Clean</span>
             </motion.h2>
 
             <motion.p
@@ -135,10 +135,10 @@ export default function About() {
                   <motion.div key={index} variants={slideLeft}>
                     <div className="glass p-4 rounded-xl flex items-start gap-4 hover:bg-white/90 transition-all duration-300 hover:shadow-md">
                       <motion.div
-                        className="bg-gradient-to-br from-ocean-blue/20 to-ocean-blue/5 p-3 rounded-lg flex-shrink-0"
+                        className="bg-gradient-to-br from-deep-teal/20 to-deep-teal/5 p-3 rounded-lg flex-shrink-0"
                         whileHover={{ scale: 1.1 }}
                       >
-                        <Icon className="w-6 h-6 text-ocean-blue" />
+                        <Icon className="w-6 h-6 text-deep-teal" />
                       </motion.div>
                       <div className="flex-1">
                         <h4 className="font-heading font-bold text-deep-indigo mb-0.5">
@@ -173,16 +173,16 @@ export default function About() {
                         className="bg-white/80 p-5 rounded-xl flex-shrink-0 group-hover:shadow-lg transition-all"
                         whileHover={{ scale: 1.1, rotate: 5 }}
                       >
-                        <Icon className="w-8 h-8 text-ocean-blue" />
+                        <Icon className="w-8 h-8 text-deep-teal" />
                       </motion.div>
                       <div className="flex-1">
                         {stat.isVerified ? (
-                          <div className="font-heading font-bold text-3xl text-ocean-blue mb-1 flex items-center gap-2">
+                          <div className="font-heading font-bold text-3xl text-deep-teal mb-1 flex items-center gap-2">
                             <CheckCircle className="w-8 h-8" />
                             Verified
                           </div>
                         ) : (
-                          <div className="font-heading font-bold text-3xl md:text-4xl text-ocean-blue mb-1">
+                          <div className="font-heading font-bold text-3xl md:text-4xl text-deep-teal mb-1">
                             <AnimatedCounter target={stat.target!} suffix={stat.suffix} />
                           </div>
                         )}
@@ -197,7 +197,7 @@ export default function About() {
             {/* Trust Badge Section */}
             <motion.div
               variants={slideRight}
-              className="bg-gradient-to-br from-ocean-blue/10 to-royal-blue/10 p-6 rounded-2xl border border-ocean-blue/20 mt-4"
+              className="bg-gradient-to-br from-deep-teal/10 to-rich-violet/10 p-6 rounded-2xl border border-deep-teal/20 mt-4"
             >
               <h4 className="font-heading font-bold text-deep-indigo mb-4 text-lg">
                 Why Trust Us?
@@ -217,7 +217,7 @@ export default function About() {
                     transition={{ delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <CheckCircle className="w-5 h-5 text-royal-blue flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-rich-violet flex-shrink-0" />
                     <span className="text-gray-700">{item}</span>
                   </motion.li>
                 ))}

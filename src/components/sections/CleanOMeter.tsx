@@ -35,7 +35,7 @@ export default function CleanOMeter() {
     >
       {/* Background accents */}
       <motion.div
-        className="absolute top-0 right-0 w-96 h-96 bg-ocean-blue/5 rounded-full blur-3xl pointer-events-none"
+        className="absolute top-0 right-0 w-96 h-96 bg-deep-teal/5 rounded-full blur-3xl pointer-events-none"
         animate={{ y: [0, 40, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
       />
@@ -51,7 +51,7 @@ export default function CleanOMeter() {
         <div className="text-center mb-16">
           <motion.div
             variants={slideUp}
-            className="inline-flex items-center gap-2 bg-royal-blue/10 text-royal-blue px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-royal-blue/20"
+            className="inline-flex items-center gap-2 bg-rich-violet/10 text-rich-violet px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-rich-violet/20"
           >
             <Check className="w-4 h-4" />
             <span className="font-semibold text-sm">Service Tiers</span>
@@ -63,7 +63,7 @@ export default function CleanOMeter() {
           >
             Choose Your
             <br />
-            <span className="text-royal-blue">Clean Level</span>
+            <span className="text-rich-violet">Clean Level</span>
           </motion.h2>
 
           <motion.p
@@ -84,7 +84,7 @@ export default function CleanOMeter() {
                   key={t.id}
                   className={({ selected }) =>
                     cn(
-                      'relative flex-1 min-w-max px-4 md:px-6 py-3 font-heading font-bold text-sm md:text-base rounded-xl transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-ocean-blue focus-visible:ring-offset-2',
+                      'relative flex-1 min-w-max px-4 md:px-6 py-3 font-heading font-bold text-sm md:text-base rounded-xl transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-deep-teal focus-visible:ring-offset-2',
                       selected
                         ? 'bg-white text-deep-indigo shadow-md'
                         : 'text-gray-600 hover:text-deep-indigo'
@@ -135,7 +135,7 @@ export default function CleanOMeter() {
                                   key={i}
                                   className="flex items-start gap-3 text-gray-700"
                                 >
-                                  <Check className="w-5 h-5 text-royal-blue flex-shrink-0 mt-0.5" />
+                                  <Check className="w-5 h-5 text-rich-violet flex-shrink-0 mt-0.5" />
                                   <span className="text-sm leading-relaxed">{item}</span>
                                 </li>
                               ))}
@@ -149,12 +149,12 @@ export default function CleanOMeter() {
                             {/* Duration Card */}
                             <div className="glass p-6 rounded-2xl">
                               <div className="flex items-center gap-3 mb-2">
-                                <Clock className="w-5 h-5 text-ocean-blue" />
+                                <Clock className="w-5 h-5 text-deep-teal" />
                                 <h3 className="font-heading font-bold text-deep-indigo">
                                   Duration
                                 </h3>
                               </div>
-                              <p className="text-3xl font-heading font-bold text-ocean-blue">
+                              <p className="text-3xl font-heading font-bold text-deep-teal">
                                 {t.duration}
                               </p>
                               <p className="text-sm text-gray-600 mt-1">
@@ -165,12 +165,12 @@ export default function CleanOMeter() {
                             {/* Frequency Card */}
                             <div className="glass p-6 rounded-2xl">
                               <div className="flex items-center gap-3 mb-2">
-                                <Calendar className="w-5 h-5 text-royal-blue" />
+                                <Calendar className="w-5 h-5 text-rich-violet" />
                                 <h3 className="font-heading font-bold text-deep-indigo">
                                   Frequency
                                 </h3>
                               </div>
-                              <p className="text-2xl font-heading font-bold text-royal-blue">
+                              <p className="text-2xl font-heading font-bold text-rich-violet">
                                 {t.frequency}
                               </p>
                               <p className="text-sm text-gray-600 mt-1">
@@ -182,7 +182,7 @@ export default function CleanOMeter() {
 
                         {/* CTA Column */}
                         <div className="md:col-span-1">
-                          <div className="glass-purple p-8 rounded-2xl h-full flex flex-col justify-center items-center text-center border-2 border-vibrant-purple/20">
+                          <div className="glass-violet p-8 rounded-2xl h-full flex flex-col justify-center items-center text-center border-2 border-rich-violet/20">
                             <h3 className="font-heading font-bold text-2xl text-deep-indigo mb-4">
                               Ready to get started?
                             </h3>
@@ -195,7 +195,7 @@ export default function CleanOMeter() {
                                   .getElementById('quote-form')
                                   ?.scrollIntoView({ behavior: 'smooth' })
                               }}
-                              className="w-full px-6 py-4 bg-gradient-to-r from-vibrant-purple to-vibrant-purple/80 text-white font-heading font-bold rounded-xl hover:shadow-xl transition-all duration-200 hover:scale-105 active:scale-95 text-lg"
+                              className="w-full px-6 py-4 bg-gradient-to-r from-rich-violet to-rich-violet/80 text-white font-heading font-bold rounded-xl hover:shadow-xl transition-all duration-200 hover:scale-105 active:scale-95 text-lg"
                             >
                               Get a Quote
                             </button>

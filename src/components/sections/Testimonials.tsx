@@ -97,15 +97,15 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="py-20 md:py-28 bg-gradient-to-br from-white via-ocean-blue/5 to-royal-blue/5 relative overflow-hidden"
+      className="py-20 md:py-28 bg-gradient-to-br from-white via-deep-teal/5 to-rich-violet/5 relative overflow-hidden"
     >
       {/* Background floating elements */}
       <motion.div
-        className="absolute top-20 right-10 w-72 h-72 bg-ocean-blue/10 rounded-full blur-3xl"
+        className="absolute top-20 right-10 w-72 h-72 bg-deep-teal/10 rounded-full blur-3xl"
         animate={floatingAnimation}
       />
       <motion.div
-        className="absolute -bottom-20 left-20 w-80 h-80 bg-royal-blue/10 rounded-full blur-3xl"
+        className="absolute -bottom-20 left-20 w-80 h-80 bg-rich-violet/10 rounded-full blur-3xl"
         animate={{ y: [0, -40, 0], transition: { duration: 6, repeat: Infinity, ease: 'easeInOut' } }}
       />
 
@@ -119,8 +119,8 @@ export default function Testimonials() {
           variants={staggerContainer}
         >
           <motion.div variants={slideUp}>
-            <div className="inline-flex items-center gap-2 bg-ocean-blue/10 text-ocean-blue px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-ocean-blue/20">
-              <Star className="w-4 h-4 fill-ocean-blue" />
+            <div className="inline-flex items-center gap-2 bg-deep-teal/10 text-deep-teal px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-deep-teal/20">
+              <Star className="w-4 h-4 fill-deep-teal" />
               <span className="text-sm font-semibold">Customer Testimonials</span>
             </div>
           </motion.div>
@@ -128,7 +128,7 @@ export default function Testimonials() {
             variants={slideUp}
             className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-deep-indigo mb-4"
           >
-            What Our <span className="text-ocean-blue">Customers Say</span>
+            What Our <span className="text-deep-teal">Customers Say</span>
           </motion.h2>
           <motion.p
             variants={slideUp}
@@ -159,7 +159,7 @@ export default function Testimonials() {
             <div>
               <div className="font-heading font-bold text-deep-indigo flex items-center gap-1.5">
                 Excellent
-                <BadgeCheck className="w-5 h-5 text-ocean-blue" />
+                <BadgeCheck className="w-5 h-5 text-deep-teal" />
               </div>
               <p className="text-gray-500 text-sm">Based on 15+ verified reviews</p>
             </div>
@@ -194,7 +194,7 @@ export default function Testimonials() {
               640: { slidesPerView: 2 },
               1024: { slidesPerView: 2.5 },
             }}
-            pagination={{ clickable: true, bulletActiveClass: 'bg-ocean-blue' }}
+            pagination={{ clickable: true, bulletActiveClass: 'bg-deep-teal' }}
             autoplay={{ delay: 5000, pauseOnMouseEnter: true }}
             loop
             onSlideChange={handleSlideChange}
@@ -209,10 +209,10 @@ export default function Testimonials() {
                   viewport={{ once: true }}
                   className="h-full"
                 >
-                  <div className="bg-white/90 backdrop-blur-sm p-8 rounded-2xl h-full flex flex-col relative group hover:bg-white transition-all duration-300 hover:shadow-xl border-l-4 border-ocean-blue shadow-md">
+                  <div className="bg-white/90 backdrop-blur-sm p-8 rounded-2xl h-full flex flex-col relative group hover:bg-white transition-all duration-300 hover:shadow-xl border-l-4 border-deep-teal shadow-md">
                     {/* Quote Icon */}
                     <div className="absolute top-6 right-6 opacity-10 group-hover:opacity-20 transition-opacity">
-                      <Quote className="w-12 h-12 text-ocean-blue" />
+                      <Quote className="w-12 h-12 text-deep-teal" />
                     </div>
 
                     {/* Star Rating */}
@@ -228,7 +228,7 @@ export default function Testimonials() {
                     </p>
 
                     {/* Divider */}
-                    <div className="h-px bg-gradient-to-r from-ocean-blue/0 via-ocean-blue/20 to-ocean-blue/0 mb-6" />
+                    <div className="h-px bg-gradient-to-r from-deep-teal/0 via-deep-teal/20 to-deep-teal/0 mb-6" />
 
                     {/* Customer Info */}
                     <div className="flex items-center gap-4">
@@ -241,7 +241,7 @@ export default function Testimonials() {
                       <div className="flex-1 min-w-0">
                         <h4 className="font-heading font-bold text-deep-indigo flex items-center gap-1.5">
                           {testimonial.name}
-                          <BadgeCheck className="w-4 h-4 text-ocean-blue" />
+                          <BadgeCheck className="w-4 h-4 text-deep-teal" />
                         </h4>
                         <p className="text-sm text-gray-600 truncate">{testimonial.service}</p>
                       </div>
@@ -263,7 +263,7 @@ export default function Testimonials() {
           <motion.button
             onClick={handlePrev}
             disabled={isBeginning}
-            className="absolute -left-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white shadow-lg text-ocean-blue hover:bg-ocean-blue hover:text-white transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed md:-left-14"
+            className="absolute -left-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white shadow-lg text-deep-teal hover:bg-deep-teal hover:text-white transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed md:-left-14"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             aria-label="Previous testimonial"
@@ -273,7 +273,7 @@ export default function Testimonials() {
           <motion.button
             onClick={handleNext}
             disabled={isEnd}
-            className="absolute -right-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white shadow-lg text-ocean-blue hover:bg-ocean-blue hover:text-white transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed md:-right-14"
+            className="absolute -right-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white shadow-lg text-deep-teal hover:bg-deep-teal hover:text-white transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed md:-right-14"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             aria-label="Next testimonial"
@@ -300,7 +300,7 @@ export default function Testimonials() {
               variants={slideUp}
               className="glass p-4 rounded-xl text-center"
             >
-              <div className="font-heading font-bold text-2xl text-ocean-blue mb-1 flex items-center justify-center gap-1">
+              <div className="font-heading font-bold text-2xl text-deep-teal mb-1 flex items-center justify-center gap-1">
                 {stat.star && <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />}
                 {stat.value}
               </div>

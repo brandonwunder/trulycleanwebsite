@@ -12,7 +12,7 @@ export default function GuaranteeCertificate() {
     >
       {/* Background accents */}
       <motion.div
-        className="absolute top-0 left-1/4 w-80 h-80 bg-ocean-blue/5 rounded-full blur-3xl pointer-events-none"
+        className="absolute top-0 left-1/4 w-80 h-80 bg-deep-teal/5 rounded-full blur-3xl pointer-events-none"
         animate={{ y: [0, 50, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
       />
@@ -27,7 +27,7 @@ export default function GuaranteeCertificate() {
         {/* Certificate Card */}
         <motion.div variants={slideUp} className="relative group">
           {/* Gradient border effect */}
-          <div className="absolute -inset-[3px] bg-gradient-to-r from-ocean-blue via-royal-blue to-ocean-blue rounded-3xl opacity-40 group-hover:opacity-60 transition-opacity duration-500 blur-sm" />
+          <div className="absolute -inset-[3px] bg-gradient-to-r from-deep-teal via-rich-violet to-deep-teal rounded-3xl opacity-40 group-hover:opacity-60 transition-opacity duration-500 blur-sm" />
 
           {/* Certificate content */}
           <div className="relative glass-dark p-12 md:p-16 rounded-3xl border-2 border-white/10 backdrop-blur-xl">
@@ -37,19 +37,19 @@ export default function GuaranteeCertificate() {
               animate={{ rotate: [0, 5, -5, 0] }}
               transition={{ duration: 4, repeat: Infinity }}
             >
-              <Award className="w-8 h-8 text-ocean-blue" />
+              <Award className="w-8 h-8 text-deep-teal" />
             </motion.div>
             <motion.div
               className="absolute top-6 right-6 opacity-30"
               animate={{ rotate: [0, -5, 5, 0] }}
               transition={{ duration: 4, repeat: Infinity }}
             >
-              <Award className="w-8 h-8 text-royal-blue" />
+              <Award className="w-8 h-8 text-rich-violet" />
             </motion.div>
 
             {/* Main seal icon */}
             <motion.div
-              className="w-24 h-24 mx-auto mb-8 bg-gradient-to-br from-ocean-blue to-royal-blue rounded-full flex items-center justify-center shadow-2xl"
+              className="w-24 h-24 mx-auto mb-8 bg-gradient-to-br from-deep-teal to-rich-violet rounded-full flex items-center justify-center shadow-2xl"
               animate={{ rotate: [0, 5, -5, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
             >
@@ -80,7 +80,7 @@ export default function GuaranteeCertificate() {
                   transition={{ delay: i * 0.1 }}
                   className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm"
                 >
-                  <item.icon className="w-4 h-4 text-ocean-blue" />
+                  <item.icon className="w-4 h-4 text-deep-teal" />
                   <span className="text-sm font-semibold text-white">{item.text}</span>
                 </motion.div>
               ))}

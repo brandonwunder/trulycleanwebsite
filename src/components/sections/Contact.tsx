@@ -30,15 +30,15 @@ export default function Contact() {
   return (
     <section
       id="quote-form"
-      className="py-20 md:py-28 bg-gradient-to-br from-gray-50 via-ocean-blue/5 to-gray-50 relative overflow-hidden"
+      className="py-20 md:py-28 bg-gradient-to-br from-gray-50 via-deep-teal/5 to-gray-50 relative overflow-hidden"
     >
       {/* Background floating elements */}
       <motion.div
-        className="absolute top-0 right-20 w-72 h-72 bg-ocean-blue/10 rounded-full blur-3xl"
+        className="absolute top-0 right-20 w-72 h-72 bg-deep-teal/10 rounded-full blur-3xl"
         animate={floatingAnimation}
       />
       <motion.div
-        className="absolute bottom-0 left-10 w-80 h-80 bg-royal-blue/10 rounded-full blur-3xl"
+        className="absolute bottom-0 left-10 w-80 h-80 bg-rich-violet/10 rounded-full blur-3xl"
         animate={{ y: [0, -50, 0], transition: { duration: 6, repeat: Infinity, ease: 'easeInOut' } }}
       />
 
@@ -52,7 +52,7 @@ export default function Contact() {
           variants={staggerContainer}
         >
           <motion.div variants={slideUp}>
-            <div className="inline-flex items-center gap-2 bg-ocean-blue/10 text-ocean-blue px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-ocean-blue/20">
+            <div className="inline-flex items-center gap-2 bg-deep-teal/10 text-deep-teal px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-deep-teal/20">
               <Mail className="w-4 h-4" />
               <span className="text-sm font-semibold">Let's Get Started</span>
             </div>
@@ -61,7 +61,7 @@ export default function Contact() {
             variants={slideUp}
             className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-deep-indigo mb-4"
           >
-            Get Your <span className="text-ocean-blue">Free Quote</span>
+            Get Your <span className="text-deep-teal">Free Quote</span>
           </motion.h2>
           <motion.p
             variants={slideUp}
@@ -88,7 +88,7 @@ export default function Contact() {
               {trustBadges.map((badge, i) => (
                 <div
                   key={i}
-                  className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-ocean-blue/10 border border-ocean-blue/20 backdrop-blur-sm"
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-deep-teal/10 border border-deep-teal/20 backdrop-blur-sm"
                 >
                   <badge.icon className={`w-3 h-3 text-${badge.color}`} />
                   <span className="text-xs font-semibold text-gray-700">{badge.text}</span>
@@ -97,7 +97,7 @@ export default function Contact() {
             </motion.div>
 
             {/* Gradient border effect */}
-            <div className="absolute -inset-[1px] bg-gradient-to-br from-ocean-blue via-royal-blue to-ocean-blue rounded-2xl opacity-20" />
+            <div className="absolute -inset-[1px] bg-gradient-to-br from-deep-teal via-rich-violet to-deep-teal rounded-2xl opacity-20" />
             <div className="relative">
               <QuoteForm />
             </div>
@@ -116,7 +116,7 @@ export default function Contact() {
               variants={slideRight}
               className="hidden lg:block"
             >
-              <div className="glass p-4 rounded-xl border border-ocean-blue/10">
+              <div className="glass p-4 rounded-xl border border-deep-teal/10">
                 <div className="flex gap-0.5 mb-2">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
@@ -144,17 +144,17 @@ export default function Contact() {
                       <Card variant="glass" size="md" hover="lift" className="group" interactive>
                         <div className="flex items-start gap-4">
                           <motion.div
-                            className="bg-gradient-to-br from-ocean-blue/20 to-ocean-blue/5 p-3 rounded-lg flex-shrink-0 group-hover:shadow-lg transition-all"
+                            className="bg-gradient-to-br from-deep-teal/20 to-deep-teal/5 p-3 rounded-lg flex-shrink-0 group-hover:shadow-lg transition-all"
                             whileHover={{ scale: 1.1 }}
                           >
-                            <Icon className="w-6 h-6 text-ocean-blue" />
+                            <Icon className="w-6 h-6 text-deep-teal" />
                           </motion.div>
                           <div className="flex-1 min-w-0">
                             <h4 className="font-semibold text-deep-indigo mb-1">{method.title}</h4>
                             {method.href ? (
                               <a
                                 href={method.href}
-                                className="text-gray-600 hover:text-ocean-blue transition break-all"
+                                className="text-gray-600 hover:text-deep-teal transition break-all"
                               >
                                 {method.value}
                               </a>
@@ -192,7 +192,7 @@ export default function Contact() {
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 + 0.1, type: 'spring', stiffness: 500 }}
                       >
-                        <CheckCircle className="w-5 h-5 text-ocean-blue flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="w-5 h-5 text-deep-teal flex-shrink-0 mt-0.5" />
                       </motion.div>
                       <span className="text-gray-700">{benefit}</span>
                     </motion.li>

@@ -33,7 +33,7 @@ export default function Loading({
           animate={{ rotate: 360 }}
           transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
         >
-          <Sparkles className="w-5 h-5 text-ocean-blue" />
+          <Sparkles className="w-5 h-5 text-deep-teal" />
         </motion.div>
         {text && <span className="text-sm text-gray-600">{text}</span>}
       </div>
@@ -45,14 +45,14 @@ export default function Loading({
       <div className={`${sizeClasses[size]} relative`}>
         {/* Rotating outer ring */}
         <motion.div
-          className="absolute inset-0 rounded-full border-3 border-transparent border-t-ocean-blue border-r-ocean-blue"
+          className="absolute inset-0 rounded-full border-3 border-transparent border-t-deep-teal border-r-deep-teal"
           animate={{ rotate: 360 }}
           transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
         />
 
         {/* Rotating inner ring (slower) */}
         <motion.div
-          className="absolute inset-2 rounded-full border-2 border-transparent border-b-royal-blue border-l-royal-blue"
+          className="absolute inset-2 rounded-full border-2 border-transparent border-b-rich-violet border-l-rich-violet"
           animate={{ rotate: -360 }}
           transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
         />
@@ -63,7 +63,7 @@ export default function Loading({
           animate={{ scale: [1, 1.1, 1] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          <Sparkles className="w-1/2 h-1/2 text-ocean-blue" />
+          <Sparkles className="w-1/2 h-1/2 text-deep-teal" />
         </motion.div>
       </div>
 

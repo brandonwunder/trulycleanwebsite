@@ -38,8 +38,8 @@ export default function ChecklistTabs() {
 
   const tierColors: Record<TierFilter, string> = {
     all: 'text-gray-600 bg-gray-100 hover:bg-gray-200',
-    standard: 'text-royal-blue bg-royal-blue/10 hover:bg-royal-blue/20',
-    deep: 'text-vibrant-purple bg-vibrant-purple/10 hover:bg-vibrant-purple/20',
+    standard: 'text-rich-violet bg-rich-violet/10 hover:bg-rich-violet/20',
+    deep: 'text-light-teal bg-light-teal/10 hover:bg-light-teal/20',
     moveout: 'text-deep-indigo bg-deep-indigo/10 hover:bg-deep-indigo/20',
   }
 
@@ -50,7 +50,7 @@ export default function ChecklistTabs() {
     >
       {/* Background accents */}
       <motion.div
-        className="absolute bottom-0 left-0 w-96 h-96 bg-royal-blue/5 rounded-full blur-3xl pointer-events-none"
+        className="absolute bottom-0 left-0 w-96 h-96 bg-rich-violet/5 rounded-full blur-3xl pointer-events-none"
         animate={{ x: [0, 50, 0], y: [0, -50, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
       />
@@ -66,7 +66,7 @@ export default function ChecklistTabs() {
         <div className="text-center mb-16">
           <motion.div
             variants={slideUp}
-            className="inline-flex items-center gap-2 bg-ocean-blue/10 text-ocean-blue px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-ocean-blue/20"
+            className="inline-flex items-center gap-2 bg-deep-teal/10 text-deep-teal px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-deep-teal/20"
           >
             <Check className="w-4 h-4" />
             <span className="font-semibold text-sm">Service Details</span>
@@ -78,7 +78,7 @@ export default function ChecklistTabs() {
           >
             What We Actually
             <br />
-            <span className="text-royal-blue">Clean</span>
+            <span className="text-rich-violet">Clean</span>
           </motion.h2>
 
           <motion.p
@@ -99,7 +99,7 @@ export default function ChecklistTabs() {
                   key={room.room}
                   className={({ selected }) =>
                     cn(
-                      'relative flex-1 min-w-max px-4 md:px-5 py-2.5 font-heading font-bold text-sm rounded-xl transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-ocean-blue',
+                      'relative flex-1 min-w-max px-4 md:px-5 py-2.5 font-heading font-bold text-sm rounded-xl transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-deep-teal',
                       selected
                         ? 'bg-white text-deep-indigo shadow-sm'
                         : 'text-gray-600 hover:text-deep-indigo'
@@ -170,7 +170,7 @@ export default function ChecklistTabs() {
                               exit="exit"
                               className="flex items-start gap-3 p-4 glass rounded-lg hover:shadow-md transition-all"
                             >
-                              <item.icon className="w-5 h-5 text-ocean-blue flex-shrink-0 mt-0.5" />
+                              <item.icon className="w-5 h-5 text-deep-teal flex-shrink-0 mt-0.5" />
                               <div className="flex-1 min-w-0">
                                 <p className="text-gray-700 text-sm md:text-base leading-relaxed">
                                   {item.task}
@@ -219,7 +219,7 @@ export default function ChecklistTabs() {
         {/* Info Box */}
         <motion.div
           variants={slideUp}
-          className="mt-12 p-6 bg-ocean-blue/10 border border-ocean-blue/20 rounded-2xl"
+          className="mt-12 p-6 bg-deep-teal/10 border border-deep-teal/20 rounded-2xl"
         >
           <p className="text-deep-indigo font-medium">
             <span className="font-bold">Pro tip:</span> Use the filter buttons above to see what's

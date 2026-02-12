@@ -49,7 +49,7 @@ export default function EmptyState({
       {action && (
         <motion.button
           onClick={action.onClick}
-          className="bg-gradient-to-r from-ocean-blue to-royal-blue text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all"
+          className="bg-gradient-to-r from-deep-teal to-rich-violet text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >

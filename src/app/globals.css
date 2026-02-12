@@ -13,16 +13,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 199 89% 48%;  /* Ocean Blue */
+    --primary: 186 91% 35%;  /* Deep Teal #0891B2 */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 221 83% 53%;  /* Royal Blue */
+    --secondary: 258 90% 66%;  /* Rich Violet #8B5CF6 */
     --secondary-foreground: 0 0% 100%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 271 91% 65%;  /* Vibrant Purple */
+    --accent: 187 85% 53%;  /* Light Teal #22D3EE */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -30,7 +30,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 199 89% 48%;
+    --ring: 186 91% 35%;
 
     --radius: 0.5rem;
   }
@@ -45,16 +45,16 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 96.1%;
 
-    --primary: 199 89% 48%;
+    --primary: 186 91% 35%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 221 83% 53%;
+    --secondary: 258 90% 66%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 217.2 16.6% 41.2%;
     --muted-foreground: 212.7 26.8% 83.9%;
 
-    --accent: 271 91% 65%;
+    --accent: 187 85% 53%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -62,7 +62,7 @@
 
     --border: 217.2 16.6% 41.2%;
     --input: 217.2 16.6% 41.2%;
-    --ring: 199 89% 48%;
+    --ring: 186 91% 35%;
   }
 }
 
@@ -85,11 +85,11 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-ocean-blue rounded-full;
+  @apply bg-deep-teal rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-ocean-blue/80;
+  @apply bg-deep-teal/80;
 }
 
 /* Smooth scroll behavior */
@@ -99,7 +99,7 @@ html {
 
 /* Focus visible styles for accessibility */
 :focus-visible {
-  @apply outline-2 outline-offset-2 outline-ocean-blue;
+  @apply outline-2 outline-offset-2 outline-deep-teal;
 }
 
 /* Swiper pagination bullet overrides */
@@ -107,7 +107,7 @@ html {
   @apply bg-gray-300 opacity-100;
 }
 .swiper-pagination-bullet-active {
-  @apply bg-ocean-blue;
+  @apply bg-deep-teal;
 }
 
 /* Before/After slider touch area */
@@ -129,7 +129,7 @@ html {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(8, 145, 178, 0.15) 0%, transparent 70%);
   animation: float-sparkle-1 8s ease-in-out infinite;
   top: 10%;
   left: 10%;
@@ -142,7 +142,7 @@ html {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
   animation: float-sparkle-2 10s ease-in-out infinite;
   right: 10%;
   bottom: 10%;
@@ -155,9 +155,9 @@ html {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 20% 30%, rgba(14, 165, 233, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.2) 0%, transparent 40%),
-    radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.15) 0%, transparent 60%);
+    radial-gradient(circle at 20% 30%, rgba(8, 145, 178, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.2) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(34, 211, 238, 0.15) 0%, transparent 60%);
   pointer-events: none;
   animation: sparkle-pulse 3s ease-in-out infinite;
 }
@@ -222,8 +222,8 @@ html {
     45deg,
     transparent,
     transparent 10px,
-    rgba(14, 165, 233, 0.02) 10px,
-    rgba(14, 165, 233, 0.02) 20px
+    rgba(8, 145, 178, 0.02) 10px,
+    rgba(8, 145, 178, 0.02) 20px
   );
   pointer-events: none;
 }

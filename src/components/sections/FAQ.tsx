@@ -71,7 +71,7 @@ function FAQItem({ item, index }: { item: typeof faqItems[0]; index: number }) {
       variants={slideUp}
       className={`rounded-xl border transition-all duration-200 ${
         isOpen
-          ? 'bg-white shadow-md border-ocean-blue/20'
+          ? 'bg-white shadow-md border-deep-teal/20'
           : 'bg-white/60 border-gray-100 hover:border-gray-200 hover:shadow-sm'
       }`}
     >
@@ -81,14 +81,14 @@ function FAQItem({ item, index }: { item: typeof faqItems[0]; index: number }) {
       >
         <div className="flex items-center gap-3">
           <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors ${
-            isOpen ? 'bg-ocean-blue/10' : 'bg-gray-100'
+            isOpen ? 'bg-deep-teal/10' : 'bg-gray-100'
           }`}>
-            <span className={`font-heading font-bold text-sm ${isOpen ? 'text-ocean-blue' : 'text-gray-400'}`}>
+            <span className={`font-heading font-bold text-sm ${isOpen ? 'text-deep-teal' : 'text-gray-400'}`}>
               {String(index + 1).padStart(2, '0')}
             </span>
           </div>
           <h3 className={`font-heading font-semibold text-base md:text-lg transition-colors ${
-            isOpen ? 'text-ocean-blue' : 'text-deep-indigo'
+            isOpen ? 'text-deep-teal' : 'text-deep-indigo'
           }`}>
             {item.question}
           </h3>
@@ -98,7 +98,7 @@ function FAQItem({ item, index }: { item: typeof faqItems[0]; index: number }) {
           transition={{ duration: 0.2 }}
           className="flex-shrink-0"
         >
-          <ChevronDown className={`w-5 h-5 transition-colors ${isOpen ? 'text-ocean-blue' : 'text-gray-400'}`} />
+          <ChevronDown className={`w-5 h-5 transition-colors ${isOpen ? 'text-deep-teal' : 'text-gray-400'}`} />
         </motion.div>
       </button>
 
@@ -134,7 +134,7 @@ export default function FAQ() {
       <section id="faq" className="relative py-20 md:py-28 overflow-hidden bg-white">
         {/* Background blobs */}
         <motion.div
-          className="absolute top-20 left-10 w-32 h-32 bg-ocean-blue/5 rounded-full blur-3xl pointer-events-none"
+          className="absolute top-20 left-10 w-32 h-32 bg-deep-teal/5 rounded-full blur-3xl pointer-events-none"
           animate={{ y: [0, -15, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
         />
@@ -150,7 +150,7 @@ export default function FAQ() {
           <div className="text-center mb-16">
             <motion.div
               variants={slideUp}
-              className="inline-flex items-center gap-2 bg-ocean-blue/10 text-ocean-blue px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-ocean-blue/20"
+              className="inline-flex items-center gap-2 bg-deep-teal/10 text-deep-teal px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-deep-teal/20"
             >
               <MessageCircle className="w-4 h-4" />
               <span className="font-semibold text-sm">Common Questions</span>
@@ -160,7 +160,7 @@ export default function FAQ() {
               className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-deep-indigo mb-4"
             >
               Got{' '}
-              <span className="text-ocean-blue">Questions?</span>
+              <span className="text-deep-teal">Questions?</span>
             </motion.h2>
             <motion.p
               variants={slideUp}
@@ -182,11 +182,11 @@ export default function FAQ() {
             variants={slideUp}
             className="mt-12 text-center"
           >
-            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-ocean-blue/5 to-royal-blue/5 px-6 py-4 rounded-2xl border border-ocean-blue/10">
-              <HelpCircle className="w-5 h-5 text-ocean-blue" />
+            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-deep-teal/5 to-rich-violet/5 px-6 py-4 rounded-2xl border border-deep-teal/10">
+              <HelpCircle className="w-5 h-5 text-deep-teal" />
               <p className="text-gray-600">
                 Still have questions?{' '}
-                <a href="tel:(602) 695-0607" className="text-ocean-blue font-semibold hover:underline">
+                <a href="tel:(602) 695-0607" className="text-deep-teal font-semibold hover:underline">
                   Call us at (602) 695-0607
                 </a>
               </p>

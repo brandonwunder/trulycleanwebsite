@@ -21,10 +21,10 @@ const steps = [
     title: 'Book Online',
     description: 'Fill out our quick form or give us a call. We\'ll match you with the perfect cleaning plan in minutes.',
     gradient: 'from-white to-gray-50',
-    iconColor: 'text-ocean-blue',
-    accentColor: 'bg-ocean-blue',
-    glowColor: 'shadow-ocean-blue/20',
-    borderGradient: 'from-ocean-blue via-ocean-blue/80 to-ocean-blue',
+    iconColor: 'text-deep-teal',
+    accentColor: 'bg-deep-teal',
+    glowColor: 'shadow-deep-teal/20',
+    borderGradient: 'from-deep-teal via-deep-teal/80 to-deep-teal',
   },
   {
     number: '02',
@@ -32,10 +32,10 @@ const steps = [
     title: 'We Clean',
     description: 'Our trained, background-checked team arrives on time with eco-friendly products and professional equipment.',
     gradient: 'from-white to-gray-50',
-    iconColor: 'text-royal-blue',
-    accentColor: 'bg-royal-blue',
-    glowColor: 'shadow-royal-blue/20',
-    borderGradient: 'from-royal-blue via-royal-blue/80 to-royal-blue',
+    iconColor: 'text-rich-violet',
+    accentColor: 'bg-rich-violet',
+    glowColor: 'shadow-rich-violet/20',
+    borderGradient: 'from-rich-violet via-rich-violet/80 to-rich-violet',
   },
   {
     number: '03',
@@ -43,23 +43,23 @@ const steps = [
     title: 'You Enjoy',
     description: 'Come home to a sparkling space. If you\'re not 100% happy, we\'ll re-clean for free. That\'s our promise.',
     gradient: 'from-white to-gray-50',
-    iconColor: 'text-vibrant-purple',
-    accentColor: 'bg-vibrant-purple',
-    glowColor: 'shadow-vibrant-purple/20',
-    borderGradient: 'from-vibrant-purple via-vibrant-purple/80 to-vibrant-purple',
+    iconColor: 'text-light-teal',
+    accentColor: 'bg-light-teal',
+    glowColor: 'shadow-light-teal/20',
+    borderGradient: 'from-light-teal via-light-teal/80 to-light-teal',
   },
 ]
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-white via-royal-blue/5 to-white">
+    <section id="how-it-works" className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-white via-rich-violet/5 to-white">
       {/* Background floating blobs */}
       <motion.div
-        className="absolute top-20 right-10 w-32 h-32 bg-royal-blue/10 rounded-full blur-3xl pointer-events-none"
+        className="absolute top-20 right-10 w-32 h-32 bg-rich-violet/10 rounded-full blur-3xl pointer-events-none"
         animate={floatingAnimation}
       />
       <motion.div
-        className="absolute bottom-20 left-10 w-24 h-24 bg-ocean-blue/10 rounded-full blur-3xl pointer-events-none"
+        className="absolute bottom-20 left-10 w-24 h-24 bg-deep-teal/10 rounded-full blur-3xl pointer-events-none"
         animate={{ y: [0, 20, 0], transition: { duration: 5, repeat: Infinity, ease: 'easeInOut' } }}
       />
 
@@ -74,7 +74,7 @@ export default function HowItWorks() {
         <div className="text-center mb-16 md:mb-20">
           <motion.div
             variants={slideUp}
-            className="inline-flex items-center gap-2 bg-royal-blue/10 text-royal-blue px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-royal-blue/20"
+            className="inline-flex items-center gap-2 bg-rich-violet/10 text-rich-violet px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-rich-violet/20"
           >
             <Sparkles className="w-4 h-4" />
             <span className="font-semibold text-sm">Simple Process</span>
@@ -84,7 +84,7 @@ export default function HowItWorks() {
             className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-deep-indigo mb-4"
           >
             Sparkling Clean in{' '}
-            <span className="text-royal-blue">3 Easy Steps</span>
+            <span className="text-rich-violet">3 Easy Steps</span>
           </motion.h2>
           <motion.p
             variants={slideUp}
@@ -108,7 +108,7 @@ export default function HowItWorks() {
             >
               <motion.path
                 d="M 0 4 L 100 4"
-                stroke="#0EA5E9"
+                stroke="#0891B2"
                 strokeWidth="0.5"
                 strokeDasharray="2 2"
                 fill="none"
