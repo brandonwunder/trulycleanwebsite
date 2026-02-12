@@ -1,83 +1,180 @@
 'use client'
 
-import { useState } from 'react'
-import { TrulyCleanLogo } from '@/components/Logo'
+import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Menu, X, Sparkles } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+
+const navLinks = [
+  { label: 'Services', href: '#services' },
+  { label: 'Testimonials', href: '#testimonials' },
+  { label: 'About', href: '#about' },
+  { label: 'Contact', href: '#quote-form' },
+]
 
 export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const phone = process.env.NEXT_PUBLIC_COMPANY_PHONE || '(602) 695-0607'
+  const [isOpen, setIsOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [activeSection, setActiveSection] = useState('')
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50)
+
+      // Update active section based on scroll position
+      const sections = ['services', 'testimonials', 'about', 'quote-form']
+      for (const section of sections) {
+        const element = document.getElementById(section)
+        if (element) {
+          const rect = element.getBoundingClientRect()
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            setActiveSection(section)
+            break
+          }
+        }
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const handleNavClick = (href: string) => {
+    const id = href.replace('#', '')
+    const element = document.getElementById(id)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+      setIsOpen(false)
+    }
+  }
+
+  const handleLogoClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md">
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          <div className="flex-shrink-0">
-            <TrulyCleanLogo variant="full" className="h-12 w-auto" />
-          </div>
+    <motion.header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'glass shadow-lg' : 'bg-transparent'
+      }`}
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+    >
+      <div className="container mx-auto px-4 max-w-7xl">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
+          <motion.button
+            onClick={handleLogoClick}
+            className="flex items-center gap-2 group"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <div className="bg-gradient-to-br from-vibrant-teal to-vibrant-green w-10 h-10 rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-[0_0_25px_rgba(6,182,212,0.4)] transition-all">
+              <Sparkles className="w-6 h-6 text-white" />
+            </div>
+            <span className="font-heading font-bold text-xl text-navy-dark hidden sm:inline">
+              Truly Clean
+            </span>
+          </motion.button>
 
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#services" className="text-navy-dark hover:text-vibrant-teal transition">
-              Services
-            </a>
-            <a href="#testimonials" className="text-navy-dark hover:text-vibrant-teal transition">
-              Testimonials
-            </a>
-            <a href="#about" className="text-navy-dark hover:text-vibrant-teal transition">
-              About
-            </a>
+            {navLinks.map((link) => (
+              <motion.button
+                key={link.href}
+                onClick={() => handleNavClick(link.href)}
+                className="relative text-gray-700 font-medium hover:text-vibrant-teal transition-colors"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {link.label}
+                {activeSection === link.href.replace('#', '') && (
+                  <motion.div
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-vibrant-teal to-vibrant-green"
+                    layoutId="activeUnderline"
+                    transition={{ duration: 0.3 }}
+                  />
+                )}
+              </motion.button>
+            ))}
           </nav>
 
-          <div className="hidden md:flex items-center gap-4">
-            <a
-              href={`tel:${phone}`}
-              className="text-navy-dark hover:text-vibrant-teal transition font-semibold"
+          {/* Desktop CTA Button */}
+          <div className="hidden md:block">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              {phone}
-            </a>
-            <button
-              onClick={() => document.getElementById('quote-form')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-vibrant-teal hover:bg-vibrant-teal/90 text-white px-6 py-2 rounded-lg transition"
-            >
-              Get Free Quote
-            </button>
+              <Button
+                variant="primary"
+                onClick={() => handleNavClick('#quote-form')}
+                className="group"
+              >
+                Get Quote
+                <Sparkles className="w-4 h-4 group-hover:scale-110 transition-transform" />
+              </Button>
+            </motion.div>
           </div>
 
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2"
+          {/* Mobile Menu Button */}
+          <motion.button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden p-2 hover:bg-white/20 rounded-lg transition-colors"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
           >
-            {mobileMenuOpen ? '✕' : '☰'}
-          </button>
+            {isOpen ? (
+              <X className="w-6 h-6 text-navy-dark" />
+            ) : (
+              <Menu className="w-6 h-6 text-navy-dark" />
+            )}
+          </motion.button>
         </div>
 
-        {mobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t pt-4">
-            <nav className="flex flex-col gap-4">
-              <a href="#services" className="text-navy-dark hover:text-vibrant-teal transition">
-                Services
-              </a>
-              <a href="#testimonials" className="text-navy-dark hover:text-vibrant-teal transition">
-                Testimonials
-              </a>
-              <a href="#about" className="text-navy-dark hover:text-vibrant-teal transition">
-                About
-              </a>
-              <a href={`tel:${phone}`} className="font-semibold text-vibrant-teal">
-                {phone}
-              </a>
-              <button
-                onClick={() => {
-                  document.getElementById('quote-form')?.scrollIntoView({ behavior: 'smooth' })
-                  setMobileMenuOpen(false)
-                }}
-                className="bg-vibrant-teal hover:bg-vibrant-teal/90 text-white px-6 py-2 rounded-lg transition w-full"
-              >
-                Get Free Quote
-              </button>
-            </nav>
-          </div>
-        )}
+        {/* Mobile Navigation */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="md:hidden overflow-hidden"
+            >
+              <div className="glass rounded-b-2xl border-t border-white/10 p-4 space-y-3">
+                {navLinks.map((link, index) => (
+                  <motion.button
+                    key={link.href}
+                    onClick={() => handleNavClick(link.href)}
+                    className="block w-full text-left px-4 py-3 rounded-lg hover:bg-white/20 text-gray-700 font-medium transition-colors"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.05 }}
+                  >
+                    {link.label}
+                  </motion.button>
+                ))}
+
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: navLinks.length * 0.05 }}
+                  className="pt-3 border-t border-white/10"
+                >
+                  <Button
+                    variant="primary"
+                    onClick={() => handleNavClick('#quote-form')}
+                    className="w-full"
+                  >
+                    Get Quote
+                  </Button>
+                </motion.div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-    </header>
+    </motion.header>
   )
 }
