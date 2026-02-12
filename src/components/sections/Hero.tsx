@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Sparkles, Phone, MapPin, Users, Heart, ChevronDown, Shield, ArrowRight } from 'lucide-react'
+import { Sparkles, Phone, MapPin, Users, Heart, ChevronDown, Shield } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { floatingAnimationSlow } from '@/lib/animations'
 
@@ -172,36 +172,6 @@ export default function Hero() {
             ))}
           </motion.div>
 
-          {/* Mini Instant Quote Card */}
-          <motion.div variants={itemVariants} className="mt-16 max-w-md mx-auto">
-            <div className="glass p-6 rounded-2xl border-2 border-vibrant-teal/20 shadow-xl">
-              <h3 className="font-heading font-bold text-xl text-navy-dark mb-4 text-center">
-                Quick Quote Preview
-              </h3>
-              <div className="space-y-3">
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  className="w-full px-4 py-2.5 bg-white/70 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vibrant-teal focus:outline-none transition-all"
-                />
-                <select className="w-full px-4 py-2.5 bg-white/70 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vibrant-teal focus:outline-none transition-all">
-                  <option value="">Select Service Type</option>
-                  <option value="residential">🏠 Residential</option>
-                  <option value="commercial">🏢 Commercial</option>
-                </select>
-                <button
-                  onClick={scrollToQuote}
-                  className="w-full px-4 py-2.5 bg-gradient-to-r from-vibrant-teal to-vibrant-teal/80 text-white font-heading font-bold rounded-lg hover:shadow-lg transition-all duration-200 hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
-                >
-                  Get Instant Estimate
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
-              <p className="text-xs text-gray-500 text-center mt-3">
-                No credit card required • Free quote in 60 seconds
-              </p>
-            </div>
-          </motion.div>
         </div>
       </motion.div>
 
