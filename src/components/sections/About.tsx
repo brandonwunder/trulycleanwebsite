@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion'
 import {
   CheckCircle,
@@ -112,6 +113,33 @@ export default function About() {
               healthy, happy life. Our mission is to provide exceptional cleaning
               services that exceed expectations every single time.
             </motion.p>
+
+            {/* Owner Photo */}
+            <motion.div
+              variants={slideLeft}
+              className="float-right ml-6 mb-6 w-48 md:w-56 mt-2"
+            >
+              <div className="relative">
+                <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-2xl border-4 border-white/50">
+                  <Image
+                    src="/images/sonya.jpg"
+                    alt="Sonya Ansell, Founder and Owner of Truly Clean"
+                    fill
+                    sizes="(max-width: 768px) 192px, 224px"
+                    style={{ objectFit: 'cover' }}
+                    quality={90}
+                    className="transition-transform duration-300 hover:scale-105"
+                  />
+                </div>
+                <div className="absolute -bottom-3 -right-3 bg-gradient-to-br from-deep-teal to-rich-violet p-3 rounded-xl shadow-lg">
+                  <Heart className="w-6 h-6 text-white" />
+                </div>
+              </div>
+              <div className="text-center mt-4 glass rounded-lg p-3">
+                <p className="font-heading font-bold text-deep-indigo text-sm">Sonya Ansell</p>
+                <p className="text-xs text-deep-teal font-semibold">Founder & Owner</p>
+              </div>
+            </motion.div>
 
             <motion.p
               variants={slideLeft}
