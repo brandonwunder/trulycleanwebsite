@@ -60,7 +60,29 @@ const config: Config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    // Glass morphism utilities
+    function ({ addUtilities }: any) {
+      addUtilities({
+        '.glass': {
+          '@apply bg-white/80 backdrop-blur-sm border border-white/20': {},
+        },
+        '.glass-dark': {
+          '@apply bg-navy-dark/80 backdrop-blur-sm border border-white/10': {},
+        },
+        '.glass-teal': {
+          '@apply bg-vibrant-teal/10 backdrop-blur-sm border border-vibrant-teal/20': {},
+        },
+        '.glass-green': {
+          '@apply bg-vibrant-green/10 backdrop-blur-sm border border-vibrant-green/20': {},
+        },
+        '.glass-orange': {
+          '@apply bg-vibrant-orange/10 backdrop-blur-sm border border-vibrant-orange/20': {},
+        },
+      })
+    },
+  ],
 }
 
 export default config

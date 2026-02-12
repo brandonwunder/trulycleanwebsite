@@ -1,105 +1,195 @@
 'use client'
 
+import { motion } from 'framer-motion'
+import { Phone, Mail, MapPin, CheckCircle } from 'lucide-react'
 import QuoteForm from '@/components/QuoteForm'
+import { Card } from '@/components/ui/card'
+import { staggerContainer, slideUp, slideLeft, slideRight, floatingAnimation } from '@/lib/animations'
 
 export default function Contact() {
   const phone = process.env.NEXT_PUBLIC_COMPANY_PHONE || '(602) 695-0607'
   const email = process.env.NEXT_PUBLIC_COMPANY_EMAIL || 'sonya_7653@hotmail.com'
-  const serviceAreas = process.env.NEXT_PUBLIC_SERVICE_AREAS || 'New River, Anthem, Cave Creek & surrounding areas'
+  const serviceAreas =
+    process.env.NEXT_PUBLIC_SERVICE_AREAS ||
+    'New River, Anthem, Cave Creek & surrounding areas'
+
+  const contactMethods = [
+    {
+      icon: Phone,
+      title: 'Phone',
+      value: phone,
+      href: `tel:${phone}`,
+    },
+    {
+      icon: Mail,
+      title: 'Email',
+      value: email,
+      href: `mailto:${email}`,
+    },
+    {
+      icon: MapPin,
+      title: 'Service Area',
+      value: serviceAreas,
+    },
+  ]
+
+  const benefits = [
+    'BBB Accredited & trusted by 492+ followers',
+    'Eco-friendly cleaning products',
+    '100% satisfaction guarantee',
+    'Flexible scheduling options',
+  ]
 
   return (
-    <section id="quote-form" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4 max-w-7xl">
-        <div className="text-center mb-12">
-          <h2 className="font-heading font-bold text-4xl md:text-5xl text-navy-dark mb-4">
-            Get Your <span className="text-vibrant-teal">Free Quote</span>
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Fill out the form below and we'll get back to you within 24 hours with a customized quote.
-          </p>
-        </div>
+    <section
+      id="quote-form"
+      className="py-20 bg-gradient-to-br from-gray-50 via-vibrant-teal/5 to-gray-50 relative overflow-hidden"
+    >
+      {/* Background floating elements */}
+      <motion.div
+        className="absolute top-0 right-20 w-72 h-72 bg-vibrant-teal/10 rounded-full blur-3xl"
+        animate={floatingAnimation}
+      />
+      <motion.div
+        className="absolute bottom-0 left-10 w-80 h-80 bg-vibrant-green/10 rounded-full blur-3xl"
+        animate={{
+          y: [0, -50, 0],
+          transition: { duration: 6, repeat: Infinity, ease: 'easeInOut' },
+        }}
+      />
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          {/* Form */}
-          <div>
-            <QuoteForm />
-          </div>
-
-          {/* Contact Info */}
-          <div className="space-y-8">
-            <div>
-              <h3 className="font-heading font-bold text-2xl text-navy-dark mb-6">
-                Or Contact Us Directly
-              </h3>
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="bg-vibrant-teal/10 p-3 rounded-lg">
-                    <span className="text-2xl">📞</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-navy-dark mb-1">Phone</h4>
-                    <a
-                      href={`tel:${phone}`}
-                      className="text-gray-600 hover:text-vibrant-teal transition"
-                    >
-                      {phone}
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-vibrant-teal/10 p-3 rounded-lg">
-                    <span className="text-2xl">📧</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-navy-dark mb-1">Email</h4>
-                    <a
-                      href={`mailto:${email}`}
-                      className="text-gray-600 hover:text-vibrant-teal transition"
-                    >
-                      {email}
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-vibrant-teal/10 p-3 rounded-lg">
-                    <span className="text-2xl">📍</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-navy-dark mb-1">Service Area</h4>
-                    <p className="text-gray-600">
-                      {serviceAreas}
-                    </p>
-                  </div>
-                </div>
+      <div className="container mx-auto px-4 max-w-7xl relative z-10">
+        {/* Header */}
+        <motion.div
+          className="text-center mb-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
+          variants={staggerContainer}
+        >
+          <motion.div variants={slideUp}>
+            <div className="inline-block mb-3">
+              <div className="glass px-4 py-1.5 rounded-full">
+                <span className="text-sm font-semibold text-vibrant-teal">
+                  Let's Get Started
+                </span>
               </div>
             </div>
+          </motion.div>
+          <motion.h2
+            variants={slideUp}
+            className="font-heading font-bold text-4xl md:text-5xl text-navy-dark mb-4"
+          >
+            Get Your <span className="text-vibrant-teal">Free Quote</span>
+          </motion.h2>
+          <motion.p
+            variants={slideUp}
+            className="text-lg text-gray-600 max-w-2xl mx-auto"
+          >
+            Fill out the form or contact us directly. We'll get back to you within 24
+            hours.
+          </motion.p>
+        </motion.div>
 
-            <div className="bg-vibrant-teal/10 border-2 border-vibrant-teal rounded-lg p-6">
-              <h4 className="font-heading font-bold text-xl text-navy-dark mb-3">
-                Why Choose Truly Clean?
-              </h4>
-              <ul className="space-y-2 text-gray-700">
-                <li className="flex items-start gap-2">
-                  <span className="text-vibrant-teal font-bold mt-1">✓</span>
-                  <span>BBB Accredited & trusted by 492+ followers</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-vibrant-teal font-bold mt-1">✓</span>
-                  <span>Eco-friendly cleaning products</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-vibrant-teal font-bold mt-1">✓</span>
-                  <span>100% satisfaction guarantee</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-vibrant-teal font-bold mt-1">✓</span>
-                  <span>Flexible scheduling options</span>
-                </li>
-              </ul>
+        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto mb-16">
+          {/* Form */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+            variants={slideLeft}
+          >
+            <QuoteForm />
+          </motion.div>
+
+          {/* Contact Info */}
+          <motion.div
+            className="space-y-6"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+            variants={staggerContainer}
+          >
+            <div>
+              <motion.h3
+                variants={slideRight}
+                className="font-heading font-bold text-2xl text-navy-dark mb-6"
+              >
+                Or Contact Us Directly
+              </motion.h3>
+              <motion.div
+                className="space-y-4"
+                variants={staggerContainer}
+              >
+                {contactMethods.map((method, index) => {
+                  const Icon = method.icon
+                  return (
+                    <motion.div key={index} variants={slideRight}>
+                      <Card
+                        variant="glass"
+                        size="md"
+                        hover="lift"
+                        className="group"
+                        interactive
+                      >
+                        <div className="flex items-start gap-4">
+                          <motion.div
+                            className="bg-gradient-to-br from-vibrant-teal/20 to-vibrant-teal/5 p-3 rounded-lg flex-shrink-0 group-hover:shadow-lg transition-all"
+                            whileHover={{ scale: 1.1 }}
+                          >
+                            <Icon className="w-6 h-6 text-vibrant-teal" />
+                          </motion.div>
+                          <div className="flex-1 min-w-0">
+                            <h4 className="font-semibold text-navy-dark mb-1">
+                              {method.title}
+                            </h4>
+                            {method.href ? (
+                              <a
+                                href={method.href}
+                                className="text-gray-600 hover:text-vibrant-teal transition break-all"
+                              >
+                                {method.value}
+                              </a>
+                            ) : (
+                              <p className="text-gray-600">{method.value}</p>
+                            )}
+                          </div>
+                        </div>
+                      </Card>
+                    </motion.div>
+                  )
+                })}
+              </motion.div>
             </div>
-          </div>
+
+            {/* Benefits Card */}
+            <motion.div variants={slideRight}>
+              <Card
+                variant="gradient"
+                size="lg"
+                className="group"
+              >
+                <h4 className="font-heading font-bold text-xl text-navy-dark mb-4">
+                  Why Choose Truly Clean?
+                </h4>
+                <ul className="space-y-3">
+                  {benefits.map((benefit, index) => (
+                    <motion.li
+                      key={index}
+                      className="flex items-start gap-3"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                    >
+                      <CheckCircle className="w-5 h-5 text-vibrant-teal flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700">{benefit}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </Card>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>
