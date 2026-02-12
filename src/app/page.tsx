@@ -8,7 +8,6 @@ import CTABreak from '@/components/sections/CTABreak'
 import BeforeAfter from '@/components/sections/BeforeAfter'
 import WhyDifferent from '@/components/sections/WhyDifferent'
 import Testimonials from '@/components/sections/Testimonials'
-import GuaranteeCertificate from '@/components/sections/GuaranteeCertificate'
 import PricingAnchor from '@/components/sections/PricingAnchor'
 import ServiceAreaMap from '@/components/sections/ServiceAreaMap'
 import About from '@/components/sections/About'
@@ -35,7 +34,6 @@ export default function HomePage() {
       <BeforeAfter />
       <WhyDifferent />
       <Testimonials />
-      <GuaranteeCertificate />
       <CTABreak
         id="cta-2"
         headline="Join 492+ Happy Customers"

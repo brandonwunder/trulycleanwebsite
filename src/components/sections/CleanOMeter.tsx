@@ -180,36 +180,25 @@ export default function CleanOMeter() {
                           </div>
                         </div>
 
-                        {/* Price & CTA Column */}
+                        {/* CTA Column */}
                         <div className="md:col-span-1">
-                          <div className="glass-orange p-6 rounded-2xl h-full flex flex-col justify-between border-2 border-vibrant-orange/20">
-                            <div>
-                              <h3 className="font-heading font-bold text-navy-dark mb-2">
-                                Price Range
-                              </h3>
-                              <p className="text-4xl font-heading font-bold text-vibrant-orange mb-2">
-                                {t.priceRange}
-                              </p>
-                              <p className="text-sm text-gray-600">
-                                Varies based on home size & conditions
-                              </p>
-                            </div>
-
-                            <div className="mt-6">
-                              <p className="text-xs text-gray-500 mb-4">
-                                Ready to get started?
-                              </p>
-                              <button
-                                onClick={() => {
-                                  document
-                                    .getElementById('quote-form')
-                                    ?.scrollIntoView({ behavior: 'smooth' })
-                                }}
-                                className="w-full px-4 py-3 bg-gradient-to-r from-vibrant-orange to-vibrant-orange/80 text-white font-heading font-bold rounded-lg hover:shadow-lg transition-all duration-200 hover:scale-105 active:scale-95"
-                              >
-                                Get Quote
-                              </button>
-                            </div>
+                          <div className="glass-orange p-8 rounded-2xl h-full flex flex-col justify-center items-center text-center border-2 border-vibrant-orange/20">
+                            <h3 className="font-heading font-bold text-2xl text-navy-dark mb-4">
+                              Ready to get started?
+                            </h3>
+                            <p className="text-gray-600 mb-6 text-sm">
+                              Get a personalized quote based on your home size and cleaning needs.
+                            </p>
+                            <button
+                              onClick={() => {
+                                document
+                                  .getElementById('quote-form')
+                                  ?.scrollIntoView({ behavior: 'smooth' })
+                              }}
+                              className="w-full px-6 py-4 bg-gradient-to-r from-vibrant-orange to-vibrant-orange/80 text-white font-heading font-bold rounded-xl hover:shadow-xl transition-all duration-200 hover:scale-105 active:scale-95 text-lg"
+                            >
+                              Get a Quote
+                            </button>
                           </div>
                         </div>
                       </motion.div>
