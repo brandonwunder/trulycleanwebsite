@@ -104,7 +104,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 glass-teal px-5 py-3 rounded-full mb-8 shadow-sm"
           >
             <Sparkles className="w-5 h-5 text-deep-teal" />
-            <span className="font-semibold text-deep-teal">Trusted by New River Families</span>
+            <span className="font-semibold text-deep-teal">Trusted by local families</span>
           </motion.div>
 
           {/* Main Headline */}
@@ -112,10 +112,10 @@ export default function Hero() {
             variants={itemVariants}
             className="font-heading font-bold text-6xl md:text-7xl lg:text-8xl text-deep-indigo mb-6 leading-[0.95] tracking-tight"
           >
-            Your Neighbors.
+            Your North Phoenix
             <br />
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-deep-teal to-rich-violet">
-              Your Cleaning Experts.
+              Cleaning Experts
             </span>
           </motion.h1>
 

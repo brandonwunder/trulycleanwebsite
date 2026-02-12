@@ -1,13 +1,17 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Phone, Mail, MapPin, CheckCircle, Star } from 'lucide-react'
-import QuoteForm from '@/components/QuoteForm'
+import { Phone, Mail, MapPin, CheckCircle, FileText } from 'lucide-react'
 import { Card } from '@/components/ui/card'
-import { staggerContainer, slideUp, slideLeft, slideRight, floatingAnimation } from '@/lib/animations'
-import { trustBadges } from '@/lib/cleaning-data'
+import { staggerContainer, slideUp, slideRight, floatingAnimation } from '@/lib/animations'
+import QuoteFormModal from '@/components/QuoteFormModal'
 
 export default function Contact() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const openModal = () => setIsModalOpen(true)
+  const closeModal = () => setIsModalOpen(false)
   const phone = process.env.NEXT_PUBLIC_COMPANY_PHONE || '(602) 695-0607'
   const email = process.env.NEXT_PUBLIC_COMPANY_EMAIL || 'sonya_7653@hotmail.com'
   const serviceAreas =
@@ -61,114 +65,76 @@ export default function Contact() {
             variants={slideUp}
             className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-deep-indigo mb-4"
           >
-            Get Your <span className="text-deep-teal">Free Quote</span>
+            Get in <span className="text-deep-teal">Touch</span>
           </motion.h2>
           <motion.p
             variants={slideUp}
             className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto"
           >
-            Fill out the form or contact us directly. We'll get back to you within 24 hours.
+            Ready for a spotless home? Get a quote or reach us directly.
           </motion.p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto mb-16 relative">
-          {/* Form with animated border */}
+        {/* Single column centered layout */}
+        <div className="max-w-3xl mx-auto">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
-            variants={slideLeft}
-            className="relative"
-          >
-            {/* Trust Badges */}
-            <motion.div
-              variants={slideUp}
-              className="flex flex-wrap gap-2 justify-center mb-6"
-            >
-              {trustBadges.map((badge, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-deep-teal/10 border border-deep-teal/20 backdrop-blur-sm"
-                >
-                  <badge.icon className={`w-3 h-3 text-${badge.color}`} />
-                  <span className="text-xs font-semibold text-gray-700">{badge.text}</span>
-                </div>
-              ))}
-            </motion.div>
-
-            {/* Gradient border effect */}
-            <div className="absolute -inset-[1px] bg-gradient-to-br from-deep-teal via-rich-violet to-deep-teal rounded-2xl opacity-20" />
-            <div className="relative">
-              <QuoteForm />
-            </div>
-          </motion.div>
-
-          {/* Contact Info */}
-          <motion.div
-            className="space-y-6"
+            className="space-y-8"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-100px' }}
             variants={staggerContainer}
           >
-            {/* Floating testimonial snippet — desktop only */}
-            <motion.div
-              variants={slideRight}
-              className="hidden lg:block"
-            >
-              <div className="glass p-4 rounded-xl border border-deep-teal/10">
-                <div className="flex gap-0.5 mb-2">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-gray-600 text-sm italic mb-2">
-                  "Truly Clean transformed my home! Attention to detail is incredible."
-                </p>
-                <span className="text-xs text-gray-400 font-medium">— Sarah J., New River</span>
-              </div>
+            {/* Get Quote Button */}
+            <motion.div variants={slideUp}>
+              <button
+                onClick={openModal}
+                className="w-full bg-gradient-to-r from-teal-500 to-teal-600 text-white font-bold py-5 px-8 rounded-xl hover:from-teal-600 hover:to-teal-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-[1.02] flex items-center justify-center gap-3 text-lg"
+              >
+                <FileText className="w-6 h-6" />
+                Get Your Free Quote
+              </button>
             </motion.div>
 
-            <div>
-              <motion.h3
-                variants={slideRight}
-                className="font-heading font-bold text-2xl text-deep-indigo mb-6"
-              >
-                Or Contact Us Directly
-              </motion.h3>
-              <motion.div className="space-y-4" variants={staggerContainer}>
-                {contactMethods.map((method, index) => {
-                  const Icon = method.icon
-                  return (
-                    <motion.div key={index} variants={slideRight}>
-                      <Card variant="glass" size="md" hover="lift" className="group" interactive>
-                        <div className="flex items-start gap-4">
-                          <motion.div
-                            className="bg-gradient-to-br from-deep-teal/20 to-deep-teal/5 p-3 rounded-lg flex-shrink-0 group-hover:shadow-lg transition-all"
-                            whileHover={{ scale: 1.1 }}
-                          >
-                            <Icon className="w-6 h-6 text-deep-teal" />
-                          </motion.div>
-                          <div className="flex-1 min-w-0">
-                            <h4 className="font-semibold text-deep-indigo mb-1">{method.title}</h4>
-                            {method.href ? (
-                              <a
-                                href={method.href}
-                                className="text-gray-600 hover:text-deep-teal transition break-all"
-                              >
-                                {method.value}
-                              </a>
-                            ) : (
-                              <p className="text-gray-600">{method.value}</p>
-                            )}
-                          </div>
+            {/* Divider */}
+            <motion.div variants={slideUp} className="flex items-center gap-4">
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
+              <span className="text-gray-500 font-medium">Or reach us directly</span>
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
+            </motion.div>
+
+            {/* Contact Methods */}
+            <motion.div className="space-y-4" variants={staggerContainer}>
+              {contactMethods.map((method, index) => {
+                const Icon = method.icon
+                return (
+                  <motion.div key={index} variants={slideRight}>
+                    <Card variant="glass" size="md" hover="lift" className="group" interactive>
+                      <div className="flex items-start gap-4">
+                        <motion.div
+                          className="bg-gradient-to-br from-deep-teal/20 to-deep-teal/5 p-3 rounded-lg flex-shrink-0 group-hover:shadow-lg transition-all"
+                          whileHover={{ scale: 1.1 }}
+                        >
+                          <Icon className="w-6 h-6 text-deep-teal" />
+                        </motion.div>
+                        <div className="flex-1 min-w-0">
+                          <h4 className="font-semibold text-deep-indigo mb-1">{method.title}</h4>
+                          {method.href ? (
+                            <a
+                              href={method.href}
+                              className="text-gray-600 hover:text-deep-teal transition break-all"
+                            >
+                              {method.value}
+                            </a>
+                          ) : (
+                            <p className="text-gray-600">{method.value}</p>
+                          )}
                         </div>
-                      </Card>
-                    </motion.div>
-                  )
-                })}
-              </motion.div>
-            </div>
+                      </div>
+                    </Card>
+                  </motion.div>
+                )
+              })}
+            </motion.div>
 
             {/* Benefits Card */}
             <motion.div variants={slideRight}>
@@ -203,6 +169,9 @@ export default function Contact() {
           </motion.div>
         </div>
       </div>
+
+      {/* Quote Form Modal */}
+      <QuoteFormModal isOpen={isModalOpen} onClose={closeModal} />
     </section>
   )
 }
