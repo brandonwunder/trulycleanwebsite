@@ -2,7 +2,17 @@
 
 import { motion } from 'framer-motion'
 import { CalendarCheck, Sparkles, Smile } from 'lucide-react'
-import { staggerContainer, slideUp, scaleIn, drawLine, swingAnimation, pulseAnimation, floatingAnimation } from '@/lib/animations'
+import { staggerContainer, slideUp, scaleIn, drawLine, floatingAnimation } from '@/lib/animations'
+
+// Premium floating animation for all icons (uniform)
+const iconFloat = {
+  y: [0, -8, 0],
+  transition: {
+    duration: 3,
+    repeat: Infinity,
+    ease: 'easeInOut',
+  },
+}
 
 const steps = [
   {
@@ -10,33 +20,33 @@ const steps = [
     icon: CalendarCheck,
     title: 'Book Online',
     description: 'Fill out our quick form or give us a call. We\'ll match you with the perfect cleaning plan in minutes.',
-    animation: swingAnimation,
-    gradient: 'from-vibrant-teal/10 to-vibrant-teal/5',
-    iconBg: 'bg-vibrant-teal/10',
+    gradient: 'from-white to-gray-50',
     iconColor: 'text-vibrant-teal',
     accentColor: 'bg-vibrant-teal',
+    glowColor: 'shadow-vibrant-teal/20',
+    borderGradient: 'from-vibrant-teal via-vibrant-teal/80 to-vibrant-teal',
   },
   {
     number: '02',
     icon: Sparkles,
     title: 'We Clean',
     description: 'Our trained, background-checked team arrives on time with eco-friendly products and professional equipment.',
-    animation: pulseAnimation,
-    gradient: 'from-vibrant-green/10 to-vibrant-green/5',
-    iconBg: 'bg-vibrant-green/10',
+    gradient: 'from-white to-gray-50',
     iconColor: 'text-vibrant-green',
     accentColor: 'bg-vibrant-green',
+    glowColor: 'shadow-vibrant-green/20',
+    borderGradient: 'from-vibrant-green via-vibrant-green/80 to-vibrant-green',
   },
   {
     number: '03',
     icon: Smile,
     title: 'You Enjoy',
     description: 'Come home to a sparkling space. If you\'re not 100% happy, we\'ll re-clean for free. That\'s our promise.',
-    animation: floatingAnimation,
-    gradient: 'from-vibrant-orange/10 to-vibrant-orange/5',
-    iconBg: 'bg-vibrant-orange/10',
+    gradient: 'from-white to-gray-50',
     iconColor: 'text-vibrant-orange',
     accentColor: 'bg-vibrant-orange',
+    glowColor: 'shadow-vibrant-orange/20',
+    borderGradient: 'from-vibrant-orange via-vibrant-orange/80 to-vibrant-orange',
   },
 ]
 
@@ -115,27 +125,41 @@ export default function HowItWorks() {
                 variants={scaleIn}
                 className="relative group"
               >
-                <div className={`relative bg-gradient-to-br ${step.gradient} rounded-2xl p-8 md:p-10 border border-white/60 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2`}>
-                  {/* Step number */}
-                  <div className={`absolute -top-4 -left-2 w-10 h-10 ${step.accentColor} rounded-xl flex items-center justify-center shadow-lg`}>
-                    <span className="font-heading font-bold text-white text-sm">{step.number}</span>
+                {/* Premium card with gradient background */}
+                <div className={`relative bg-gradient-to-br ${step.gradient} rounded-3xl p-8 md:p-10 border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-3`}>
+                  {/* Step number badge with premium styling */}
+                  <div className={`absolute -top-4 -left-2 w-12 h-12 ${step.accentColor} rounded-2xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-110`}>
+                    <span className="font-heading font-bold text-white text-base">{step.number}</span>
                   </div>
 
-                  {/* Icon */}
-                  <motion.div
-                    className={`w-16 h-16 ${step.iconBg} rounded-2xl flex items-center justify-center mb-6`}
-                    animate={step.animation}
-                  >
-                    <step.icon className={`w-8 h-8 ${step.iconColor}`} />
-                  </motion.div>
+                  {/* Premium icon with gradient border ring */}
+                  <div className="relative w-20 h-20 mb-6">
+                    {/* Gradient border ring */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${step.borderGradient} rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity duration-300`} />
+                    <div className={`absolute inset-[2px] bg-white rounded-2xl`} />
+
+                    {/* Icon container with float animation */}
+                    <motion.div
+                      className={`relative w-full h-full flex items-center justify-center`}
+                      animate={iconFloat}
+                    >
+                      <step.icon className={`w-10 h-10 ${step.iconColor} group-hover:scale-110 transition-transform duration-300`} />
+                    </motion.div>
+
+                    {/* Subtle glow effect on hover */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${step.borderGradient} rounded-2xl opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-500`} />
+                  </div>
 
                   {/* Content */}
-                  <h3 className="font-heading font-bold text-2xl text-navy-dark mb-3">
+                  <h3 className="font-heading font-bold text-2xl text-navy-dark mb-4 group-hover:text-opacity-90 transition-all duration-300">
                     {step.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed text-base">
                     {step.description}
                   </p>
+
+                  {/* Bottom accent line */}
+                  <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${step.borderGradient} rounded-b-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
                 </div>
               </motion.div>
             ))}
