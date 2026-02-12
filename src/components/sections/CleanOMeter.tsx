@@ -128,120 +128,122 @@ export default function CleanOMeter() {
 
             {/* Tab Panels - Content */}
             <Tab.Panels className="w-full">
-              <AnimatePresence mode="wait">
-                <Tab.Panel key={tier.id}>
+              {cleaningTiers.map((t) => (
+                <Tab.Panel key={t.id}>
                   {/* ARIA live region for screen readers */}
                   <div className="sr-only" role="status" aria-live="polite" aria-atomic="true">
-                    {tier.name} tier selected. {tier.description}
+                    {t.name} tier selected. {t.description}
                   </div>
 
-                  <motion.div
-                    key={selectedTier}
-                    variants={tierSwitch}
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
-                    className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8"
-                  >
-                    {/* Checklist Column */}
-                    <div className="md:col-span-1">
-                      <div className="glass p-6 rounded-2xl">
-                        <h3 className="font-heading font-bold text-lg text-deep-indigo mb-4">
-                          What's Included
-                        </h3>
-                        <ul className="space-y-3">
-                          {tier.checklist.map((item, i) => (
-                            <motion.li
-                              key={i}
-                              initial={{ opacity: 0, x: -10 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              transition={{ delay: i * 0.05 }}
-                              className="flex items-start gap-3 text-gray-700"
-                            >
-                              <Check className="w-5 h-5 text-rich-violet flex-shrink-0 mt-0.5" />
-                              <span className="text-sm leading-relaxed">{item}</span>
-                            </motion.li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-
-                    {/* Details Column - Time & Frequency */}
-                    <div className="md:col-span-1">
-                      <div className="space-y-4">
-                        {/* Duration Card */}
-                        <motion.div
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: 0.1 }}
-                          className="glass p-6 rounded-2xl"
-                        >
-                          <div className="flex items-center gap-3 mb-2">
-                            <Clock className="w-5 h-5 text-deep-teal" />
-                            <h3 className="font-heading font-bold text-deep-indigo">
-                              Duration
-                            </h3>
-                          </div>
-                          <p className="text-3xl font-heading font-bold text-deep-teal">
-                            {tier.duration}
-                          </p>
-                          <p className="text-sm text-gray-600 mt-1">
-                            Typical cleaning time
-                          </p>
-                        </motion.div>
-
-                        {/* Frequency Card */}
-                        <motion.div
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: 0.15 }}
-                          className="glass p-6 rounded-2xl"
-                        >
-                          <div className="flex items-center gap-3 mb-2">
-                            <Calendar className="w-5 h-5 text-rich-violet" />
-                            <h3 className="font-heading font-bold text-deep-indigo">
-                              Frequency
-                            </h3>
-                          </div>
-                          <p className="text-2xl font-heading font-bold text-rich-violet">
-                            {tier.frequency}
-                          </p>
-                          <p className="text-sm text-gray-600 mt-1">
-                            Recommended schedule
-                          </p>
-                        </motion.div>
-                      </div>
-                    </div>
-
-                    {/* CTA Column */}
+                  <AnimatePresence mode="wait">
                     <motion.div
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 0.2 }}
-                      className="md:col-span-1"
+                      key={t.id}
+                      variants={tierSwitch}
+                      initial="hidden"
+                      animate="visible"
+                      exit="exit"
+                      className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8"
                     >
-                      <div className="glass-violet p-8 rounded-2xl h-full flex flex-col justify-center items-center text-center border-2 border-rich-violet/20">
-                        <h3 className="font-heading font-bold text-2xl text-deep-indigo mb-4">
-                          Ready to get started?
-                        </h3>
-                        <p className="text-gray-600 mb-6 text-sm">
-                          Get a personalized quote based on your home size and cleaning needs.
-                        </p>
-                        <button
-                          onClick={() => {
-                            document
-                              .getElementById('quote-form')
-                              ?.scrollIntoView({ behavior: 'smooth' })
-                          }}
-                          className="w-full px-6 py-4 bg-gradient-to-r from-rich-violet to-rich-violet/80 text-white font-heading font-bold rounded-xl hover:shadow-xl transition-all duration-200 hover:scale-105 active:scale-95 text-lg"
-                        >
-                          Get a Quote
-                        </button>
+                      {/* Checklist Column */}
+                      <div className="md:col-span-1">
+                        <div className="glass p-6 rounded-2xl">
+                          <h3 className="font-heading font-bold text-lg text-deep-indigo mb-4">
+                            What's Included
+                          </h3>
+                          <ul className="space-y-3">
+                            {t.checklist.map((item, i) => (
+                              <motion.li
+                                key={i}
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: i * 0.05 }}
+                                className="flex items-start gap-3 text-gray-700"
+                              >
+                                <Check className="w-5 h-5 text-rich-violet flex-shrink-0 mt-0.5" />
+                                <span className="text-sm leading-relaxed">{item}</span>
+                              </motion.li>
+                            ))}
+                          </ul>
+                        </div>
                       </div>
+
+                      {/* Details Column - Time & Frequency */}
+                      <div className="md:col-span-1">
+                        <div className="space-y-4">
+                          {/* Duration Card */}
+                          <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.1 }}
+                            className="glass p-6 rounded-2xl"
+                          >
+                            <div className="flex items-center gap-3 mb-2">
+                              <Clock className="w-5 h-5 text-deep-teal" />
+                              <h3 className="font-heading font-bold text-deep-indigo">
+                                Duration
+                              </h3>
+                            </div>
+                            <p className="text-3xl font-heading font-bold text-deep-teal">
+                              {t.duration}
+                            </p>
+                            <p className="text-sm text-gray-600 mt-1">
+                              Typical cleaning time
+                            </p>
+                          </motion.div>
+
+                          {/* Frequency Card */}
+                          <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.15 }}
+                            className="glass p-6 rounded-2xl"
+                          >
+                            <div className="flex items-center gap-3 mb-2">
+                              <Calendar className="w-5 h-5 text-rich-violet" />
+                              <h3 className="font-heading font-bold text-deep-indigo">
+                                Frequency
+                              </h3>
+                            </div>
+                            <p className="text-2xl font-heading font-bold text-rich-violet">
+                              {t.frequency}
+                            </p>
+                            <p className="text-sm text-gray-600 mt-1">
+                              Recommended schedule
+                            </p>
+                          </motion.div>
+                        </div>
+                      </div>
+
+                      {/* CTA Column */}
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.2 }}
+                        className="md:col-span-1"
+                      >
+                        <div className="glass-violet p-8 rounded-2xl h-full flex flex-col justify-center items-center text-center border-2 border-rich-violet/20">
+                          <h3 className="font-heading font-bold text-2xl text-deep-indigo mb-4">
+                            Ready to get started?
+                          </h3>
+                          <p className="text-gray-600 mb-6 text-sm">
+                            Get a personalized quote based on your home size and cleaning needs.
+                          </p>
+                          <button
+                            onClick={() => {
+                              document
+                                .getElementById('quote-form')
+                                ?.scrollIntoView({ behavior: 'smooth' })
+                            }}
+                            className="w-full px-6 py-4 bg-gradient-to-r from-rich-violet to-rich-violet/80 text-white font-heading font-bold rounded-xl hover:shadow-xl transition-all duration-200 hover:scale-105 active:scale-95 text-lg"
+                          >
+                            Get a Quote
+                          </button>
+                        </div>
+                      </motion.div>
                     </motion.div>
-                  </motion.div>
+                  </AnimatePresence>
                 </Tab.Panel>
-              </AnimatePresence>
+              ))}
             </Tab.Panels>
           </Tab.Group>
         </motion.div>
