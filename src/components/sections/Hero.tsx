@@ -105,7 +105,7 @@ export default function Hero() {
             animate={floatingAnimationSlow}
             className="mb-2 md:mb-3 lg:mb-3"
           >
-            <div className="relative mx-auto w-[540px] sm:w-[660px] lg:w-[840px] max-w-[90vw]">
+            <div className="relative mx-auto w-[405px] sm:w-[495px] lg:w-[630px] max-w-[90vw]">
               <Image
                 src="/images/logo/logo-new.png"
                 alt="Truly Clean"
