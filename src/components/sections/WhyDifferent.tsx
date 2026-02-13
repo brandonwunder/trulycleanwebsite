@@ -91,7 +91,7 @@ export default function WhyDifferent() {
             </div>
             <div />
             <div />
-            <div className="relative text-center">
+            <div className="relative text-center flex justify-center">
               {/* Column watermark */}
               <div
                 className="absolute inset-0 flex items-center justify-center opacity-[0.04] pointer-events-none"
@@ -107,7 +107,15 @@ export default function WhyDifferent() {
                 />
               </div>
 
-              <span className="relative z-10 font-heading font-semibold text-deep-teal text-sm uppercase tracking-wider">Truly Clean</span>
+              <div className="relative z-10 h-12">
+                <Image
+                  src="/images/logo/logo-hero.png"
+                  alt="Truly Clean"
+                  width={1536}
+                  height={1024}
+                  className="h-full w-auto object-contain"
+                />
+              </div>
             </div>
           </motion.div>
 
