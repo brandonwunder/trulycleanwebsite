@@ -114,6 +114,23 @@ export default function Hero() {
         animate="visible"
       >
         <div className="text-center">
+          {/* Premium Logo Lockup */}
+          <motion.div
+            variants={itemVariants}
+            className="mb-12 md:mb-14 lg:mb-16"
+          >
+            <div className="relative mx-auto w-[120px] sm:w-[150px] lg:w-[180px]">
+              <Image
+                src="/images/logo/logo-full-200x60.png"
+                alt="Truly Clean"
+                width={200}
+                height={60}
+                priority
+                className="w-full h-auto object-contain"
+              />
+            </div>
+          </motion.div>
+
           {/* Badge */}
           <motion.div
             variants={itemVariants}
