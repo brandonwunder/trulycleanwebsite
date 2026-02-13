@@ -62,7 +62,7 @@ export default function WhyDifferent() {
             className="inline-flex items-center gap-2 bg-rich-violet/10 text-rich-violet px-5 py-2.5 rounded-full mb-6 backdrop-blur-sm border border-rich-violet/20"
           >
             <Zap className="w-4 h-4" />
-            <span className="font-semibold text-sm">The Truly Clean Difference</span>
+            <span className="font-semibold text-sm">The TrulyClean Difference</span>
           </motion.div>
           <motion.h2
             variants={slideUp}
@@ -75,7 +75,7 @@ export default function WhyDifferent() {
             variants={slideUp}
             className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto"
           >
-            Not all cleaning services are created equal. Here's what sets Truly Clean apart.
+            Not all cleaning services are created equal. Here's what sets TrulyClean apart.
           </motion.p>
         </div>
 
@@ -110,7 +110,7 @@ export default function WhyDifferent() {
               <div className="relative z-10 h-24 flex justify-center">
                 <Image
                   src="/images/logo/logo-hero.png"
-                  alt="Truly Clean"
+                  alt="TrulyClean"
                   width={1536}
                   height={1024}
                   className="h-full w-auto object-contain"
@@ -138,7 +138,7 @@ export default function WhyDifferent() {
                   <item.icon className="w-6 h-6 text-deep-teal" />
                 </div>
 
-                {/* Truly Clean column */}
+                {/* TrulyClean column */}
                 <div className="flex items-center gap-3 bg-gradient-to-r from-deep-teal/5 to-rich-violet/5 rounded-xl px-6 py-4 border border-deep-teal/20">
                   <CheckCircle className="w-5 h-5 text-rich-violet flex-shrink-0" />
                   <span className="text-deep-indigo font-medium">{item.truly}</span>

@@ -126,7 +126,7 @@ Real cleaning service websites to study and draw inspiration from.
 
 ---
 
-## Color & Aesthetic Recommendations for Truly Clean
+## Color & Aesthetic Recommendations for TrulyClean
 
 ### Vibrant & Professional Palette
 - **Primary:** Bright blue or teal (trust, cleanliness)

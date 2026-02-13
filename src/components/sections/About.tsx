@@ -102,14 +102,14 @@ export default function About() {
               variants={slideLeft}
               className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-deep-indigo mb-6"
             >
-              About <span className="text-deep-teal">Truly Clean</span>
+              About <span className="text-deep-teal">TrulyClean</span>
             </motion.h2>
 
             <motion.p
               variants={slideLeft}
               className="text-lg text-gray-700 mb-6 leading-relaxed"
             >
-              At Truly Clean, we believe that a clean space is the foundation for a
+              At TrulyClean, we believe that a clean space is the foundation for a
               healthy, happy life. Our mission is to provide exceptional cleaning
               services that exceed expectations every single time.
             </motion.p>
@@ -123,7 +123,7 @@ export default function About() {
                 <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-2xl border-4 border-white/50">
                   <Image
                     src="/images/sonya.jpg"
-                    alt="Sonya Ansell, Founder and Owner of Truly Clean"
+                    alt="Sonya Ansell, Founder and Owner of TrulyClean"
                     fill
                     sizes="(max-width: 768px) 192px, 224px"
                     style={{ objectFit: 'cover' }}

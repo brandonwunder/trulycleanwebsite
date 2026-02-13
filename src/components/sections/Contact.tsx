@@ -80,7 +80,7 @@ export default function Contact() {
             <div className="relative w-auto h-24 flex-shrink-0">
               <Image
                 src="/images/logo/logo-hero.png"
-                alt="Truly Clean"
+                alt="TrulyClean"
                 width={1536}
                 height={1024}
                 className="h-full w-auto object-contain opacity-80"
@@ -175,7 +175,7 @@ export default function Contact() {
             <motion.div variants={slideRight}>
               <Card variant="gradient" size="lg" className="group">
                 <h4 className="font-heading font-bold text-xl text-deep-indigo mb-4">
-                  Why Choose Truly Clean?
+                  Why Choose TrulyClean?
                 </h4>
                 <ul className="space-y-3">
                   {benefits.map((benefit, index) => (

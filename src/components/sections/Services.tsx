@@ -124,7 +124,7 @@ export default function Services() {
             <div className="relative h-24 sm:h-28 lg:h-32">
               <Image
                 src="/images/logo/logo-hero.png"
-                alt="Truly Clean"
+                alt="TrulyClean"
                 width={1536}
                 height={1024}
                 className="h-full w-auto object-contain opacity-90"

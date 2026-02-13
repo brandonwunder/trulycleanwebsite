@@ -1,18 +1,18 @@
-# Truly Clean - Website Development Guide (CLAUDE.md)
+# TrulyClean - Website Development Guide (CLAUDE.md)
 
 **Last Updated:** February 11, 2026
-**Project:** Truly Clean - Residential & Commercial Cleaning Service Website
+**Project:** TrulyClean - Residential & Commercial Cleaning Service Website
 
 ---
 
 ## 📋 Project Overview
 
-**Company:** Truly Clean
+**Company:** TrulyClean
 **Business Type:** Residential & Commercial Cleaning Services
 **Primary Goal:** Build a modern website with a quick-quote form and customer testimonials
 **Facebook Page:** https://www.facebook.com/TrulyCleanSonya
 
-This document serves as the master instruction guide for all development work on the Truly Clean website. Any AI assistant working on this project should read this file first to understand the vision, requirements, and technical approach.
+This document serves as the master instruction guide for all development work on the TrulyClean website. Any AI assistant working on this project should read this file first to understand the vision, requirements, and technical approach.
 
 ---
 
@@ -68,7 +68,7 @@ This document serves as the master instruction guide for all development work on
 COMPANY BRANDING INFORMATION
 ============================
 
-Company Name: Truly Clean
+Company Name: TrulyClean
 Tagline/Slogan: [TO BE EXTRACTED FROM FACEBOOK]
 
 Primary Services (Residential):
@@ -498,7 +498,7 @@ When ready to implement:
 
 ## 📞 Contact & Communication
 
-**Project Owner:** Truly Clean / Sonya
+**Project Owner:** TrulyClean / Sonya
 **Facebook Page:** https://www.facebook.com/TrulyCleanSonya
 **Primary Contact Method:** [TO BE FILLED FROM FACEBOOK]
 
@@ -556,4 +556,4 @@ Before considering the website "complete," verify:
 
 **Last Updated:** February 11, 2026
 
-*This document is the source of truth for all development work on the Truly Clean website. Please refer to it regularly and update it as requirements change.*
+*This document is the source of truth for all development work on the TrulyClean website. Please refer to it regularly and update it as requirements change.*

@@ -44,7 +44,7 @@ export default function TestimonialCarousel() {
   const testimonials = [
     {
       name: 'Sarah Johnson',
-      text: 'Truly Clean made my home sparkle! The team was professional, on-time, and thorough. Highly recommended!',
+      text: 'TrulyClean made my home sparkle! The team was professional, on-time, and thorough. Highly recommended!',
       rating: 5,
       image: '/testimonials/sarah.jpg'
     },

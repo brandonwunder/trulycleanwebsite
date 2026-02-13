@@ -65,7 +65,7 @@ export default function QuoteForm() {
           <div className="relative w-20 h-20">
             <Image
               src="/images/logo/logo-icon-64.png"
-              alt="Truly Clean"
+              alt="TrulyClean"
               width={80}
               height={80}
               className="object-contain"

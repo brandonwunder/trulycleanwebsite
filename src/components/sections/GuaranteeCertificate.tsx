@@ -57,7 +57,7 @@ export default function GuaranteeCertificate() {
               <div className="relative w-24 h-24">
                 <Image
                   src="/images/logo/logo-icon-64.png"
-                  alt="Truly Clean Guarantee"
+                  alt="TrulyClean Guarantee"
                   width={96}
                   height={96}
                   className="object-contain filter drop-shadow-xl"
@@ -108,7 +108,7 @@ export default function GuaranteeCertificate() {
               <div className="text-right">
                 <p className="text-xs uppercase tracking-wider text-white/70 mb-1">Authorized By</p>
                 <p className="font-heading font-bold text-white">Sonya, Owner</p>
-                <p className="text-xs text-white/70">Truly Clean LLC</p>
+                <p className="text-xs text-white/70">TrulyClean LLC</p>
               </div>
             </div>
           </div>

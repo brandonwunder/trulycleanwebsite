@@ -1,6 +1,6 @@
 # 📚 External Resources & Links
 
-All documentation links, references, and resources for the Truly Clean project.
+All documentation links, references, and resources for the TrulyClean project.
 
 ---
 

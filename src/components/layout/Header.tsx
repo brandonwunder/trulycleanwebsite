@@ -76,7 +76,7 @@ export default function Header() {
             <div className="sm:hidden relative w-10 h-10 rounded-lg overflow-hidden shadow-lg group-hover:shadow-[0_0_25px_rgba(6,182,212,0.4)] transition-all">
               <Image
                 src="/images/logo/logo-icon-40.png"
-                alt="Truly Clean Logo"
+                alt="TrulyClean Logo"
                 width={40}
                 height={40}
                 priority
@@ -88,7 +88,7 @@ export default function Header() {
             <div className="hidden sm:block relative h-10" style={{ width: '180px' }}>
               <Image
                 src="/images/logo/logo-full-200x60.png"
-                alt="Truly Clean Logo"
+                alt="TrulyClean Logo"
                 fill
                 priority
                 className="object-contain"

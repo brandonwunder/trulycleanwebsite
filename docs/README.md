@@ -1,6 +1,6 @@
 # 📚 Documentation Index
 
-Welcome to the Truly Clean project documentation! This folder contains detailed guides for all tools, libraries, and resources used in this project.
+Welcome to the TrulyClean project documentation! This folder contains detailed guides for all tools, libraries, and resources used in this project.
 
 ## Quick Navigation
 

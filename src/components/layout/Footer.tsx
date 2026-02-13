@@ -61,14 +61,14 @@ export default function Footer() {
               <div className="relative w-auto h-14 flex-shrink-0">
                 <Image
                   src="/images/logo/logo-hero.png"
-                  alt="Truly Clean Logo"
+                  alt="TrulyClean Logo"
                   width={1536}
                   height={1024}
                   className="object-contain"
                 />
               </div>
               <div>
-                <h3 className="font-heading font-bold text-xl">Truly Clean</h3>
+                <h3 className="font-heading font-bold text-xl">TrulyClean</h3>
                 <p className="text-xs text-gray-400">Professional Cleaning Services</p>
               </div>
             </div>
@@ -184,7 +184,7 @@ export default function Footer() {
             variants={slideLeft}
             className="text-gray-400 text-sm"
           >
-            © {currentYear} Truly Clean. All rights reserved. | Proudly serving the Phoenix area
+            © {currentYear} TrulyClean. All rights reserved. | Proudly serving the Phoenix area
           </motion.p>
 
           {/* Legal Links */}

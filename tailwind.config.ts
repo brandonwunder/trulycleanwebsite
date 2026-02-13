@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Custom Truly Clean brand colors - Teal Harmony palette
+        // Custom TrulyClean brand colors - Teal Harmony palette
         'deep-teal': '#0891B2',      // Cyan 600 - Primary teal
         'rich-violet': '#8B5CF6',    // Violet 500 - Primary purple
         'light-teal': '#22D3EE',     // Cyan 400 - Tertiary accent

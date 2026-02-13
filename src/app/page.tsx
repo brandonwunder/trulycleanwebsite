@@ -56,7 +56,7 @@ export default function HomePage() {
       <CTABreak
         id="cta-final"
         headline="Limited Availability This Week - Join 492+ Happy Customers"
-        subtext="See why New River families trust Truly Clean. Book now to secure your preferred cleaning date."
+        subtext="See why New River families trust TrulyClean. Book now to secure your preferred cleaning date."
         ctaLabel="Book Your Clean Today"
         variant="dark"
       />

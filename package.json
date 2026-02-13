@@ -1,7 +1,7 @@
 {
   "name": "truly-clean",
   "version": "0.1.0",
-  "description": "Modern website for Truly Clean - Residential & Commercial Cleaning Services",
+  "description": "Modern website for TrulyClean - Residential & Commercial Cleaning Services",
   "private": true,
   "scripts": {
     "dev": "next dev",

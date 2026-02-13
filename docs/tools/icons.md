@@ -207,7 +207,7 @@ export default function ContactSection() {
 <div className="relative">
   <Quote size={48} className="text-gray-300 absolute -top-4 -left-4" />
   <p className="relative z-10 italic">
-    "Truly Clean transformed my home. Highly recommended!"
+    "TrulyClean transformed my home. Highly recommended!"
   </p>
 </div>
 ```

@@ -16,7 +16,7 @@ const outfit = Outfit({
 })
 
 export const metadata: Metadata = {
-  title: 'Truly Clean | Professional Cleaning Services',
+  title: 'TrulyClean | Professional Cleaning Services',
   description: 'Professional residential and commercial cleaning services. Get your free quote today!',
   keywords: 'cleaning, residential cleaning, commercial cleaning, professional cleaning',
   icons: {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     apple: '/images/logo/apple-touch-icon.png',
   },
   openGraph: {
-    title: 'Truly Clean | Professional Cleaning Services',
+    title: 'TrulyClean | Professional Cleaning Services',
     description: 'Get your free cleaning quote today',
     type: 'website',
     images: [
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
         url: '/images/logo/logo-square-512.png',
         width: 512,
         height: 512,
-        alt: 'Truly Clean Logo',
+        alt: 'TrulyClean Logo',
       },
     ],
   },

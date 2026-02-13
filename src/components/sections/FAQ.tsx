@@ -21,7 +21,7 @@ const faqItems = [
   },
   {
     question: 'Are you insured and bonded?',
-    answer: 'Absolutely. Truly Clean is fully licensed, bonded, and insured. We also carry comprehensive liability coverage for your complete peace of mind. We\'re BBB Accredited with an A+ rating.',
+    answer: 'Absolutely. TrulyClean is fully licensed, bonded, and insured. We also carry comprehensive liability coverage for your complete peace of mind. We\'re BBB Accredited with an A+ rating.',
   },
   {
     question: 'How do I schedule a cleaning?',
@@ -166,7 +166,7 @@ export default function FAQ() {
               variants={slideUp}
               className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto"
             >
-              We've got answers. Here's everything you need to know about Truly Clean.
+              We've got answers. Here's everything you need to know about TrulyClean.
             </motion.p>
           </div>
 

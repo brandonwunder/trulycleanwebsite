@@ -184,7 +184,7 @@ async function generateFaviconIco() {
  * Main function
  */
 async function main() {
-  console.log('\n🎨 Truly Clean Logo Generation Script\n');
+  console.log('\n🎨 TrulyClean Logo Generation Script\n');
   console.log(`Source: ${SOURCE_LOGO}`);
   console.log(`Output: ${OUTPUT_DIR}\n`);
 

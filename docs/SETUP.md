@@ -1,6 +1,6 @@
 # ⚙️ Installation & Setup Guide
 
-Complete setup instructions to get the Truly Clean project running locally.
+Complete setup instructions to get the TrulyClean project running locally.
 
 ---
 
@@ -91,7 +91,7 @@ cp .env.example .env.local
 ```env
 # Site Configuration (Required)
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
-NEXT_PUBLIC_SITE_NAME=Truly Clean
+NEXT_PUBLIC_SITE_NAME=TrulyClean
 
 # Company Contact Info (From Facebook)
 NEXT_PUBLIC_COMPANY_PHONE=(555) 123-4567
@@ -243,7 +243,7 @@ git init
 git add .
 
 # Create first commit
-git commit -m "Initial project setup with Truly Clean website structure"
+git commit -m "Initial project setup with TrulyClean website structure"
 
 # (Optional) Connect to GitHub and push
 # git remote add origin https://github.com/your-username/truly-clean.git

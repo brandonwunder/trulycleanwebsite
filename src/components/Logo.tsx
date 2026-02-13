@@ -30,7 +30,7 @@ export function TrulyCleanLogo({
     <div className={`relative ${className}`} style={{ width: config.w, height: config.h }}>
       <Image
         src={config.src}
-        alt="Truly Clean Logo"
+        alt="TrulyClean Logo"
         width={config.w}
         height={config.h}
         className="object-contain"

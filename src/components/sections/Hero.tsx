@@ -112,7 +112,7 @@ export default function Hero() {
             >
               <Image
                 src="/images/logo/logo-hero.png"
-                alt="Truly Clean"
+                alt="TrulyClean"
                 width={1536}
                 height={1024}
                 priority

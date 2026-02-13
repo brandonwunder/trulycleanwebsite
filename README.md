@@ -1,6 +1,6 @@
-# Truly Clean - Website
+# TrulyClean - Website
 
-A modern, vibrant website for Truly Clean—a residential and commercial cleaning service company. Features a quick quote request form, customer testimonials, and service information.
+A modern, vibrant website for TrulyClean—a residential and commercial cleaning service company. Features a quick quote request form, customer testimonials, and service information.
 
 ## 🚀 Quick Start
 
@@ -265,7 +265,7 @@ For issues or questions:
 
 ---
 
-**Project:** Truly Clean Website
+**Project:** TrulyClean Website
 **Last Updated:** February 11, 2026
 **Status:** In Development
 
