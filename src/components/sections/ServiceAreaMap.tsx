@@ -1,9 +1,8 @@
 'use client'
 
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { MapPin, Sparkles, Star } from 'lucide-react'
-import { staggerContainer, slideUp, floatingAnimationSlow } from '@/lib/animations'
+import { staggerContainer, slideUp } from '@/lib/animations'
 
 export default function ServiceAreaMap() {
   return (
@@ -51,24 +50,6 @@ export default function ServiceAreaMap() {
             Local roots, premium service across the I-17 corridor from our New River headquarters.
           </motion.p>
         </div>
-
-        {/* North Phoenix Map Graphic */}
-        <motion.div
-          variants={slideUp}
-          animate={floatingAnimationSlow}
-          className="flex justify-center mb-16"
-        >
-          <div className="relative w-full max-w-md">
-            <Image
-              src="/images/graphics/north-phoenix-map.png"
-              alt="North Phoenix Service Area Map"
-              width={600}
-              height={700}
-              className="w-full h-auto drop-shadow-lg"
-              priority
-            />
-          </div>
-        </motion.div>
 
         {/* Service Area Content */}
         <motion.div
