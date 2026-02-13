@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Phone, Mail, MapPin, CheckCircle, FileText } from 'lucide-react'
@@ -61,6 +62,40 @@ export default function Contact() {
               <span className="text-sm font-semibold">Let's Get Started</span>
             </div>
           </motion.div>
+
+          {/* Premium Divider with Shield */}
+          <motion.div
+            variants={slideUp}
+            className="flex items-center justify-center gap-4 my-8"
+          >
+            {/* Left line */}
+            <div
+              className="h-[1px] w-16 sm:w-24 lg:w-32"
+              style={{
+                background: 'linear-gradient(to right, transparent 0%, #0891B2 50%, #8B5CF6 100%)'
+              }}
+            />
+
+            {/* Shield icon */}
+            <div className="relative w-8 h-8 flex-shrink-0">
+              <Image
+                src="/images/logo/logo-icon-40.png"
+                alt="Truly Clean"
+                width={32}
+                height={32}
+                className="w-full h-full object-contain opacity-80"
+              />
+            </div>
+
+            {/* Right line */}
+            <div
+              className="h-[1px] w-16 sm:w-24 lg:w-32"
+              style={{
+                background: 'linear-gradient(to left, transparent 0%, #8B5CF6 50%, #0891B2 100%)'
+              }}
+            />
+          </motion.div>
+
           <motion.h2
             variants={slideUp}
             className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-deep-indigo mb-4"

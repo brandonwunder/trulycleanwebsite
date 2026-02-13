@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import {
   Home,
@@ -67,6 +68,24 @@ export default function Services() {
       id="services"
       className="py-20 md:py-28 relative overflow-hidden"
     >
+      {/* Premium Watermark */}
+      <div
+        className="absolute top-20 right-0 w-[520px] h-[520px] md:w-[380px] md:h-[380px] opacity-[0.04] md:opacity-[0.03] pointer-events-none -z-10"
+        style={{
+          transform: 'translate(30%, -10%)',
+          filter: 'blur(1px)'
+        }}
+      >
+        <Image
+          src="/images/logo/logo-icon-512.png"
+          alt=""
+          width={520}
+          height={520}
+          className="w-full h-full object-contain"
+          aria-hidden="true"
+        />
+      </div>
+
       {/* Background floating elements */}
       <motion.div
         className="absolute top-10 left-10 w-40 h-40 bg-deep-teal/8 rounded-full blur-3xl"
@@ -96,6 +115,23 @@ export default function Services() {
               <span className="text-sm font-semibold">Our Expertise</span>
             </div>
           </motion.div>
+
+          {/* Premium Brand Stamp */}
+          <motion.div
+            variants={slideUp}
+            className="flex justify-center mb-6"
+          >
+            <div className="relative h-10 sm:h-12 lg:h-14">
+              <Image
+                src="/images/logo/logo-icon-64.png"
+                alt="Truly Clean"
+                width={56}
+                height={56}
+                className="h-full w-auto object-contain opacity-90"
+              />
+            </div>
+          </motion.div>
+
           <motion.h2
             variants={slideUp}
             className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-deep-indigo mb-4"

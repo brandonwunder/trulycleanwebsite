@@ -195,8 +195,28 @@ export default function About() {
               const Icon = stat.icon
               return (
                 <motion.div key={index} variants={slideRight}>
-                  <Card variant="gradient" size="lg" hover="lift" className="group">
-                    <div className="flex items-center gap-6">
+                  <Card
+                    variant="gradient"
+                    size="lg"
+                    hover="lift"
+                    className={`group ${index === 1 ? 'relative overflow-hidden' : ''}`}
+                    style={index === 1 ? {
+                      background: 'linear-gradient(135deg, rgba(8, 145, 178, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%)',
+                    } : undefined}
+                  >
+                    {index === 1 && (
+                      <div
+                        className="absolute inset-0 rounded-2xl pointer-events-none"
+                        style={{
+                          background: 'linear-gradient(135deg, #0891B2 0%, #8B5CF6 100%)',
+                          padding: '1px',
+                          WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                          WebkitMaskComposite: 'xor',
+                          maskComposite: 'exclude'
+                        }}
+                      />
+                    )}
+                    <div className={`flex items-center gap-6 ${index === 1 ? 'relative z-10' : ''}`}>
                       <motion.div
                         className="bg-white/80 p-5 rounded-xl flex-shrink-0 group-hover:shadow-lg transition-all"
                         whileHover={{ scale: 1.1, rotate: 5 }}
@@ -206,7 +226,15 @@ export default function About() {
                       <div className="flex-1">
                         {stat.isVerified ? (
                           <div className="font-heading font-bold text-3xl text-deep-teal mb-1 flex items-center gap-2">
-                            <CheckCircle className="w-8 h-8" />
+                            <div className="relative w-7 h-7">
+                              <Image
+                                src="/images/logo/logo-icon-40.png"
+                                alt=""
+                                width={28}
+                                height={28}
+                                className="w-full h-full object-contain"
+                              />
+                            </div>
                             Verified
                           </div>
                         ) : (

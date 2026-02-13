@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { CheckCircle, X, Leaf, Shield, Award, DollarSign, Phone, Sparkles, Zap } from 'lucide-react'
 import { staggerContainer, slideUp } from '@/lib/animations'
@@ -90,8 +91,23 @@ export default function WhyDifferent() {
             </div>
             <div />
             <div />
-            <div className="text-center">
-              <span className="font-heading font-semibold text-deep-teal text-sm uppercase tracking-wider">Truly Clean</span>
+            <div className="relative text-center">
+              {/* Column watermark */}
+              <div
+                className="absolute inset-0 flex items-center justify-center opacity-[0.04] pointer-events-none"
+                aria-hidden="true"
+              >
+                <Image
+                  src="/images/logo/logo-icon-512.png"
+                  alt=""
+                  width={520}
+                  height={520}
+                  className="w-[520px] h-[520px] object-contain"
+                  style={{ transform: 'translateX(15%)' }}
+                />
+              </div>
+
+              <span className="relative z-10 font-heading font-semibold text-deep-teal text-sm uppercase tracking-wider">Truly Clean</span>
             </div>
           </motion.div>
 
