@@ -142,15 +142,15 @@ export default function Hero() {
             variants={itemVariants}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
           >
-            <div className="glass rounded-2xl p-1.5 shadow-lg shadow-deep-teal/10">
-              <Button onClick={scrollToQuote} size="xl" variant="primary" className="shadow-none">
+            <div className="glass rounded-2xl p-1.5 shadow-lg shadow-deep-teal/10 h-fit">
+              <Button onClick={scrollToQuote} size="xl" variant="primary" className="shadow-none h-12">
                 <Sparkles className="w-5 h-5" />
                 Get My Instant Quote
               </Button>
             </div>
-            <div className="glass rounded-2xl p-1.5 shadow-lg">
-              <Button size="xl" variant="secondary" asChild className="shadow-none">
-                <a href={`tel:${phone}`}>
+            <div className="glass rounded-2xl p-1.5 shadow-lg h-fit">
+              <Button size="xl" variant="secondary" asChild className="shadow-none h-12">
+                <a href={`tel:${phone}`} className="h-12 flex items-center">
                   <Phone className="w-5 h-5" />
                   Call Now
                 </a>
