@@ -121,12 +121,12 @@ export default function Services() {
             variants={slideUp}
             className="flex justify-center mb-6"
           >
-            <div className="relative h-10 sm:h-12 lg:h-14">
+            <div className="relative h-12 sm:h-14 lg:h-16">
               <Image
-                src="/images/logo/logo-icon-64.png"
+                src="/images/logo/logo-hero.png"
                 alt="Truly Clean"
-                width={56}
-                height={56}
+                width={1536}
+                height={1024}
                 className="h-full w-auto object-contain opacity-90"
               />
             </div>
