@@ -102,9 +102,14 @@ export default function Hero() {
           {/* Premium Logo Lockup */}
           <motion.div
             animate={floatingAnimationSlow}
-            className="mb-0.5 md:mb-1 lg:mb-1"
+            className="mb-0 md:mb-px"
           >
-            <div className="relative mx-auto w-[405px] sm:w-[495px] lg:w-[630px] max-w-[90vw] drop-shadow-2xl">
+            <div
+              className="relative mx-auto w-[405px] sm:w-[495px] lg:w-[630px] max-w-[90vw] drop-shadow-2xl"
+              style={{
+                filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.15)) drop-shadow(0 15px 30px rgba(8, 145, 178, 0.2)) drop-shadow(0 8px 16px rgba(139, 92, 246, 0.15))'
+              }}
+            >
               <Image
                 src="/images/logo/logo-hero.png"
                 alt="Truly Clean"
