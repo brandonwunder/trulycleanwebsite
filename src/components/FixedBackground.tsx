@@ -38,6 +38,7 @@ export default function FixedBackground() {
             alt="Professional cleaner working in modern Arizona home"
             fill
             priority
+            fetchPriority="high"
             quality={85}
             sizes="100vw"
             style={{ objectFit: 'cover', objectPosition: '60% 40%' }}

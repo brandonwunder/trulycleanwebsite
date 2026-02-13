@@ -116,6 +116,7 @@ export default function Hero() {
                 width={1536}
                 height={1024}
                 priority
+                fetchPriority="high"
                 className="w-full h-auto object-contain"
               />
             </div>

@@ -1,17 +1,20 @@
+import dynamic from 'next/dynamic'
 import Hero from '@/components/sections/Hero'
 import TrustBar from '@/components/sections/TrustBar'
 import Testimonials from '@/components/sections/Testimonials'
 import BeforeAfter from '@/components/sections/BeforeAfter'
 import Services from '@/components/sections/Services'
-import HowItWorks from '@/components/sections/HowItWorks'
-import CTABreak from '@/components/sections/CTABreak'
-import WhyDifferent from '@/components/sections/WhyDifferent'
-import CleanOMeter from '@/components/sections/CleanOMeter'
-import ServiceAreaMap from '@/components/sections/ServiceAreaMap'
-import About from '@/components/sections/About'
-import FAQ from '@/components/sections/FAQ'
-import Contact from '@/components/sections/Contact'
 import { StickyCTA } from '@/components/StickyCTA'
+
+// Dynamic imports for below-fold sections
+const HowItWorks = dynamic(() => import('@/components/sections/HowItWorks'))
+const CTABreak = dynamic(() => import('@/components/sections/CTABreak'))
+const WhyDifferent = dynamic(() => import('@/components/sections/WhyDifferent'))
+const CleanOMeter = dynamic(() => import('@/components/sections/CleanOMeter'))
+const ServiceAreaMap = dynamic(() => import('@/components/sections/ServiceAreaMap'))
+const About = dynamic(() => import('@/components/sections/About'))
+const FAQ = dynamic(() => import('@/components/sections/FAQ'))
+const Contact = dynamic(() => import('@/components/sections/Contact'))
 
 export default function HomePage() {
   return (
