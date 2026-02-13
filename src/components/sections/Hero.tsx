@@ -107,10 +107,10 @@ export default function Hero() {
           >
             <div className="relative mx-auto w-[540px] sm:w-[660px] lg:w-[840px] max-w-[90vw]">
               <Image
-                src="/images/logo/logo-full-200x60.png"
+                src="/images/logo/logo-new.png"
                 alt="Truly Clean"
-                width={200}
-                height={60}
+                width={1536}
+                height={1024}
                 priority
                 className="w-full h-auto object-contain"
               />
