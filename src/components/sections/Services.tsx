@@ -121,7 +121,7 @@ export default function Services() {
             variants={slideUp}
             className="flex justify-center mb-6"
           >
-            <div className="relative h-12 sm:h-14 lg:h-16">
+            <div className="relative h-24 sm:h-28 lg:h-32">
               <Image
                 src="/images/logo/logo-hero.png"
                 alt="Truly Clean"
