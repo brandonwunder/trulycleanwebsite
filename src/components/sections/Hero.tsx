@@ -107,7 +107,7 @@ export default function Hero() {
           >
             <div className="relative mx-auto w-[405px] sm:w-[495px] lg:w-[630px] max-w-[90vw]">
               <Image
-                src="/images/logo/logo-new.png"
+                src="/images/logo/logo-hero.png"
                 alt="Truly Clean"
                 width={1536}
                 height={1024}
