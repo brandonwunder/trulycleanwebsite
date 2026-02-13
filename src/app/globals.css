@@ -347,9 +347,50 @@ button:active,
   border: 1px solid rgba(255, 255, 255, 0.20);
 }
 
+/* ===== CSS ANIMATIONS (Replaces Framer Motion for simple effects) ===== */
+
+/* Slide up animation for static sections */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  opacity: 0;
+}
+
+/* Stagger animation helper - use delay to create stagger effect */
+.animate-slide-up-1 { animation-delay: 0.1s; }
+.animate-slide-up-2 { animation-delay: 0.25s; }
+.animate-slide-up-3 { animation-delay: 0.4s; }
+.animate-slide-up-4 { animation-delay: 0.55s; }
+.animate-slide-up-5 { animation-delay: 0.7s; }
+.animate-slide-up-6 { animation-delay: 0.85s; }
+
+/* Floating/bobbing animation for background elements */
+@keyframes float-bg {
+  0%, 100% { transform: translate(0, 0); opacity: 0.3; }
+  25% { transform: translate(40px, -40px); opacity: 0.5; }
+  50% { transform: translate(-20px, 20px); opacity: 0.4; }
+  75% { transform: translate(40px, 10px); opacity: 0.6; }
+}
+
+.animate-float-bg {
+  animation: float-bg 8s ease-in-out infinite;
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .fixed-background-image {
+  .fixed-background-image,
+  .animate-slide-up,
+  .animate-float-bg {
     animation: none;
   }
 }

@@ -1,8 +1,4 @@
-'use client'
-
-import { motion } from 'framer-motion'
 import { Star, Award, Users, ShieldCheck } from 'lucide-react'
-import { staggerContainer, slideUp } from '@/lib/animations'
 
 const trustItems = [
   {
@@ -34,19 +30,12 @@ export default function TrustBar() {
       {/* Subtle gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-deep-teal/5 via-transparent to-rich-violet/5" />
 
-      <motion.div
-        className="container mx-auto px-4 max-w-7xl relative z-10"
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
-      >
+      <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
           {trustItems.map((item, index) => (
-            <motion.div
+            <div
               key={index}
-              variants={slideUp}
-              className="flex items-center gap-3 justify-center py-2"
+              className={`flex items-center gap-3 justify-center py-2 animate-slide-up animate-slide-up-${(index % 4) + 1}`}
             >
               <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-deep-teal/10 flex items-center justify-center">
                 <item.icon className="w-5 h-5 text-deep-teal" />
@@ -66,10 +55,10 @@ export default function TrustBar() {
                 </div>
                 <span className="text-gray-400 text-xs md:text-sm">{item.sublabel}</span>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
-      </motion.div>
+      </div>
     </section>
   )
 }
