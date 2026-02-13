@@ -101,7 +101,6 @@ export default function Hero() {
         <div className="text-center">
           {/* Premium Logo Lockup */}
           <motion.div
-            variants={itemVariants}
             animate={floatingAnimationSlow}
             className="mb-0.5 md:mb-1 lg:mb-1"
           >
