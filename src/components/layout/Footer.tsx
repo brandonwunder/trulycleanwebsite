@@ -60,9 +60,10 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-4">
               <div className="relative w-12 h-12 rounded-lg overflow-hidden flex-shrink-0">
                 <Image
-                  src="/images/logo/logo-icon.png"
+                  src="/images/logo/logo-icon-48.png"
                   alt="Truly Clean Logo"
-                  fill
+                  width={48}
+                  height={48}
                   className="object-contain"
                 />
               </div>

@@ -82,9 +82,10 @@ export default function Hero() {
       >
         <div className="relative w-6 h-6">
           <Image
-            src="/images/logo/logo-icon.png"
+            src="/images/logo/logo-icon-32.png"
             alt="Truly Clean Logo"
-            fill
+            width={24}
+            height={24}
             className="object-contain"
           />
         </div>

@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 const navLinks = [
@@ -72,18 +72,28 @@ export default function Header() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <div className="relative w-10 h-10 rounded-lg overflow-hidden shadow-lg group-hover:shadow-[0_0_25px_rgba(6,182,212,0.4)] transition-all">
+            {/* Mobile: Icon only */}
+            <div className="sm:hidden relative w-10 h-10 rounded-lg overflow-hidden shadow-lg group-hover:shadow-[0_0_25px_rgba(6,182,212,0.4)] transition-all">
               <Image
-                src="/images/logo/logo-icon.png"
+                src="/images/logo/logo-icon-40.png"
+                alt="Truly Clean Logo"
+                width={40}
+                height={40}
+                priority
+                className="object-contain"
+              />
+            </div>
+
+            {/* Desktop: Full logo with text */}
+            <div className="hidden sm:block relative h-10" style={{ width: '180px' }}>
+              <Image
+                src="/images/logo/logo-full-200x60.png"
                 alt="Truly Clean Logo"
                 fill
                 priority
                 className="object-contain"
               />
             </div>
-            <span className="font-heading font-bold text-xl text-deep-indigo hidden sm:inline">
-              Truly Clean
-            </span>
           </motion.button>
 
           {/* Desktop Navigation */}

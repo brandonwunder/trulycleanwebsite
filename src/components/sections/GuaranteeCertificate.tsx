@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Shield, Award, Clock, Heart, CheckCircle } from 'lucide-react'
 import { staggerContainer, slideUp } from '@/lib/animations'
@@ -49,11 +50,19 @@ export default function GuaranteeCertificate() {
 
             {/* Main seal icon */}
             <motion.div
-              className="w-24 h-24 mx-auto mb-8 bg-gradient-to-br from-deep-teal to-rich-violet rounded-full flex items-center justify-center shadow-2xl"
+              className="w-24 h-24 mx-auto mb-8 flex items-center justify-center"
               animate={{ rotate: [0, 5, -5, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
             >
-              <Shield className="w-12 h-12 text-white" />
+              <div className="relative w-24 h-24">
+                <Image
+                  src="/images/logo/logo-icon-64.png"
+                  alt="Truly Clean Guarantee"
+                  width={96}
+                  height={96}
+                  className="object-contain filter drop-shadow-xl"
+                />
+              </div>
             </motion.div>
 
             {/* Content */}

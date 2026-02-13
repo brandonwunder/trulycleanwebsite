@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
@@ -57,11 +58,19 @@ export default function QuoteForm() {
         className="glass p-8 rounded-2xl text-center border border-rich-violet/30"
       >
         <motion.div
-          className="mb-4"
+          className="mb-6 relative flex justify-center"
           animate={{ scale: [1, 1.1, 1] }}
           transition={{ duration: 0.6 }}
         >
-          <CheckCircle className="w-16 h-16 text-rich-violet mx-auto" />
+          <div className="relative w-20 h-20">
+            <Image
+              src="/images/logo/logo-icon-64.png"
+              alt="Truly Clean"
+              width={80}
+              height={80}
+              className="object-contain"
+            />
+          </div>
         </motion.div>
         <h3 className="font-heading font-bold text-2xl text-deep-indigo mb-2">
           Quote Request Received!

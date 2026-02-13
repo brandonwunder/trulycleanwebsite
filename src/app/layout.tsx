@@ -24,7 +24,7 @@ export const metadata: Metadata = {
       { url: '/images/logo/favicon-16.png', sizes: '16x16', type: 'image/png' },
       { url: '/images/logo/favicon-32.png', sizes: '32x32', type: 'image/png' },
     ],
-    apple: '/images/logo/logo-icon-256.png',
+    apple: '/images/logo/apple-touch-icon.png',
   },
   openGraph: {
     title: 'Truly Clean | Professional Cleaning Services',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/logo/logo-icon-512.png',
+        url: '/images/logo/logo-square-512.png',
         width: 512,
         height: 512,
         alt: 'Truly Clean Logo',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary',
-    images: '/images/logo/logo-icon-512.png',
+    images: '/images/logo/logo-square-512.png',
   },
 }
 

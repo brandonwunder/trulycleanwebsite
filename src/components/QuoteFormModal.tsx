@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useEffect } from 'react'
 import { X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -70,9 +71,20 @@ export default function QuoteFormModal({ isOpen, onClose }: QuoteFormModalProps)
 
               {/* Modal content */}
               <div className="p-6 md:p-8">
-                <h2 className="text-3xl font-bold text-navy-900 mb-2">
-                  Get Your Free Quote
-                </h2>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="relative w-8 h-8">
+                    <Image
+                      src="/images/logo/logo-icon-40.png"
+                      alt=""
+                      width={32}
+                      height={32}
+                      className="object-contain"
+                    />
+                  </div>
+                  <h2 className="text-3xl font-bold text-navy-900">
+                    Get Your Free Quote
+                  </h2>
+                </div>
                 <p className="text-gray-600 mb-6">
                   Fill out the form and we'll get back to you within 24 hours.
                 </p>
