@@ -77,7 +77,7 @@ export default function Contact() {
             />
 
             {/* Logo icon */}
-            <div className="relative w-auto h-12 flex-shrink-0">
+            <div className="relative w-auto h-24 flex-shrink-0">
               <Image
                 src="/images/logo/logo-hero.png"
                 alt="Truly Clean"
