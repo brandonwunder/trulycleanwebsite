@@ -77,21 +77,6 @@ export default function Hero() {
 
       {/* Floating trust badges — desktop only */}
       <motion.div
-        className="hidden xl:flex absolute top-20 right-20 items-center gap-3 glass px-5 py-3 rounded-full shadow-lg z-20 border border-deep-teal/20"
-        animate={floatingAnimationSlow}
-      >
-        <div className="relative w-6 h-6">
-          <Image
-            src="/images/logo/logo-icon-32.png"
-            alt="Truly Clean Logo"
-            width={24}
-            height={24}
-            className="object-contain"
-          />
-        </div>
-        <span className="text-sm font-semibold text-deep-indigo">Premium Care</span>
-      </motion.div>
-      <motion.div
         className="hidden xl:flex absolute top-32 right-16 items-center gap-2 glass px-4 py-2.5 rounded-full shadow-lg z-20"
         animate={floatingAnimationSlow}
       >
@@ -119,7 +104,7 @@ export default function Hero() {
             variants={itemVariants}
             className="mb-12 md:mb-14 lg:mb-16"
           >
-            <div className="relative mx-auto w-[120px] sm:w-[150px] lg:w-[180px]">
+            <div className="relative mx-auto w-[180px] sm:w-[220px] lg:w-[280px]">
               <Image
                 src="/images/logo/logo-full-200x60.png"
                 alt="Truly Clean"
@@ -129,15 +114,6 @@ export default function Hero() {
                 className="w-full h-auto object-contain"
               />
             </div>
-          </motion.div>
-
-          {/* Badge */}
-          <motion.div
-            variants={itemVariants}
-            className="inline-flex items-center gap-2 glass-teal px-5 py-3 rounded-full mb-8 shadow-sm"
-          >
-            <Sparkles className="w-5 h-5 text-deep-teal" />
-            <span className="font-semibold text-deep-teal">Trusted by local families</span>
           </motion.div>
 
           {/* Main Headline */}
