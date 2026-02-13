@@ -103,7 +103,7 @@ export default function Hero() {
           <motion.div
             variants={itemVariants}
             animate={floatingAnimationSlow}
-            className="mb-12 md:mb-14 lg:mb-16"
+            className="mb-2 md:mb-3 lg:mb-3"
           >
             <div className="relative mx-auto w-[540px] sm:w-[660px] lg:w-[840px] max-w-[90vw]">
               <Image
