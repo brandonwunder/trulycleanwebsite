@@ -107,7 +107,7 @@ export default function WhyDifferent() {
                 />
               </div>
 
-              <div className="relative z-10 h-12">
+              <div className="relative z-10 h-24 flex justify-center">
                 <Image
                   src="/images/logo/logo-hero.png"
                   alt="Truly Clean"
