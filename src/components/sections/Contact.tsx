@@ -76,14 +76,14 @@ export default function Contact() {
               }}
             />
 
-            {/* Shield icon */}
-            <div className="relative w-8 h-8 flex-shrink-0">
+            {/* Logo icon */}
+            <div className="relative w-auto h-12 flex-shrink-0">
               <Image
-                src="/images/logo/logo-icon-40.png"
+                src="/images/logo/logo-hero.png"
                 alt="Truly Clean"
-                width={32}
-                height={32}
-                className="w-full h-full object-contain opacity-80"
+                width={1536}
+                height={1024}
+                className="h-full w-auto object-contain opacity-80"
               />
             </div>
 
