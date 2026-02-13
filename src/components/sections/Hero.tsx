@@ -102,9 +102,10 @@ export default function Hero() {
           {/* Premium Logo Lockup */}
           <motion.div
             variants={itemVariants}
+            animate={floatingAnimationSlow}
             className="mb-12 md:mb-14 lg:mb-16"
           >
-            <div className="relative mx-auto w-[180px] sm:w-[220px] lg:w-[280px]">
+            <div className="relative mx-auto w-[540px] sm:w-[660px] lg:w-[840px] max-w-[90vw]">
               <Image
                 src="/images/logo/logo-full-200x60.png"
                 alt="Truly Clean"
